@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>道藏本体论</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: "Noto Serif SC", "SimSun", serif; background: #f5f0e6; color: #2a1f1a; }
+:root { --primary: #5c3317; --secondary: #8b4513; --accent: #d4af37; --bg: #f5f0e6; --card: #fff; --border: #d4c5a9; }
+
+/* 导航栏 */
+nav { background: linear-gradient(180deg, #3a1f0a, #5c3317); color: #fff; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 12px rgba(0,0,0,0.15); position: sticky; top:0; z-index: 100; }
+.nav-title { font-size: 24px; font-weight: bold; letter-spacing: 2px; }
+.nav-links { display: flex; gap: 32px; }
+.nav-links a { color: #f0e6d2; text-decoration: none; font-size: 17px; padding: 4px 0; border-bottom: 2px solid transparent; transition: all 0.2s; }
+.nav-links a.active, .nav-links a:hover { color: #fff; border-bottom-color: var(--accent); }
+
+/* 通用布局 */
+.container { max-width: 1600px; margin: 0 auto; padding: 0 24px; }
+.page-title { text-align: center; font-size: 36px; color: var(--primary); margin: 32px 0 8px; }
+.page-subtitle { text-align: center; color: #7a6a5a; font-size: 16px; margin-bottom: 32px; }
+
+/* 全藏原典布局 - 和佛经完全一致 */
+.classics-layout { display: grid; grid-template-columns: 280px 1fr; gap: 24px; min-height: calc(100vh - 64px); }
+
+/* 左侧分类树 */
+.sidebar { background: var(--card); border-radius: 12px; padding: 20px 0; border: 1px solid var(--border); height: fit-content; position: sticky; top: 80px; max-height: calc(100vh - 96px); overflow-y: auto; }
+.cat-group { margin-bottom: 12px; }
+.cat-main { padding: 10px 20px; font-weight: bold; font-size: 16px; color: var(--primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+.cat-main:hover { background: #f8f4eb; }
+.cat-sub { padding-left: 20px; display: none; }
+.cat-sub.open { display: block; }
+.cat-sub-item { padding: 8px 20px 8px 32px; font-size: 14px; color: #5a4a3a; cursor: pointer; display: flex; justify-content: space-between; }
+.cat-sub-item:hover, .cat-sub-item.active { background: #f3ead8; color: var(--secondary); }
+.cat-count { color: #9a8a7a; font-size: 12px; }
+
+/* 右侧内容区 */
+.classics-main { padding-bottom: 60px; }
+.search-bar { display: flex; gap: 12px; margin-bottom: 24px; }
+.search-bar input { flex: 1; padding: 12px 20px; border: 1px solid var(--border); border-radius: 8px; font-size: 16px; background: var(--card); }
+.search-bar select { padding: 12px 20px; border: 1px solid var(--border); border-radius: 8px; font-size: 16px; background: var(--card); min-width: 160px; }
+
+/* 经书网格 */
+.sutra-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.sutra-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; cursor: pointer; transition: all 0.2s; }
+.sutra-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(92,51,23,0.1); border-color: var(--accent); }
+.sutra-name { font-size: 18px; font-weight: bold; color: var(--primary); margin-bottom: 6px; }
+.sutra-meta { font-size: 13px; color: #7a6a5a; }
+
+/* 阅读区 - 和佛经一致的内嵌模式 */
+.reader-container { background: var(--card); border-radius: 12px; border: 1px solid var(--border); padding: 40px; min-height: 700px; display: none; }
+.reader-header { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center; }
+.reader-title { font-size: 28px; color: var(--primary); font-weight: bold; }
+.reader-close { padding: 8px 16px; border: none; background: #f3ead8; color: var(--primary); border-radius: 6px; cursor: pointer; font-size: 15px; }
+.reader-close:hover { background: #e8ddc4; }
+.reader-content { font-size: 18px; line-height: 2; color: #2a1f1a; white-space: pre-wrap; font-family: "SimSun", "Noto Serif SC", serif; max-height: 800px; overflow-y: auto; padding: 0 20px; }
+.reader-meta { color: #7a6a5a; font-size: 14px; margin-bottom: 20px; font-style: italic; }
+.loading { text-align: center; padding: 60px; color: #7a6a5a; font-size: 16px; }
+
+/* 其余原有模块样式保留 */
+.module { background: var(--card); border-radius: 12px; border: 1px solid var(--border); padding: 32px; margin-bottom: 32px; }
+.module-title { font-size: 24px; color: var(--primary); margin-bottom: 24px; border-left: 4px solid var(--accent); padding-left: 12px; }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-title">道藏本体论</div>
+  <div class="nav-links">
+    <a href="#home" class="active" data-page="home">总览</a>
+    <a href="#ontology" data-page="ontology">本体体系</a>
+    <a href="#classics" data-page="classics">全藏原典</a>
+    <a href="#graph" data-page="graph">义理图谱</a>
+    <a href="#sects" data-page="sects">仙真道派</a>
+    <a href="#concept" data-page="concept">概念推演</a>
+  </div>
+</nav>
+
+<div class="container">
+  <!-- 总览页 -->
+  <div id="page-home" class="page">
+    <h1 class="page-title">道藏本体论</h1>
+    <p class="page-subtitle">三洞四辅十二类，1721部道经知识体系</p>
+    <div class="module">
+      <div class="module-title">本体架构</div>
+      <p style="font-size:17px;line-height:2;">采用「四轴×七层」通用古籍本体架构，覆盖从顶层道论到底层文本的全部知识域：</p>
+      <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:12px;margin-top:20px;text-align:center;">
+        <div style="background:#3a1f0a;color:#fff;padding:16px 8px;border-radius:8px;font-weight:bold;">L0 元模型层</div>
+        <div style="background:#5c3317;color:#fff;padding:16px 8px;border-radius:8px;font-weight:bold;">L1 道论层</div>
+        <div style="background:#8b4513;color:#fff;padding:16px 8px;border-radius:8px;font-weight:bold;">L2 义理层</div>
+        <div style="background:#a0522d;color:#fff;padding:16px 8px;border-radius:8px;font-weight:bold;">L3 宗派层</div>
+        <div style="background:#cd853f;color:#fff;padding:16px 8px;border-radius:8px;font-weight:bold;">L4 文本层</div>
+        <div style="background:#daa520;color:#fff;padding:16px 8px;border-radius:8px;font-weight:bold;">L5 人物层</div>
+        <div style="background:#f3ead8;color:#3a1f0a;padding:16px 8px;border-radius:8px;font-weight:bold;">L6 外延层</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 全藏原典页 - 完全对齐佛经结构 -->
+  <div id="page-classics" class="page" style="display:none;">
+    <h1 class="page-title">全藏原典</h1>
+    <p class="page-subtitle">三洞四辅十二类道经，点击经名在线阅读全文</p>
+    <div class="classics-layout">
+      <!-- 左侧分类树 -->
+      <div class="sidebar" id="catTree"></div>
+      <!-- 右侧内容 -->
+      <div class="classics-main">
+        <div class="search-bar">
+          <input type="text" id="sutraSearch" placeholder="搜索经名...">
+          <select id="catSelect">
+            <option value="all">全部分类</option>
+          </select>
+        </div>
+        <!-- 经书列表 -->
+        <div class="sutra-grid" id="sutraGrid"></div>
+        <!-- 阅读区 -->
+        <div class="reader-container" id="reader">
+          <div class="reader-header">
+            <div class="reader-title" id="readerTitle"></div>
+            <button class="reader-close" id="closeReader">返回列表</button>
+          </div>
+          <div class="reader-meta" id="readerMeta"></div>
+          <div class="loading" id="readerLoading">正在加载经文...</div>
+          <div class="reader-content" id="readerContent"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 其余占位页面 -->
+  <div id="page-ontology" class="page" style="display:none;"><h1 class="page-title">本体体系</h1><p class="page-subtitle">本体构建中...</p></div>
+  <div id="page-graph" class="page" style="display:none;"><h1 class="page-title">义理图谱</h1><p class="page-subtitle">图谱加载中...</p></div>
+  <div id="page-sects" class="page" style="display:none;"><h1 class="page-title">仙真道派</h1><p class="page-subtitle">宗派与仙真体系...</p></div>
+  <div id="page-concept" class="page" style="display:none;"><h1 class="page-title">概念推演</h1><p class="page-subtitle">概念路径推演...</p></div>
+</div>
+
+<script>
+// 全局状态
+let allSutras = [];
+let currentCat = 'all';
+let searchKey = '';
+
+// 导航切换
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+    document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove('active'));
+    const pageId = 'page-' + link.dataset.page;
+    document.getElementById(pageId).style.display = 'block';
+    link.classList.add('active');
+    if(link.dataset.page === 'classics' && allSutras.length === 0) loadSutraIndex();
+  });
+});
+
+// 加载经书索引
+async function loadSutraIndex() {
+  try {
+    const res = await fetch('sutra_index.json');
+    allSutras = await res.json();
+    renderCatTree();
+    renderCatSelect();
+    renderSutraGrid();
+  } catch(e) {
+    document.getElementById('sutraGrid').innerHTML = '<p style="grid-column:1/-1;text-align:center;padding:40px;color:#999;">索引加载失败，请刷新重试</p>';
+  }
+}
+
+// 渲染左侧分类树
+function renderCatTree() {
+  const cats = {};
+  allSutras.forEach(s => {
+    const mainCat = s.main_category;
+    if(!cats[mainCat]) cats[mainCat] = { count:0, subs:{} };
+    cats[mainCat].count++;
+    if(s.sub_category) {
+      if(!cats[mainCat].subs[s.sub_category]) cats[mainCat].subs[s.sub_category] = 0;
+      cats[mainCat].subs[s.sub_category]++;
+    }
+  });
+  let html = `<div class="cat-main" data-cat="all">全部 <span class="cat-count">${allSutras.length}部</span></div>`;
+  Object.entries(cats).forEach(([main, data]) => {
+    html += `<div class="cat-group">
+      <div class="cat-main" data-cat="${main}" data-toggle="sub-${main.replace(/\s/g,'')}">
+        ${main} <span class="cat-count">${data.count}部</span>
+      </div>
+      <div class="cat-sub" id="sub-${main.replace(/\s/g,'')}">`;
+    Object.entries(data.subs).forEach(([sub, count]) => {
+      html += `<div class="cat-sub-item" data-cat="${main}" data-sub="${sub}">${sub} <span class="cat-count">${count}部</span></div>`;
+    });
+    html += `</div></div>`;
+  });
+  const tree = document.getElementById('catTree');
+  tree.innerHTML = html;
+
+  // 分类点击事件
+  tree.querySelectorAll('.cat-main').forEach(item => {
+    item.addEventListener('click', () => {
+      const cat = item.dataset.cat;
+      const subId = item.dataset.toggle;
+      if(subId) document.getElementById(subId).classList.toggle('open');
+      currentCat = cat;
+      document.querySelectorAll('.cat-sub-item').forEach(i => i.classList.remove('active'));
+      document.getElementById('catSelect').value = cat;
+      renderSutraGrid();
+    });
+  });
+  tree.querySelectorAll('.cat-sub-item').forEach(item => {
+    item.addEventListener('click', e => {
+      e.stopPropagation();
+      currentCat = item.dataset.cat + '/' + item.dataset.sub;
+      document.querySelectorAll('.cat-sub-item').forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+      document.getElementById('catSelect').value = item.dataset.cat;
+      renderSutraGrid();
+    });
+  });
+}
+
+// 渲染顶部分类下拉
+function renderCatSelect() {
+  const select = document.getElementById('catSelect');
+  const cats = [...new Set(allSutras.map(s => s.main_category))];
+  cats.forEach(c => {
+    const opt = document.createElement('option');
+    opt.value = c; opt.textContent = c;
+    select.appendChild(opt);
+  });
+  select.addEventListener('change', () => {
+    currentCat = select.value;
+    renderSutraGrid();
+  });
+  document.getElementById('sutraSearch').addEventListener('input', e => {
+    searchKey = e.target.value.trim();
+    renderSutraGrid();
+  });
+}
+
+// 渲染经书网格
+function renderSutraGrid() {
+  document.getElementById('reader').style.display = 'none';
+  document.getElementById('sutraGrid').style.display = 'grid';
+  let list = allSutras;
+  if(currentCat !== 'all') {
+    if(currentCat.includes('/')) {
+      const [main, sub] = currentCat.split('/');
+      list = list.filter(s => s.main_category === main && s.sub_category === sub);
+    } else {
+      list = list.filter(s => s.main_category === currentCat);
+    }
+  }
+  if(searchKey) list = list.filter(s => s.title.includes(searchKey));
+  
+  document.getElementById('sutraGrid').innerHTML = list.map(s => `
+    <div class="sutra-card" data-id="${s.id}" data-path="${s.path}">
+      <div class="sutra-name">${s.title}</div>
+      <div class="sutra-meta">${s.main_category} ${s.sub_category ? '· ' + s.sub_category : ''}</div>
+    </div>
+  `).join('');
+
+  // 点击打开经书
+  document.querySelectorAll('.sutra-card').forEach(card => {
+    card.addEventListener('click', () => openSutra(card.dataset.path, card.querySelector('.sutra-name').textContent, card.querySelector('.sutra-meta').textContent));
+  });
+}
+
+// 打开经文阅读 - 和佛经一致的内嵌模式
+async function openSutra(path, title, meta) {
+  document.getElementById('sutraGrid').style.display = 'none';
+  const reader = document.getElementById('reader');
+  reader.style.display = 'block';
+  document.getElementById('readerTitle').textContent = title;
+  document.getElementById('readerMeta').textContent = meta;
+  document.getElementById('readerLoading').style.display = 'block';
+  document.getElementById('readerContent').textContent = '';
+  
+  try {
+    // 修正路径：统一处理斜杠和编码
+    const fullPath = 'texts/' + path.replace(/^\//, '');
+    const res = await fetch(fullPath);
+    if(!res.ok) throw new Error('加载失败');
+    const text = await res.text();
+    document.getElementById('readerContent').textContent = text;
+  } catch(e) {
+    document.getElementById('readerContent').textContent = '经文加载失败，请检查网络或稍后重试。\n错误信息：' + e.message;
+  } finally {
+    document.getElementById('readerLoading').style.display = 'none';
+  }
+}
+
+// 关闭阅读
+document.getElementById('closeReader').addEventListener('click', () => {
+  document.getElementById('reader').style.display = 'none';
+  document.getElementById('sutraGrid').style.display = 'grid';
+});
+</script>
+</body>
+</html>
