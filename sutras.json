@@ -1,1 +1,1088 @@
-{"total": 104, "buList": [{"code": "DZ1", "name": "洞真部"}, {"code": "DZ2", "name": "洞玄部"}, {"code": "DZ3", "name": "洞神部"}, {"code": "DZ4", "name": "太玄部"}, {"code": "DZ5", "name": "太平部"}, {"code": "DZ6", "name": "太清部"}, {"code": "DZ7", "name": "正一部"}, {"code": "DZ8", "name": "续道藏"}, {"code": "DZ9", "name": "藏外"}], "sutras": [{"id": "DZ5-001", "name": "上方钧天演范真经", "bu": "太平部", "buCode": "DZ5", "sub": "诸经类", "hasTrans": false, "file": "texts/core/DZ5-001__上方钧天演范真经.txt", "chars": 1206}, {"id": "DZ5-002", "name": "太上灵宝净明玉真枢真经", "bu": "太平部", "buCode": "DZ5", "sub": "诸经类", "hasTrans": false, "file": "texts/core/DZ5-002__太上灵宝净明玉真枢真经.txt", "chars": 2292}, {"id": "DZ5-003", "name": "太上灵宝净明道元正印经", "bu": "太平部", "buCode": "DZ5", "sub": "诸经类", "hasTrans": false, "file": "texts/core/DZ5-003__太上灵宝净明道元正印经.txt", "chars": 1600}, {"id": "DZ5-004", "name": "马自然金丹口诀", "bu": "太平部", "buCode": "DZ5", "sub": "诸经类", "hasTrans": false, "file": "texts/core/DZ5-004__马自然金丹口诀.txt", "chars": 2523}, {"id": "DZ6-001", "name": "孙子遗说", "bu": "太清部", "buCode": "DZ6", "sub": "诸经类", "hasTrans": false, "file": "texts/core/DZ6-001__孙子遗说.txt", "chars": 2474}, {"id": "DZ6-002", "name": "阴丹内篇", "bu": "太清部", "buCode": "DZ6", "sub": "诸经类", "hasTrans": false, "file": "texts/core/DZ6-002__阴丹内篇.txt", "chars": 2508}, {"id": "DZ4-001", "name": "上清无英真童合游内变玉经", "bu": "太玄部", "buCode": "DZ4", "sub": "诸经类", "hasTrans": false, "file": "texts/core/DZ4-001__上清无英真童合游内变玉经.txt", "chars": 2981}, {"id": "DZ7-001", "name": "七元璇玑召魔品经", "bu": "正一部", "buCode": "DZ7", "sub": "诸经类", "hasTrans": false, "file": "texts/core/DZ7-001__七元璇玑召魔品经.txt", "chars": 2906}, {"id": "DZ7-002", "name": "三要达道论", "bu": "正一部", "buCode": "DZ7", "sub": "诸经类", "hasTrans": false, "file": "texts/core/DZ7-002__三要达道论.txt", "chars": 1944}, {"id": "DZ7-003", "name": "上清七圣玄纪经", "bu": "正一部", "buCode": "DZ7", "sub": "诸经类", "hasTrans": false, "file": "texts/core/DZ7-003__上清七圣玄纪经.txt", "chars": 1919}, {"id": "DZ7-004", "name": "上清元始高上玉皇九天谱箓", "bu": "正一部", "buCode": "DZ7", "sub": "诸经类", "hasTrans": false, "file": "texts/core/DZ7-004__上清元始高上玉皇九天谱箓.txt", "chars": 1183}, {"id": "DZ7-005", "name": "上清大洞九微八道大经妙箓", "bu": "正一部", "buCode": "DZ7", "sub": "诸经类", "hasTrans": false, "file": "texts/core/DZ7-005__上清大洞九微八道大经妙箓.txt", "chars": 2565}, {"id": "DZ7-006", "name": "上清太微帝君结带真文法", "bu": "正一部", "buCode": "DZ7", "sub": "诸经类", "hasTrans": false, "file": "texts/core/DZ7-006__上清太微帝君结带真文法.txt", "chars": 1581}, {"id": "DZ7-007", "name": "上清经秘诀", "bu": "正一部", "buCode": "DZ7", "sub": "诸经类", "hasTrans": false, "file": "texts/core/DZ7-007__上清经秘诀.txt", "chars": 2147}, {"id": "DZ7-008", "name": "六根归道论", "bu": "正一部", "buCode": "DZ7", "sub": "诸经类", "hasTrans": false, "file": "texts/core/DZ7-008__六根归道论.txt", "chars": 2738}, {"id": "DZ7-009", "name": "天皇太一神律避秽经", "bu": "正一部", "buCode": "DZ7", "sub": "诸经类", "hasTrans": false, "file": "texts/core/DZ7-009__天皇太一神律避秽经.txt", "chars": 2059}, {"id": "DZ7-010", "name": "太上老君太素经", "bu": "正一部", "buCode": "DZ7", "sub": "诸经类", "hasTrans": false, "file": "texts/core/DZ7-010__太上老君太素经.txt", "chars": 2152}, {"id": "DZ7-011", "name": "枕中经", "bu": "正一部", "buCode": "DZ7", "sub": "诸经类", "hasTrans": false, "file": "texts/core/DZ7-011__枕中经.txt", "chars": 2630}, {"id": "DZ7-012", "name": "洞玄灵宝道士明镜法", "bu": "正一部", "buCode": "DZ7", "sub": "诸经类", "hasTrans": false, "file": "texts/core/DZ7-012__洞玄灵宝道士明镜法.txt", "chars": 2905}, {"id": "DZ7-013", "name": "洞真太上紫文丹章", "bu": "正一部", "buCode": "DZ7", "sub": "诸经类", "hasTrans": false, "file": "texts/core/DZ7-013__洞真太上紫文丹章.txt", "chars": 2576}, {"id": "DZ7-014", "name": "洞真太上青芽始生经", "bu": "正一部", "buCode": "DZ7", "sub": "诸经类", "hasTrans": false, "file": "texts/core/DZ7-014__洞真太上青芽始生经.txt", "chars": 2669}, {"id": "DZ2-001", "name": "金箓上寿三献仪", "bu": "洞玄部", "buCode": "DZ2", "sub": "威仪类", "hasTrans": false, "file": "texts/core/DZ2-001__金箓上寿三献仪.txt", "chars": 2996}, {"id": "DZ2-002", "name": "太上灵宝净明法印式", "bu": "洞玄部", "buCode": "DZ2", "sub": "方法类", "hasTrans": false, "file": "texts/core/DZ2-002__太上灵宝净明法印式.txt", "chars": 398}, {"id": "DZ2-003", "name": "太上灵宝净明法序", "bu": "洞玄部", "buCode": "DZ2", "sub": "方法类", "hasTrans": false, "file": "texts/core/DZ2-003__太上灵宝净明法序.txt", "chars": 1278}, {"id": "DZ2-004", "name": "太上灵宝净明院真师密诰", "bu": "洞玄部", "buCode": "DZ2", "sub": "方法类", "hasTrans": false, "file": "texts/core/DZ2-004__太上灵宝净明院真师密诰.txt", "chars": 2547}, {"id": "DZ2-005", "name": "灵宝净明天枢都司法院须知法文", "bu": "洞玄部", "buCode": "DZ2", "sub": "方法类", "hasTrans": false, "file": "texts/core/DZ2-005__灵宝净明天枢都司法院须知法文.txt", "chars": 2795}, {"id": "DZ2-006", "name": "许真君受炼形神上清毕道法要节文", "bu": "洞玄部", "buCode": "DZ2", "sub": "方法类", "hasTrans": false, "file": "texts/core/DZ2-006__许真君受炼形神上清毕道法要节文.txt", "chars": 1714}, {"id": "DZ2-007", "name": "太上七星神咒经", "bu": "洞玄部", "buCode": "DZ2", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ2-007__太上七星神咒经.txt", "chars": 1466}, {"id": "DZ2-008", "name": "太上召诸龙神安镇坟墓经", "bu": "洞玄部", "buCode": "DZ2", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ2-008__太上召诸龙神安镇坟墓经.txt", "chars": 2520}, {"id": "DZ2-009", "name": "太上救苦天尊说消愆灭罪经", "bu": "洞玄部", "buCode": "DZ2", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ2-009__太上救苦天尊说消愆灭罪经.txt", "chars": 2512}, {"id": "DZ2-010", "name": "太上洞玄灵宝天尊说大通经", "bu": "洞玄部", "buCode": "DZ2", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ2-010__太上洞玄灵宝天尊说大通经.txt", "chars": 961}, {"id": "DZ2-011", "name": "太上洞玄灵宝智慧观身经", "bu": "洞玄部", "buCode": "DZ2", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ2-011__太上洞玄灵宝智慧观身经.txt", "chars": 1857}, {"id": "DZ2-012", "name": "太上洞玄灵宝消禳火灾经", "bu": "洞玄部", "buCode": "DZ2", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ2-012__太上洞玄灵宝消禳火灾经.txt", "chars": 2950}, {"id": "DZ2-013", "name": "太上洞玄灵宝福日妙经", "bu": "洞玄部", "buCode": "DZ2", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ2-013__太上洞玄灵宝福日妙经.txt", "chars": 2263}, {"id": "DZ2-014", "name": "太上洞玄灵宝观妙经", "bu": "洞玄部", "buCode": "DZ2", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ2-014__太上洞玄灵宝观妙经.txt", "chars": 1539}, {"id": "DZ2-015", "name": "太上灵宝天尊说延寿妙经", "bu": "洞玄部", "buCode": "DZ2", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ2-015__太上灵宝天尊说延寿妙经.txt", "chars": 2293}, {"id": "DZ2-016", "name": "太上灵宝天尊说禳灾度厄经", "bu": "洞玄部", "buCode": "DZ2", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ2-016__太上灵宝天尊说禳灾度厄经.txt", "chars": 1153}, {"id": "DZ2-017", "name": "太上神咒延寿妙经", "bu": "洞玄部", "buCode": "DZ2", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ2-017__太上神咒延寿妙经.txt", "chars": 1281}, {"id": "DZ2-018", "name": "太上虚皇保生神咒经", "bu": "洞玄部", "buCode": "DZ2", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ2-018__太上虚皇保生神咒经.txt", "chars": 1155}, {"id": "DZ2-019", "name": "太上说利益蚕王妙经", "bu": "洞玄部", "buCode": "DZ2", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ2-019__太上说利益蚕王妙经.txt", "chars": 1217}, {"id": "DZ2-020", "name": "太上说牛癀妙经", "bu": "洞玄部", "buCode": "DZ2", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ2-020__太上说牛癀妙经.txt", "chars": 1194}, {"id": "DZ2-021", "name": "太上说酆都拔苦愈乐妙经", "bu": "洞玄部", "buCode": "DZ2", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ2-021__太上说酆都拔苦愈乐妙经.txt", "chars": 957}, {"id": "DZ2-022", "name": "太上道君说解冤拔度妙经", "bu": "洞玄部", "buCode": "DZ2", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ2-022__太上道君说解冤拔度妙经.txt", "chars": 2238}, {"id": "DZ2-023", "name": "上清长生宝鉴图", "bu": "洞玄部", "buCode": "DZ2", "sub": "灵图类", "hasTrans": false, "file": "texts/core/DZ2-023__上清长生宝鉴图.txt", "chars": 414}, {"id": "DZ2-024", "name": "上清辖落七元符", "bu": "洞玄部", "buCode": "DZ2", "sub": "神符类", "hasTrans": false, "file": "texts/core/DZ2-024__上清辖落七元符.txt", "chars": 909}, {"id": "DZ1-001", "name": "干元子三始论", "bu": "洞真部", "buCode": "DZ1", "sub": "方法类", "hasTrans": false, "file": "texts/core/DZ1-001__干元子三始论.txt", "chars": 2603}, {"id": "DZ1-002", "name": "三光注龄资福延寿妙经", "bu": "洞真部", "buCode": "DZ1", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ1-002__三光注龄资福延寿妙经.txt", "chars": 1236}, {"id": "DZ1-003", "name": "元始八威龙文经", "bu": "洞真部", "buCode": "DZ1", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ1-003__元始八威龙文经.txt", "chars": 1824}, {"id": "DZ1-004", "name": "元始天尊说三官宝号经", "bu": "洞真部", "buCode": "DZ1", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ1-004__元始天尊说三官宝号经.txt", "chars": 1461}, {"id": "DZ1-005", "name": "元始天尊说甘露升天神咒妙经", "bu": "洞真部", "buCode": "DZ1", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ1-005__元始天尊说甘露升天神咒妙经.txt", "chars": 2833}, {"id": "DZ1-006", "name": "元始天尊说生天得道经", "bu": "洞真部", "buCode": "DZ1", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ1-006__元始天尊说生天得道经.txt", "chars": 2174}, {"id": "DZ1-007", "name": "元始天尊说酆都灭罪经", "bu": "洞真部", "buCode": "DZ1", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ1-007__元始天尊说酆都灭罪经.txt", "chars": 2872}, {"id": "DZ1-008", "name": "元始说功德法食往生经", "bu": "洞真部", "buCode": "DZ1", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ1-008__元始说功德法食往生经.txt", "chars": 2307}, {"id": "DZ1-009", "name": "太上元始天尊证果真经", "bu": "洞真部", "buCode": "DZ1", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ1-009__太上元始天尊证果真经.txt", "chars": 1172}, {"id": "DZ1-010", "name": "太上元始天尊说大雨龙王经", "bu": "洞真部", "buCode": "DZ1", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ1-010__太上元始天尊说大雨龙王经.txt", "chars": 2914}, {"id": "DZ1-011", "name": "太上元始天尊说消殄虫蝗经", "bu": "洞真部", "buCode": "DZ1", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ1-011__太上元始天尊说消殄虫蝗经.txt", "chars": 1968}, {"id": "DZ1-012", "name": "太上元始天尊说续命妙经", "bu": "洞真部", "buCode": "DZ1", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ1-012__太上元始天尊说续命妙经.txt", "chars": 1213}, {"id": "DZ1-013", "name": "太上元始天尊说金光明经", "bu": "洞真部", "buCode": "DZ1", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ1-013__太上元始天尊说金光明经.txt", "chars": 1554}, {"id": "DZ1-014", "name": "太上升玄消灾护命妙经", "bu": "洞真部", "buCode": "DZ1", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ1-014__太上升玄消灾护命妙经.txt", "chars": 2351}, {"id": "DZ1-015", "name": "太上安镇九垒龙神妙经", "bu": "洞真部", "buCode": "DZ1", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ1-015__太上安镇九垒龙神妙经.txt", "chars": 1951}, {"id": "DZ1-016", "name": "太上洞渊辞瘟神咒妙经", "bu": "洞真部", "buCode": "DZ1", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ1-016__太上洞渊辞瘟神咒妙经.txt", "chars": 1917}, {"id": "DZ1-017", "name": "太上洞真安灶经", "bu": "洞真部", "buCode": "DZ1", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ1-017__太上洞真安灶经.txt", "chars": 2102}, {"id": "DZ1-018", "name": "太上真一报父母恩重经", "bu": "洞真部", "buCode": "DZ1", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ1-018__太上真一报父母恩重经.txt", "chars": 2081}, {"id": "DZ1-019", "name": "太上说九幽拔罪心印妙经", "bu": "洞真部", "buCode": "DZ1", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ1-019__太上说九幽拔罪心印妙经.txt", "chars": 1500}, {"id": "DZ1-020", "name": "太上长生延寿集福德经", "bu": "洞真部", "buCode": "DZ1", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ1-020__太上长生延寿集福德经.txt", "chars": 2207}, {"id": "DZ1-021", "name": "太乙元真保命长生经", "bu": "洞真部", "buCode": "DZ1", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ1-021__太乙元真保命长生经.txt", "chars": 2390}, {"id": "DZ1-022", "name": "混元阳符经", "bu": "洞真部", "buCode": "DZ1", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ1-022__混元阳符经.txt", "chars": 745}, {"id": "DZ1-023", "name": "玉清无上内景真经", "bu": "洞真部", "buCode": "DZ1", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ1-023__玉清无上内景真经.txt", "chars": 2412}, {"id": "DZ1-024", "name": "玉清胎元内养真经", "bu": "洞真部", "buCode": "DZ1", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ1-024__玉清胎元内养真经.txt", "chars": 2455}, {"id": "DZ1-025", "name": "高上玉皇心印经", "bu": "洞真部", "buCode": "DZ1", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ1-025__高上玉皇心印经.txt", "chars": 1095}, {"id": "DZ1-026", "name": "高上玉皇胎息经", "bu": "洞真部", "buCode": "DZ1", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ1-026__高上玉皇胎息经.txt", "chars": 624}, {"id": "DZ1-027", "name": "黄帝阴符经", "bu": "洞真部", "buCode": "DZ1", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ1-027__黄帝阴符经.txt", "chars": 2035}, {"id": "DZ1-028", "name": "上清洞真九宫紫房图", "bu": "洞真部", "buCode": "DZ1", "sub": "灵图类", "hasTrans": false, "file": "texts/core/DZ1-028__上清洞真九宫紫房图.txt", "chars": 2536}, {"id": "DZ1-029", "name": "胎息经注", "bu": "洞真部", "buCode": "DZ1", "sub": "玉诀类", "hasTrans": false, "file": "texts/core/DZ1-029__胎息经注.txt", "chars": 2949}, {"id": "DZ1-030", "name": "上清洞真元经五籍符", "bu": "洞真部", "buCode": "DZ1", "sub": "神符类", "hasTrans": false, "file": "texts/core/DZ1-030__上清洞真元经五籍符.txt", "chars": 1663}, {"id": "DZ3-001", "name": "玄霜掌上录", "bu": "洞神部", "buCode": "DZ3", "sub": "众术类", "hasTrans": false, "file": "texts/core/DZ3-001__玄霜掌上录.txt", "chars": 2398}, {"id": "DZ3-002", "name": "保生铭", "bu": "洞神部", "buCode": "DZ3", "sub": "方法类", "hasTrans": false, "file": "texts/core/DZ3-002__保生铭.txt", "chars": 1175}, {"id": "DZ3-003", "name": "太上老君玄妙枕中内德神咒经", "bu": "洞神部", "buCode": "DZ3", "sub": "方法类", "hasTrans": false, "file": "texts/core/DZ3-003__太上老君玄妙枕中内德神咒经.txt", "chars": 2843}, {"id": "DZ3-004", "name": "彭祖摄生养性论", "bu": "洞神部", "buCode": "DZ3", "sub": "方法类", "hasTrans": false, "file": "texts/core/DZ3-004__彭祖摄生养性论.txt", "chars": 2544}, {"id": "DZ3-005", "name": "抱朴子养生论", "bu": "洞神部", "buCode": "DZ3", "sub": "方法类", "hasTrans": false, "file": "texts/core/DZ3-005__抱朴子养生论.txt", "chars": 2663}, {"id": "DZ3-006", "name": "太上内丹守一真定经", "bu": "洞神部", "buCode": "DZ3", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ3-006__太上内丹守一真定经.txt", "chars": 1263}, {"id": "DZ3-007", "name": "太上日月混元经", "bu": "洞神部", "buCode": "DZ3", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ3-007__太上日月混元经.txt", "chars": 1944}, {"id": "DZ3-008", "name": "太上浩元经", "bu": "洞神部", "buCode": "DZ3", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ3-008__太上浩元经.txt", "chars": 1501}, {"id": "DZ3-009", "name": "太上玄灵北斗本命长生妙经", "bu": "洞神部", "buCode": "DZ3", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ3-009__太上玄灵北斗本命长生妙经.txt", "chars": 2387}, {"id": "DZ3-010", "name": "太上老君内日用妙经", "bu": "洞神部", "buCode": "DZ3", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ3-010__太上老君内日用妙经.txt", "chars": 1561}, {"id": "DZ3-011", "name": "太上老君外日用妙经", "bu": "洞神部", "buCode": "DZ3", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ3-011__太上老君外日用妙经.txt", "chars": 801}, {"id": "DZ3-012", "name": "太上老君说了心经", "bu": "洞神部", "buCode": "DZ3", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ3-012__太上老君说了心经.txt", "chars": 816}, {"id": "DZ3-013", "name": "太上老君说安宅八阳经", "bu": "洞神部", "buCode": "DZ3", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ3-013__太上老君说安宅八阳经.txt", "chars": 1530}, {"id": "DZ3-014", "name": "太上老君说常清静妙经", "bu": "洞神部", "buCode": "DZ3", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ3-014__太上老君说常清静妙经.txt", "chars": 2743}, {"id": "DZ3-015", "name": "太上老君说救生真经", "bu": "洞神部", "buCode": "DZ3", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ3-015__太上老君说救生真经.txt", "chars": 1094}, {"id": "DZ3-016", "name": "太上老君说补谢八阳经", "bu": "洞神部", "buCode": "DZ3", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ3-016__太上老君说补谢八阳经.txt", "chars": 1525}, {"id": "DZ3-017", "name": "太上老君说解释咒诅经", "bu": "洞神部", "buCode": "DZ3", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ3-017__太上老君说解释咒诅经.txt", "chars": 2841}, {"id": "DZ3-018", "name": "太上说东斗主算护命妙经", "bu": "洞神部", "buCode": "DZ3", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ3-018__太上说东斗主算护命妙经.txt", "chars": 2516}, {"id": "DZ3-019", "name": "太上说中斗大魁掌算伏魔神咒经", "bu": "洞神部", "buCode": "DZ3", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ3-019__太上说中斗大魁掌算伏魔神咒经.txt", "chars": 1812}, {"id": "DZ3-020", "name": "太上说十炼生神救护经", "bu": "洞神部", "buCode": "DZ3", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ3-020__太上说十炼生神救护经.txt", "chars": 1400}, {"id": "DZ3-021", "name": "玄天上帝说报父母恩重经", "bu": "洞神部", "buCode": "DZ3", "sub": "本文类", "hasTrans": false, "file": "texts/core/DZ3-021__玄天上帝说报父母恩重经.txt", "chars": 2514}, {"id": "DZ3-022", "name": "南华真经邈", "bu": "洞神部", "buCode": "DZ3", "sub": "玉诀类", "hasTrans": false, "file": "texts/core/DZ3-022__南华真经邈.txt", "chars": 2708}, {"id": "DZ3-023", "name": "真武灵应真君增上佑圣尊号册文", "bu": "洞神部", "buCode": "DZ3", "sub": "谱箓类", "hasTrans": false, "file": "texts/core/DZ3-023__真武灵应真君增上佑圣尊号册文.txt", "chars": 1179}, {"id": "DZ8-001", "name": "太上元始天尊说孔雀经白文", "bu": "续道藏", "buCode": "DZ8", "sub": "诸经类", "hasTrans": false, "file": "texts/core/DZ8-001__太上元始天尊说孔雀经白文.txt", "chars": 305}, {"id": "DZ8-002", "name": "太上大圣朗灵上将护国妙经", "bu": "续道藏", "buCode": "DZ8", "sub": "诸经类", "hasTrans": false, "file": "texts/core/DZ8-002__太上大圣朗灵上将护国妙经.txt", "chars": 2263}, {"id": "DZ8-003", "name": "太上洞真徊玄章", "bu": "续道藏", "buCode": "DZ8", "sub": "诸经类", "hasTrans": false, "file": "texts/core/DZ8-003__太上洞真徊玄章.txt", "chars": 2944}, {"id": "DZ8-004", "name": "太上说通真高皇解冤经", "bu": "续道藏", "buCode": "DZ8", "sub": "诸经类", "hasTrans": false, "file": "texts/core/DZ8-004__太上说通真高皇解冤经.txt", "chars": 1865}, {"id": "DZ9-001", "name": "百字碑", "bu": "藏外", "buCode": "DZ9", "sub": "诸经类", "hasTrans": false, "file": "texts/core/DZ9-001__百字碑.txt", "chars": 445}, {"id": "DZ9-002", "name": "金丹四百字", "bu": "藏外", "buCode": "DZ9", "sub": "诸经类", "hasTrans": false, "file": "texts/core/DZ9-002__金丹四百字.txt", "chars": 2356}]}
+{
+ "total": 104,
+ "buList": [
+  {
+   "code": "DZ1",
+   "name": "洞真部"
+  },
+  {
+   "code": "DZ2",
+   "name": "洞玄部"
+  },
+  {
+   "code": "DZ3",
+   "name": "洞神部"
+  },
+  {
+   "code": "DZ4",
+   "name": "太玄部"
+  },
+  {
+   "code": "DZ5",
+   "name": "太平部"
+  },
+  {
+   "code": "DZ6",
+   "name": "太清部"
+  },
+  {
+   "code": "DZ7",
+   "name": "正一部"
+  },
+  {
+   "code": "DZ8",
+   "name": "续道藏"
+  },
+  {
+   "code": "DZ9",
+   "name": "藏外"
+  }
+ ],
+ "sutras": [
+  {
+   "id": "DZ5-001",
+   "name": "上方钧天演范真经",
+   "bu": "太平部",
+   "buCode": "DZ5",
+   "sub": "诸经类",
+   "hasTrans": false,
+   "file": "texts/core/DZ5-001__上方钧天演范真经.txt",
+   "chars": 1206
+  },
+  {
+   "id": "DZ5-002",
+   "name": "太上灵宝净明玉真枢真经",
+   "bu": "太平部",
+   "buCode": "DZ5",
+   "sub": "诸经类",
+   "hasTrans": false,
+   "file": "texts/core/DZ5-002__太上灵宝净明玉真枢真经.txt",
+   "chars": 2292
+  },
+  {
+   "id": "DZ5-003",
+   "name": "太上灵宝净明道元正印经",
+   "bu": "太平部",
+   "buCode": "DZ5",
+   "sub": "诸经类",
+   "hasTrans": false,
+   "file": "texts/core/DZ5-003__太上灵宝净明道元正印经.txt",
+   "chars": 1600
+  },
+  {
+   "id": "DZ5-004",
+   "name": "马自然金丹口诀",
+   "bu": "太平部",
+   "buCode": "DZ5",
+   "sub": "诸经类",
+   "hasTrans": false,
+   "file": "texts/core/DZ5-004__马自然金丹口诀.txt",
+   "chars": 2523
+  },
+  {
+   "id": "DZ6-001",
+   "name": "孙子遗说",
+   "bu": "太清部",
+   "buCode": "DZ6",
+   "sub": "诸经类",
+   "hasTrans": false,
+   "file": "texts/core/DZ6-001__孙子遗说.txt",
+   "chars": 2474
+  },
+  {
+   "id": "DZ6-002",
+   "name": "阴丹内篇",
+   "bu": "太清部",
+   "buCode": "DZ6",
+   "sub": "诸经类",
+   "hasTrans": false,
+   "file": "texts/core/DZ6-002__阴丹内篇.txt",
+   "chars": 2508
+  },
+  {
+   "id": "DZ4-001",
+   "name": "上清无英真童合游内变玉经",
+   "bu": "太玄部",
+   "buCode": "DZ4",
+   "sub": "诸经类",
+   "hasTrans": false,
+   "file": "texts/core/DZ4-001__上清无英真童合游内变玉经.txt",
+   "chars": 2981
+  },
+  {
+   "id": "DZ7-001",
+   "name": "七元璇玑召魔品经",
+   "bu": "正一部",
+   "buCode": "DZ7",
+   "sub": "诸经类",
+   "hasTrans": false,
+   "file": "texts/core/DZ7-001__七元璇玑召魔品经.txt",
+   "chars": 2906
+  },
+  {
+   "id": "DZ7-002",
+   "name": "三要达道论",
+   "bu": "正一部",
+   "buCode": "DZ7",
+   "sub": "诸经类",
+   "hasTrans": false,
+   "file": "texts/core/DZ7-002__三要达道论.txt",
+   "chars": 1944
+  },
+  {
+   "id": "DZ7-003",
+   "name": "上清七圣玄纪经",
+   "bu": "正一部",
+   "buCode": "DZ7",
+   "sub": "诸经类",
+   "hasTrans": false,
+   "file": "texts/core/DZ7-003__上清七圣玄纪经.txt",
+   "chars": 1919
+  },
+  {
+   "id": "DZ7-004",
+   "name": "上清元始高上玉皇九天谱箓",
+   "bu": "正一部",
+   "buCode": "DZ7",
+   "sub": "诸经类",
+   "hasTrans": false,
+   "file": "texts/core/DZ7-004__上清元始高上玉皇九天谱箓.txt",
+   "chars": 1183
+  },
+  {
+   "id": "DZ7-005",
+   "name": "上清大洞九微八道大经妙箓",
+   "bu": "正一部",
+   "buCode": "DZ7",
+   "sub": "诸经类",
+   "hasTrans": false,
+   "file": "texts/core/DZ7-005__上清大洞九微八道大经妙箓.txt",
+   "chars": 2565
+  },
+  {
+   "id": "DZ7-006",
+   "name": "上清太微帝君结带真文法",
+   "bu": "正一部",
+   "buCode": "DZ7",
+   "sub": "诸经类",
+   "hasTrans": false,
+   "file": "texts/core/DZ7-006__上清太微帝君结带真文法.txt",
+   "chars": 1581
+  },
+  {
+   "id": "DZ7-007",
+   "name": "上清经秘诀",
+   "bu": "正一部",
+   "buCode": "DZ7",
+   "sub": "诸经类",
+   "hasTrans": false,
+   "file": "texts/core/DZ7-007__上清经秘诀.txt",
+   "chars": 2147
+  },
+  {
+   "id": "DZ7-008",
+   "name": "六根归道论",
+   "bu": "正一部",
+   "buCode": "DZ7",
+   "sub": "诸经类",
+   "hasTrans": false,
+   "file": "texts/core/DZ7-008__六根归道论.txt",
+   "chars": 2738
+  },
+  {
+   "id": "DZ7-009",
+   "name": "天皇太一神律避秽经",
+   "bu": "正一部",
+   "buCode": "DZ7",
+   "sub": "诸经类",
+   "hasTrans": false,
+   "file": "texts/core/DZ7-009__天皇太一神律避秽经.txt",
+   "chars": 2059
+  },
+  {
+   "id": "DZ7-010",
+   "name": "太上老君太素经",
+   "bu": "正一部",
+   "buCode": "DZ7",
+   "sub": "诸经类",
+   "hasTrans": false,
+   "file": "texts/core/DZ7-010__太上老君太素经.txt",
+   "chars": 2152
+  },
+  {
+   "id": "DZ7-011",
+   "name": "枕中经",
+   "bu": "正一部",
+   "buCode": "DZ7",
+   "sub": "诸经类",
+   "hasTrans": false,
+   "file": "texts/core/DZ7-011__枕中经.txt",
+   "chars": 2630
+  },
+  {
+   "id": "DZ7-012",
+   "name": "洞玄灵宝道士明镜法",
+   "bu": "正一部",
+   "buCode": "DZ7",
+   "sub": "诸经类",
+   "hasTrans": false,
+   "file": "texts/core/DZ7-012__洞玄灵宝道士明镜法.txt",
+   "chars": 2905
+  },
+  {
+   "id": "DZ7-013",
+   "name": "洞真太上紫文丹章",
+   "bu": "正一部",
+   "buCode": "DZ7",
+   "sub": "诸经类",
+   "hasTrans": false,
+   "file": "texts/core/DZ7-013__洞真太上紫文丹章.txt",
+   "chars": 2576
+  },
+  {
+   "id": "DZ7-014",
+   "name": "洞真太上青芽始生经",
+   "bu": "正一部",
+   "buCode": "DZ7",
+   "sub": "诸经类",
+   "hasTrans": false,
+   "file": "texts/core/DZ7-014__洞真太上青芽始生经.txt",
+   "chars": 2669
+  },
+  {
+   "id": "DZ2-001",
+   "name": "金箓上寿三献仪",
+   "bu": "洞玄部",
+   "buCode": "DZ2",
+   "sub": "威仪类",
+   "hasTrans": false,
+   "file": "texts/core/DZ2-001__金箓上寿三献仪.txt",
+   "chars": 2996
+  },
+  {
+   "id": "DZ2-002",
+   "name": "太上灵宝净明法印式",
+   "bu": "洞玄部",
+   "buCode": "DZ2",
+   "sub": "方法类",
+   "hasTrans": false,
+   "file": "texts/core/DZ2-002__太上灵宝净明法印式.txt",
+   "chars": 398
+  },
+  {
+   "id": "DZ2-003",
+   "name": "太上灵宝净明法序",
+   "bu": "洞玄部",
+   "buCode": "DZ2",
+   "sub": "方法类",
+   "hasTrans": false,
+   "file": "texts/core/DZ2-003__太上灵宝净明法序.txt",
+   "chars": 1278
+  },
+  {
+   "id": "DZ2-004",
+   "name": "太上灵宝净明院真师密诰",
+   "bu": "洞玄部",
+   "buCode": "DZ2",
+   "sub": "方法类",
+   "hasTrans": false,
+   "file": "texts/core/DZ2-004__太上灵宝净明院真师密诰.txt",
+   "chars": 2547
+  },
+  {
+   "id": "DZ2-005",
+   "name": "灵宝净明天枢都司法院须知法文",
+   "bu": "洞玄部",
+   "buCode": "DZ2",
+   "sub": "方法类",
+   "hasTrans": false,
+   "file": "texts/core/DZ2-005__灵宝净明天枢都司法院须知法文.txt",
+   "chars": 2795
+  },
+  {
+   "id": "DZ2-006",
+   "name": "许真君受炼形神上清毕道法要节文",
+   "bu": "洞玄部",
+   "buCode": "DZ2",
+   "sub": "方法类",
+   "hasTrans": false,
+   "file": "texts/core/DZ2-006__许真君受炼形神上清毕道法要节文.txt",
+   "chars": 1714
+  },
+  {
+   "id": "DZ2-007",
+   "name": "太上七星神咒经",
+   "bu": "洞玄部",
+   "buCode": "DZ2",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ2-007__太上七星神咒经.txt",
+   "chars": 1466
+  },
+  {
+   "id": "DZ2-008",
+   "name": "太上召诸龙神安镇坟墓经",
+   "bu": "洞玄部",
+   "buCode": "DZ2",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ2-008__太上召诸龙神安镇坟墓经.txt",
+   "chars": 2520
+  },
+  {
+   "id": "DZ2-009",
+   "name": "太上救苦天尊说消愆灭罪经",
+   "bu": "洞玄部",
+   "buCode": "DZ2",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ2-009__太上救苦天尊说消愆灭罪经.txt",
+   "chars": 2512
+  },
+  {
+   "id": "DZ2-010",
+   "name": "太上洞玄灵宝天尊说大通经",
+   "bu": "洞玄部",
+   "buCode": "DZ2",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ2-010__太上洞玄灵宝天尊说大通经.txt",
+   "chars": 961
+  },
+  {
+   "id": "DZ2-011",
+   "name": "太上洞玄灵宝智慧观身经",
+   "bu": "洞玄部",
+   "buCode": "DZ2",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ2-011__太上洞玄灵宝智慧观身经.txt",
+   "chars": 1857
+  },
+  {
+   "id": "DZ2-012",
+   "name": "太上洞玄灵宝消禳火灾经",
+   "bu": "洞玄部",
+   "buCode": "DZ2",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ2-012__太上洞玄灵宝消禳火灾经.txt",
+   "chars": 2950
+  },
+  {
+   "id": "DZ2-013",
+   "name": "太上洞玄灵宝福日妙经",
+   "bu": "洞玄部",
+   "buCode": "DZ2",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ2-013__太上洞玄灵宝福日妙经.txt",
+   "chars": 2263
+  },
+  {
+   "id": "DZ2-014",
+   "name": "太上洞玄灵宝观妙经",
+   "bu": "洞玄部",
+   "buCode": "DZ2",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ2-014__太上洞玄灵宝观妙经.txt",
+   "chars": 1539
+  },
+  {
+   "id": "DZ2-015",
+   "name": "太上灵宝天尊说延寿妙经",
+   "bu": "洞玄部",
+   "buCode": "DZ2",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ2-015__太上灵宝天尊说延寿妙经.txt",
+   "chars": 2293
+  },
+  {
+   "id": "DZ2-016",
+   "name": "太上灵宝天尊说禳灾度厄经",
+   "bu": "洞玄部",
+   "buCode": "DZ2",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ2-016__太上灵宝天尊说禳灾度厄经.txt",
+   "chars": 1153
+  },
+  {
+   "id": "DZ2-017",
+   "name": "太上神咒延寿妙经",
+   "bu": "洞玄部",
+   "buCode": "DZ2",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ2-017__太上神咒延寿妙经.txt",
+   "chars": 1281
+  },
+  {
+   "id": "DZ2-018",
+   "name": "太上虚皇保生神咒经",
+   "bu": "洞玄部",
+   "buCode": "DZ2",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ2-018__太上虚皇保生神咒经.txt",
+   "chars": 1155
+  },
+  {
+   "id": "DZ2-019",
+   "name": "太上说利益蚕王妙经",
+   "bu": "洞玄部",
+   "buCode": "DZ2",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ2-019__太上说利益蚕王妙经.txt",
+   "chars": 1217
+  },
+  {
+   "id": "DZ2-020",
+   "name": "太上说牛癀妙经",
+   "bu": "洞玄部",
+   "buCode": "DZ2",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ2-020__太上说牛癀妙经.txt",
+   "chars": 1194
+  },
+  {
+   "id": "DZ2-021",
+   "name": "太上说酆都拔苦愈乐妙经",
+   "bu": "洞玄部",
+   "buCode": "DZ2",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ2-021__太上说酆都拔苦愈乐妙经.txt",
+   "chars": 957
+  },
+  {
+   "id": "DZ2-022",
+   "name": "太上道君说解冤拔度妙经",
+   "bu": "洞玄部",
+   "buCode": "DZ2",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ2-022__太上道君说解冤拔度妙经.txt",
+   "chars": 2238
+  },
+  {
+   "id": "DZ2-023",
+   "name": "上清长生宝鉴图",
+   "bu": "洞玄部",
+   "buCode": "DZ2",
+   "sub": "灵图类",
+   "hasTrans": false,
+   "file": "texts/core/DZ2-023__上清长生宝鉴图.txt",
+   "chars": 414
+  },
+  {
+   "id": "DZ2-024",
+   "name": "上清辖落七元符",
+   "bu": "洞玄部",
+   "buCode": "DZ2",
+   "sub": "神符类",
+   "hasTrans": false,
+   "file": "texts/core/DZ2-024__上清辖落七元符.txt",
+   "chars": 909
+  },
+  {
+   "id": "DZ1-001",
+   "name": "干元子三始论",
+   "bu": "洞真部",
+   "buCode": "DZ1",
+   "sub": "方法类",
+   "hasTrans": false,
+   "file": "texts/core/DZ1-001__干元子三始论.txt",
+   "chars": 2603
+  },
+  {
+   "id": "DZ1-002",
+   "name": "三光注龄资福延寿妙经",
+   "bu": "洞真部",
+   "buCode": "DZ1",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ1-002__三光注龄资福延寿妙经.txt",
+   "chars": 1236
+  },
+  {
+   "id": "DZ1-003",
+   "name": "元始八威龙文经",
+   "bu": "洞真部",
+   "buCode": "DZ1",
+   "sub": "本文类",
+   "hasTrans": true,
+   "file": "texts/core/DZ1-003__元始八威龙文经.txt",
+   "chars": 1824,
+   "translated": true
+  },
+  {
+   "id": "DZ1-004",
+   "name": "元始天尊说三官宝号经",
+   "bu": "洞真部",
+   "buCode": "DZ1",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ1-004__元始天尊说三官宝号经.txt",
+   "chars": 1461
+  },
+  {
+   "id": "DZ1-005",
+   "name": "元始天尊说甘露升天神咒妙经",
+   "bu": "洞真部",
+   "buCode": "DZ1",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ1-005__元始天尊说甘露升天神咒妙经.txt",
+   "chars": 2833
+  },
+  {
+   "id": "DZ1-006",
+   "name": "元始天尊说生天得道经",
+   "bu": "洞真部",
+   "buCode": "DZ1",
+   "sub": "本文类",
+   "hasTrans": true,
+   "file": "texts/core/DZ1-006__元始天尊说生天得道经.txt",
+   "chars": 2174,
+   "translated": true
+  },
+  {
+   "id": "DZ1-007",
+   "name": "元始天尊说酆都灭罪经",
+   "bu": "洞真部",
+   "buCode": "DZ1",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ1-007__元始天尊说酆都灭罪经.txt",
+   "chars": 2872
+  },
+  {
+   "id": "DZ1-008",
+   "name": "元始说功德法食往生经",
+   "bu": "洞真部",
+   "buCode": "DZ1",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ1-008__元始说功德法食往生经.txt",
+   "chars": 2307
+  },
+  {
+   "id": "DZ1-009",
+   "name": "太上元始天尊证果真经",
+   "bu": "洞真部",
+   "buCode": "DZ1",
+   "sub": "本文类",
+   "hasTrans": true,
+   "file": "texts/core/DZ1-009__太上元始天尊证果真经.txt",
+   "chars": 1172,
+   "translated": true
+  },
+  {
+   "id": "DZ1-010",
+   "name": "太上元始天尊说大雨龙王经",
+   "bu": "洞真部",
+   "buCode": "DZ1",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ1-010__太上元始天尊说大雨龙王经.txt",
+   "chars": 2914
+  },
+  {
+   "id": "DZ1-011",
+   "name": "太上元始天尊说消殄虫蝗经",
+   "bu": "洞真部",
+   "buCode": "DZ1",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ1-011__太上元始天尊说消殄虫蝗经.txt",
+   "chars": 1968
+  },
+  {
+   "id": "DZ1-012",
+   "name": "太上元始天尊说续命妙经",
+   "bu": "洞真部",
+   "buCode": "DZ1",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ1-012__太上元始天尊说续命妙经.txt",
+   "chars": 1213
+  },
+  {
+   "id": "DZ1-013",
+   "name": "太上元始天尊说金光明经",
+   "bu": "洞真部",
+   "buCode": "DZ1",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ1-013__太上元始天尊说金光明经.txt",
+   "chars": 1554
+  },
+  {
+   "id": "DZ1-014",
+   "name": "太上升玄消灾护命妙经",
+   "bu": "洞真部",
+   "buCode": "DZ1",
+   "sub": "本文类",
+   "hasTrans": true,
+   "file": "texts/core/DZ1-014__太上升玄消灾护命妙经.txt",
+   "chars": 2351,
+   "translated": true
+  },
+  {
+   "id": "DZ1-015",
+   "name": "太上安镇九垒龙神妙经",
+   "bu": "洞真部",
+   "buCode": "DZ1",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ1-015__太上安镇九垒龙神妙经.txt",
+   "chars": 1951
+  },
+  {
+   "id": "DZ1-016",
+   "name": "太上洞渊辞瘟神咒妙经",
+   "bu": "洞真部",
+   "buCode": "DZ1",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ1-016__太上洞渊辞瘟神咒妙经.txt",
+   "chars": 1917
+  },
+  {
+   "id": "DZ1-017",
+   "name": "太上洞真安灶经",
+   "bu": "洞真部",
+   "buCode": "DZ1",
+   "sub": "本文类",
+   "hasTrans": true,
+   "file": "texts/core/DZ1-017__太上洞真安灶经.txt",
+   "chars": 2102,
+   "translated": true
+  },
+  {
+   "id": "DZ1-018",
+   "name": "太上真一报父母恩重经",
+   "bu": "洞真部",
+   "buCode": "DZ1",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ1-018__太上真一报父母恩重经.txt",
+   "chars": 2081
+  },
+  {
+   "id": "DZ1-019",
+   "name": "太上说九幽拔罪心印妙经",
+   "bu": "洞真部",
+   "buCode": "DZ1",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ1-019__太上说九幽拔罪心印妙经.txt",
+   "chars": 1500
+  },
+  {
+   "id": "DZ1-020",
+   "name": "太上长生延寿集福德经",
+   "bu": "洞真部",
+   "buCode": "DZ1",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ1-020__太上长生延寿集福德经.txt",
+   "chars": 2207
+  },
+  {
+   "id": "DZ1-021",
+   "name": "太乙元真保命长生经",
+   "bu": "洞真部",
+   "buCode": "DZ1",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ1-021__太乙元真保命长生经.txt",
+   "chars": 2390
+  },
+  {
+   "id": "DZ1-022",
+   "name": "混元阳符经",
+   "bu": "洞真部",
+   "buCode": "DZ1",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ1-022__混元阳符经.txt",
+   "chars": 745
+  },
+  {
+   "id": "DZ1-023",
+   "name": "玉清无上内景真经",
+   "bu": "洞真部",
+   "buCode": "DZ1",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ1-023__玉清无上内景真经.txt",
+   "chars": 2412
+  },
+  {
+   "id": "DZ1-024",
+   "name": "玉清胎元内养真经",
+   "bu": "洞真部",
+   "buCode": "DZ1",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ1-024__玉清胎元内养真经.txt",
+   "chars": 2455
+  },
+  {
+   "id": "DZ1-025",
+   "name": "高上玉皇心印经",
+   "bu": "洞真部",
+   "buCode": "DZ1",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ1-025__高上玉皇心印经.txt",
+   "chars": 1095
+  },
+  {
+   "id": "DZ1-026",
+   "name": "高上玉皇胎息经",
+   "bu": "洞真部",
+   "buCode": "DZ1",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ1-026__高上玉皇胎息经.txt",
+   "chars": 624
+  },
+  {
+   "id": "DZ1-027",
+   "name": "黄帝阴符经",
+   "bu": "洞真部",
+   "buCode": "DZ1",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ1-027__黄帝阴符经.txt",
+   "chars": 2035
+  },
+  {
+   "id": "DZ1-028",
+   "name": "上清洞真九宫紫房图",
+   "bu": "洞真部",
+   "buCode": "DZ1",
+   "sub": "灵图类",
+   "hasTrans": false,
+   "file": "texts/core/DZ1-028__上清洞真九宫紫房图.txt",
+   "chars": 2536
+  },
+  {
+   "id": "DZ1-029",
+   "name": "胎息经注",
+   "bu": "洞真部",
+   "buCode": "DZ1",
+   "sub": "玉诀类",
+   "hasTrans": false,
+   "file": "texts/core/DZ1-029__胎息经注.txt",
+   "chars": 2949
+  },
+  {
+   "id": "DZ1-030",
+   "name": "上清洞真元经五籍符",
+   "bu": "洞真部",
+   "buCode": "DZ1",
+   "sub": "神符类",
+   "hasTrans": false,
+   "file": "texts/core/DZ1-030__上清洞真元经五籍符.txt",
+   "chars": 1663
+  },
+  {
+   "id": "DZ3-001",
+   "name": "玄霜掌上录",
+   "bu": "洞神部",
+   "buCode": "DZ3",
+   "sub": "众术类",
+   "hasTrans": false,
+   "file": "texts/core/DZ3-001__玄霜掌上录.txt",
+   "chars": 2398
+  },
+  {
+   "id": "DZ3-002",
+   "name": "保生铭",
+   "bu": "洞神部",
+   "buCode": "DZ3",
+   "sub": "方法类",
+   "hasTrans": false,
+   "file": "texts/core/DZ3-002__保生铭.txt",
+   "chars": 1175
+  },
+  {
+   "id": "DZ3-003",
+   "name": "太上老君玄妙枕中内德神咒经",
+   "bu": "洞神部",
+   "buCode": "DZ3",
+   "sub": "方法类",
+   "hasTrans": false,
+   "file": "texts/core/DZ3-003__太上老君玄妙枕中内德神咒经.txt",
+   "chars": 2843
+  },
+  {
+   "id": "DZ3-004",
+   "name": "彭祖摄生养性论",
+   "bu": "洞神部",
+   "buCode": "DZ3",
+   "sub": "方法类",
+   "hasTrans": false,
+   "file": "texts/core/DZ3-004__彭祖摄生养性论.txt",
+   "chars": 2544
+  },
+  {
+   "id": "DZ3-005",
+   "name": "抱朴子养生论",
+   "bu": "洞神部",
+   "buCode": "DZ3",
+   "sub": "方法类",
+   "hasTrans": false,
+   "file": "texts/core/DZ3-005__抱朴子养生论.txt",
+   "chars": 2663
+  },
+  {
+   "id": "DZ3-006",
+   "name": "太上内丹守一真定经",
+   "bu": "洞神部",
+   "buCode": "DZ3",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ3-006__太上内丹守一真定经.txt",
+   "chars": 1263
+  },
+  {
+   "id": "DZ3-007",
+   "name": "太上日月混元经",
+   "bu": "洞神部",
+   "buCode": "DZ3",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ3-007__太上日月混元经.txt",
+   "chars": 1944
+  },
+  {
+   "id": "DZ3-008",
+   "name": "太上浩元经",
+   "bu": "洞神部",
+   "buCode": "DZ3",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ3-008__太上浩元经.txt",
+   "chars": 1501
+  },
+  {
+   "id": "DZ3-009",
+   "name": "太上玄灵北斗本命长生妙经",
+   "bu": "洞神部",
+   "buCode": "DZ3",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ3-009__太上玄灵北斗本命长生妙经.txt",
+   "chars": 2387
+  },
+  {
+   "id": "DZ3-010",
+   "name": "太上老君内日用妙经",
+   "bu": "洞神部",
+   "buCode": "DZ3",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ3-010__太上老君内日用妙经.txt",
+   "chars": 1561
+  },
+  {
+   "id": "DZ3-011",
+   "name": "太上老君外日用妙经",
+   "bu": "洞神部",
+   "buCode": "DZ3",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ3-011__太上老君外日用妙经.txt",
+   "chars": 801
+  },
+  {
+   "id": "DZ3-012",
+   "name": "太上老君说了心经",
+   "bu": "洞神部",
+   "buCode": "DZ3",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ3-012__太上老君说了心经.txt",
+   "chars": 816
+  },
+  {
+   "id": "DZ3-013",
+   "name": "太上老君说安宅八阳经",
+   "bu": "洞神部",
+   "buCode": "DZ3",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ3-013__太上老君说安宅八阳经.txt",
+   "chars": 1530
+  },
+  {
+   "id": "DZ3-014",
+   "name": "太上老君说常清静妙经",
+   "bu": "洞神部",
+   "buCode": "DZ3",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ3-014__太上老君说常清静妙经.txt",
+   "chars": 2743
+  },
+  {
+   "id": "DZ3-015",
+   "name": "太上老君说救生真经",
+   "bu": "洞神部",
+   "buCode": "DZ3",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ3-015__太上老君说救生真经.txt",
+   "chars": 1094
+  },
+  {
+   "id": "DZ3-016",
+   "name": "太上老君说补谢八阳经",
+   "bu": "洞神部",
+   "buCode": "DZ3",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ3-016__太上老君说补谢八阳经.txt",
+   "chars": 1525
+  },
+  {
+   "id": "DZ3-017",
+   "name": "太上老君说解释咒诅经",
+   "bu": "洞神部",
+   "buCode": "DZ3",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ3-017__太上老君说解释咒诅经.txt",
+   "chars": 2841
+  },
+  {
+   "id": "DZ3-018",
+   "name": "太上说东斗主算护命妙经",
+   "bu": "洞神部",
+   "buCode": "DZ3",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ3-018__太上说东斗主算护命妙经.txt",
+   "chars": 2516
+  },
+  {
+   "id": "DZ3-019",
+   "name": "太上说中斗大魁掌算伏魔神咒经",
+   "bu": "洞神部",
+   "buCode": "DZ3",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ3-019__太上说中斗大魁掌算伏魔神咒经.txt",
+   "chars": 1812
+  },
+  {
+   "id": "DZ3-020",
+   "name": "太上说十炼生神救护经",
+   "bu": "洞神部",
+   "buCode": "DZ3",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ3-020__太上说十炼生神救护经.txt",
+   "chars": 1400
+  },
+  {
+   "id": "DZ3-021",
+   "name": "玄天上帝说报父母恩重经",
+   "bu": "洞神部",
+   "buCode": "DZ3",
+   "sub": "本文类",
+   "hasTrans": false,
+   "file": "texts/core/DZ3-021__玄天上帝说报父母恩重经.txt",
+   "chars": 2514
+  },
+  {
+   "id": "DZ3-022",
+   "name": "南华真经邈",
+   "bu": "洞神部",
+   "buCode": "DZ3",
+   "sub": "玉诀类",
+   "hasTrans": false,
+   "file": "texts/core/DZ3-022__南华真经邈.txt",
+   "chars": 2708
+  },
+  {
+   "id": "DZ3-023",
+   "name": "真武灵应真君增上佑圣尊号册文",
+   "bu": "洞神部",
+   "buCode": "DZ3",
+   "sub": "谱箓类",
+   "hasTrans": false,
+   "file": "texts/core/DZ3-023__真武灵应真君增上佑圣尊号册文.txt",
+   "chars": 1179
+  },
+  {
+   "id": "DZ8-001",
+   "name": "太上元始天尊说孔雀经白文",
+   "bu": "续道藏",
+   "buCode": "DZ8",
+   "sub": "诸经类",
+   "hasTrans": false,
+   "file": "texts/core/DZ8-001__太上元始天尊说孔雀经白文.txt",
+   "chars": 305
+  },
+  {
+   "id": "DZ8-002",
+   "name": "太上大圣朗灵上将护国妙经",
+   "bu": "续道藏",
+   "buCode": "DZ8",
+   "sub": "诸经类",
+   "hasTrans": false,
+   "file": "texts/core/DZ8-002__太上大圣朗灵上将护国妙经.txt",
+   "chars": 2263
+  },
+  {
+   "id": "DZ8-003",
+   "name": "太上洞真徊玄章",
+   "bu": "续道藏",
+   "buCode": "DZ8",
+   "sub": "诸经类",
+   "hasTrans": false,
+   "file": "texts/core/DZ8-003__太上洞真徊玄章.txt",
+   "chars": 2944
+  },
+  {
+   "id": "DZ8-004",
+   "name": "太上说通真高皇解冤经",
+   "bu": "续道藏",
+   "buCode": "DZ8",
+   "sub": "诸经类",
+   "hasTrans": false,
+   "file": "texts/core/DZ8-004__太上说通真高皇解冤经.txt",
+   "chars": 1865
+  },
+  {
+   "id": "DZ9-001",
+   "name": "百字碑",
+   "bu": "藏外",
+   "buCode": "DZ9",
+   "sub": "诸经类",
+   "hasTrans": false,
+   "file": "texts/core/DZ9-001__百字碑.txt",
+   "chars": 445
+  },
+  {
+   "id": "DZ9-002",
+   "name": "金丹四百字",
+   "bu": "藏外",
+   "buCode": "DZ9",
+   "sub": "诸经类",
+   "hasTrans": false,
+   "file": "texts/core/DZ9-002__金丹四百字.txt",
+   "chars": 2356
+  }
+ ]
+}
