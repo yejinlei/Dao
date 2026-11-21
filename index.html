@@ -24,7 +24,7 @@ body {
   min-height: 100vh;
   margin: 0;
 }
-.serif { font-family: 'Songti SC', 'STSong', 'SimSun', serif; }
+.serif { font-family: 'Songti SC', 'STSong', 'SimSun', 'Noto Serif CJK SC', serif; }
 .nav-sticky {
   backdrop-filter: blur(16px);
   background: rgba(252,248,240,0.92);
@@ -41,9 +41,10 @@ body {
   border-color: rgba(139,69,19,0.25);
 }
 .dao-btn {
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
   border: 1px solid rgba(139,69,19,0.2);
   cursor: pointer;
+  background: #fff;
 }
 .dao-btn:hover, .dao-btn.active {
   background: rgb(var(--brand-rgb));
@@ -59,42 +60,6 @@ body {
 .hex-pattern {
   background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15z' fill='none' stroke='%238b4513' stroke-opacity='0.03' stroke-width='1'/%3E%3C/svg%3E");
 }
-.sutra-list-item {
-  transition: all 0.2s ease;
-  cursor: pointer;
-  border-bottom: 1px solid rgba(139,69,19,0.08);
-}
-.sutra-list-item:hover {
-  background: rgba(139,69,19,0.06);
-}
-.sutra-list-item:last-child { border-bottom: none; }
-.sutra-list-scroll {
-  max-height: calc(100vh - 280px);
-  overflow-y: auto;
-}
-.sutra-list-scroll::-webkit-scrollbar { width: 6px; }
-.sutra-list-scroll::-webkit-scrollbar-thumb { background: rgba(139,69,19,0.2); border-radius: 3px; }
-
-.reader-container { max-width: 800px; margin: 0 auto; }
-.sutra-text { font-family: 'Songti SC', 'STSong', 'SimSun', serif; line-height: 2; text-align: justify; }
-.sutra-text.orig-mode .orig-line { display: block; color: #2d2d2d; }
-.sutra-text.orig-mode .trans-block { display: none; }
-.sutra-text.orig-mode .section-title { display: block; }
-.sutra-text.baihua-mode .orig-line { display: none; }
-.sutra-text.baihua-mode .trans-block { display: block; color: #444; }
-.sutra-text.baihua-mode .section-title { display: block; }
-.sutra-text.duizhao-mode .orig-line { display: block; color: #2d2d2d; margin-bottom: 4px; text-indent: 2em; }
-.sutra-text.duizhao-mode .trans-block { display: block; color: #5a3a1f; background: rgba(139,69,19,0.05); padding: 10px 14px; border-radius: 8px; margin-bottom: 18px; font-size: 0.96em; line-height: 1.9; }
-.sutra-text.duizhao-mode .section-title { display: block; }
-.trans-block { display: none; }
-.orig-line { text-indent: 2em; margin-bottom: 6px; }
-.section-title { font-weight: bold; font-size: 1.1em; color: rgb(var(--brand-rgb)); margin: 20px 0 10px; text-indent: 0; }
-
-.font-size-small .sutra-text { font-size: 16px; }
-.font-size-medium .sutra-text { font-size: 18px; }
-.font-size-large .sutra-text { font-size: 21px; }
-.font-size-xlarge .sutra-text { font-size: 24px; }
-
 .kpi-number {
   font-family: 'Songti SC', 'STSong', serif;
   background: linear-gradient(135deg, rgb(var(--brand-rgb)), rgb(var(--accent-rgb)));
@@ -109,58 +74,233 @@ select:focus, input:focus { border-color: rgb(var(--brand-rgb)); }
   font-size: 2rem; opacity: 0.12; position: absolute; font-family: serif; pointer-events: none;
 }
 
-.modal-overlay {
-  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.55); z-index: 100; display: none;
-  backdrop-filter: blur(4px);
+/* ============ 经文库列表（对齐佛学站点） ============ */
+.sutra-card {
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: 1px solid rgba(139,69,19,0.1);
+  background: #fff;
 }
-.modal-overlay.active { display: flex; align-items: flex-start; justify-content: center; padding-top: 30px; }
-.modal-content {
-  background: #fcf8f0; border-radius: 16px; width: 95%; max-width: 940px;
-  max-height: 92vh; overflow: hidden; display: flex; flex-direction: column;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+.sutra-card:hover {
+  background: rgba(139,69,19,0.04);
+  border-color: rgba(139,69,19,0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(139,69,19,0.1);
 }
-.modal-header {
-  padding: 14px 22px; border-bottom: 1px solid rgba(139,69,19,0.15);
-  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap:8px;
-  background: linear-gradient(135deg, rgba(139,69,19,0.06), rgba(218,165,32,0.04));
+.sutra-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
 }
-.modal-body { flex: 1; overflow-y: auto; padding: 28px 32px; }
-.modal-body::-webkit-scrollbar { width: 6px; }
-.modal-body::-webkit-scrollbar-thumb { background: rgba(139,69,19,0.2); border-radius: 3px; }
+.sutra-list-scroll {
+  max-height: calc(100vh - 280px);
+  overflow-y: auto;
+  padding: 16px;
+}
+.sutra-list-scroll::-webkit-scrollbar { width: 6px; }
+.sutra-list-scroll::-webkit-scrollbar-thumb { background: rgba(139,69,19,0.2); border-radius: 3px; }
+.cat-sticky {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(252,248,240,0.95);
+  backdrop-filter: blur(8px);
+  padding: 10px 4px 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgb(var(--brand-rgb));
+  border-bottom: 1px solid rgba(139,69,19,0.12);
+  margin-top: 8px;
+}
+.cat-sticky:first-child { margin-top: 0; }
 
-.star { color: rgb(var(--accent-rgb)); }
-.loading-tip { text-align: center; padding: 40px; color: rgb(var(--ink-rgb))/60; }
+/* ============ 阅读器抽屉（对齐佛学站点模态框） ============ */
+.reader-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 100;
+  display: none;
+  backdrop-filter: blur(3px);
+}
+.reader-overlay.active { display: block; }
+.reader-drawer {
+  position: fixed; top: 0; right: 0; bottom: 0;
+  width: 100%; max-width: 960px;
+  background: #fcf8f0;
+  z-index: 101;
+  display: none; flex-direction: column;
+  box-shadow: -8px 0 40px rgba(0,0,0,0.25);
+  animation: slideIn 0.28s ease-out;
+}
+.reader-drawer.active { display: flex; }
+@keyframes slideIn { from{transform:translateX(100%);} to{transform:translateX(0);} }
+
+.reader-toolbar {
+  padding: 10px 18px;
+  border-bottom: 1px solid rgba(139,69,19,0.15);
+  background: linear-gradient(135deg, rgba(139,69,19,0.05), rgba(218,165,32,0.03));
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 8px;
+}
+.reader-title-wrap { min-width: 0; flex: 1; }
+.reader-title {
+  font-size: 18px; font-weight: 700;
+  color: rgb(var(--brand-rgb));
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.reader-meta { font-size: 12px; color: rgba(45,45,45,0.55); margin-top: 2px; }
+
+.tool-btn {
+  padding: 6px 12px; font-size: 13px;
+  border-radius: 8px; border: 1px solid rgba(139,69,19,0.18);
+  background: #fff; color: rgb(var(--ink-rgb));
+  cursor: pointer; transition: all 0.15s;
+  white-space: nowrap;
+}
+.tool-btn:hover { background: rgba(139,69,19,0.08); border-color: rgba(139,69,19,0.3); }
+.tool-btn.active { background: rgb(var(--brand-rgb)); color: #fff; border-color: rgb(var(--brand-rgb)); }
+.tool-divider { width: 1px; height: 20px; background: rgba(139,69,19,0.15); margin: 0 4px; }
+
+.reader-body {
+  flex: 1; overflow-y: auto;
+  padding: 32px 40px 60px;
+  line-height: 2;
+}
+.reader-body::-webkit-scrollbar { width: 6px; }
+.reader-body::-webkit-scrollbar-thumb { background: rgba(139,69,19,0.2); border-radius: 3px; }
+
+.reader-container { max-width: 760px; margin: 0 auto; }
+
+/* ============ 经文样式（对齐佛学站点经文阅读） ============ */
+.sutra-text {
+  font-family: 'Songti SC', 'STSong', 'SimSun', 'Noto Serif CJK SC', serif;
+  font-size: 18px;
+  color: #2d2d2d;
+}
+.sutra-text .section-title {
+  font-weight: 700; font-size: 1.1em;
+  color: rgb(var(--brand-rgb));
+  text-align: center;
+  margin: 28px 0 14px;
+  letter-spacing: 2px;
+}
+.sutra-text .section-title-sub {
+  text-align: center;
+  color: rgba(139,69,19,0.7);
+  font-size: 0.95em;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+.sutra-text .orig-p {
+  text-indent: 2em;
+  margin-bottom: 4px;
+  text-align: justify;
+}
+.sutra-text .trans-p {
+  color: #5a3a1f;
+  background: rgba(139,69,19,0.06);
+  border-left: 3px solid rgb(var(--accent-rgb));
+  padding: 10px 16px;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 18px;
+  font-size: 0.96em;
+  line-height: 1.95;
+  text-indent: 2em;
+  text-align: justify;
+}
+.sutra-text .preface-block {
+  background: rgba(46,139,87,0.06);
+  border-left: 3px solid rgb(var(--jade-rgb));
+  padding: 14px 18px;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 24px;
+  font-size: 0.95em;
+  line-height: 1.9;
+  color: #2d5a3d;
+}
+.sutra-text .preface-title {
+  font-weight: 700; color: rgb(var(--jade-rgb));
+  margin-bottom: 6px; letter-spacing: 1px;
+}
+
+/* ===== 四种阅读模式 ===== */
+/* 原文模式 */
+.mode-orig .trans-p, .mode-orig .preface-block { display: none; }
+.mode-orig .orig-p { display: block; }
+
+/* 白话模式 */
+.mode-baihua .orig-p { display: none; }
+.mode-baihua .trans-p { display: block; background: transparent; border-left: none; padding: 0; color: #333; font-size: 1em; text-indent: 2em; }
+.mode-baihua .preface-block { display: block; }
+
+/* 对照模式（默认） */
+.mode-duizhao .orig-p { display: block; }
+.mode-duizhao .trans-p { display: block; }
+
+/* 注音模式：在难字旁显示拼音ruby */
+.mode-pinyin .trans-p, .mode-pinyin .preface-block { display: none; }
+.mode-pinyin .orig-p { display: block; }
+.mode-pinyin ruby rt {
+  font-size: 0.55em;
+  color: rgb(var(--brand-rgb));
+  font-family: 'PingFang SC', sans-serif;
+  font-weight: normal;
+}
+.mode-pinyin ruby { ruby-position: over; }
+
+/* ===== 字号档位 ===== */
+.fs-small  .sutra-text { font-size: 16px; }
+.fs-medium .sutra-text { font-size: 18px; }
+.fs-large  .sutra-text { font-size: 21px; }
+.fs-xlarge .sutra-text { font-size: 25px; }
+.fs-small  .sutra-text .trans-p { font-size: 15px; }
+.fs-medium .sutra-text .trans-p { font-size: 17px; }
+.fs-large  .sutra-text .trans-p { font-size: 20px; }
+.fs-xlarge .sutra-text .trans-p { font-size: 23px; }
+
+.loading-tip { text-align: center; padding: 60px 20px; color: rgba(45,45,45,0.5); font-size: 15px; }
+.loading-tip .spin { display:inline-block; width:20px; height:20px; border:2px solid rgba(139,69,19,0.2); border-top-color:rgb(var(--brand-rgb)); border-radius:50%; animation:spin 0.8s linear infinite; margin-right:8px; vertical-align: middle;}
+@keyframes spin { to{transform:rotate(360deg);} }
+
+.star { color: rgb(var(--accent-rgb)); margin-right: 2px; }
+
+/* 响应式 */
+@media (max-width: 640px){
+  .reader-body { padding: 20px 18px 40px; }
+  .reader-drawer { max-width: 100%; }
+  .tool-btn { padding: 5px 9px; font-size: 12px; }
+}
 </style>
 </head>
 <body class="pattern-bg hex-pattern" id="mainBody">
 
-<!-- 阅读模态框 -->
-<div class="modal-overlay" id="readerModal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <div class="min-w-0">
-        <h2 class="serif text-xl md:text-2xl font-bold text-[rgb(var(--brand-rgb))] truncate" id="readerTitle">经名</h2>
-        <div class="text-xs text-[rgb(var(--ink-rgb))]/60 mt-1" id="readerMeta"></div>
-      </div>
-      <div class="flex items-center gap-1.5 flex-wrap">
-        <button onclick="setViewMode('orig')" class="dao-btn px-3 py-1.5 rounded-lg text-sm view-btn" data-mode="orig">原文</button>
-        <button onclick="setViewMode('duizhao')" class="dao-btn px-3 py-1.5 rounded-lg text-sm view-btn active" data-mode="duizhao">对照</button>
-        <button onclick="setViewMode('baihua')" class="dao-btn px-3 py-1.5 rounded-lg text-sm view-btn" data-mode="baihua">白话</button>
-        <span class="mx-1 text-[rgb(var(--ink-rgb))]/20">|</span>
-        <button onclick="setFontSize('small')" class="dao-btn px-2 py-1.5 rounded-lg text-sm font-btn" data-size="small">小</button>
-        <button onclick="setFontSize('medium')" class="dao-btn px-2 py-1.5 rounded-lg text-sm font-btn active" data-size="medium">中</button>
-        <button onclick="setFontSize('large')" class="dao-btn px-2 py-1.5 rounded-lg text-sm font-btn" data-size="large">大</button>
-        <button onclick="setFontSize('xlarge')" class="dao-btn px-2 py-1.5 rounded-lg text-sm font-btn" data-size="xlarge">特大</button>
-        <span class="mx-1 text-[rgb(var(--ink-rgb))]/20">|</span>
-        <button onclick="closeReader()" class="dao-btn px-3 py-1.5 rounded-lg text-sm">✕ 关闭</button>
-      </div>
+<!-- 阅读抽屉 -->
+<div class="reader-overlay" id="readerOverlay" onclick="closeReader()"></div>
+<div class="reader-drawer" id="readerDrawer">
+  <div class="reader-toolbar">
+    <div class="reader-title-wrap">
+      <div class="reader-title serif" id="readerTitle">经名</div>
+      <div class="reader-meta" id="readerMeta"></div>
     </div>
-    <div class="modal-body font-size-medium" id="readerBody">
-      <div class="reader-container">
-        <div class="sutra-text duizhao-mode" id="sutraContent">
-          <div class="loading-tip">正在加载经文…</div>
-        </div>
+    <div class="flex items-center gap-1 flex-wrap">
+      <button class="tool-btn" onclick="setViewMode('orig')" data-mode="orig" title="原文">📜 原文</button>
+      <button class="tool-btn active" onclick="setViewMode('duizhao')" data-mode="duizhao" title="原文白话对照">📖 对照</button>
+      <button class="tool-btn" onclick="setViewMode('baihua')" data-mode="baihua" title="纯白话译文">📝 白话</button>
+      <button class="tool-btn" onclick="setViewMode('pinyin')" data-mode="pinyin" title="原文加注音">🔤 注音</button>
+      <span class="tool-divider"></span>
+      <button class="tool-btn" onclick="setFontSize('small')"  data-fs="small"  title="小字号">A-</button>
+      <button class="tool-btn active" onclick="setFontSize('medium')" data-fs="medium" title="中字号">A</button>
+      <button class="tool-btn" onclick="setFontSize('large')"  data-fs="large"  title="大字号">A+</button>
+      <button class="tool-btn" onclick="setFontSize('xlarge')" data-fs="xlarge" title="特大字号">A++</button>
+      <span class="tool-divider"></span>
+      <button class="tool-btn" title="收藏此经">⭐</button>
+      <button class="tool-btn" title="笔记">📝</button>
+      <button class="tool-btn" title="书签">🔖</button>
+      <button class="tool-btn" onclick="closeReader()" title="关闭">✕</button>
+    </div>
+  </div>
+  <div class="reader-body fs-medium" id="readerBody">
+    <div class="reader-container">
+      <div class="sutra-text mode-duizhao" id="sutraContent">
+        <div class="loading-tip"><span class="spin"></span>正在加载经文…</div>
       </div>
     </div>
   </div>
@@ -204,7 +344,7 @@ select:focus, input:focus { border-color: rgb(var(--brand-rgb)); }
     </div>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
       <div class="layer-card rounded-2xl p-5"><div class="kpi-number text-3xl md:text-4xl font-bold mb-1">1721<span class="text-lg">部</span></div><div class="text-sm text-[rgb(var(--ink-rgb))]/60">道藏经籍</div><div class="mt-2 text-xs text-[rgb(var(--jade-rgb))]">含续藏及藏外文献</div></div>
-      <div class="layer-card rounded-2xl p-5"><div class="kpi-number text-3xl md:text-4xl font-bold mb-1">100<span class="text-lg">%</span></div><div class="text-sm text-[rgb(var(--ink-rgb))]/60">白话翻译覆盖</div><div class="mt-2 text-xs text-[rgb(var(--jade-rgb))]">原文/对照/白话三模式</div></div>
+      <div class="layer-card rounded-2xl p-5"><div class="kpi-number text-3xl md:text-4xl font-bold mb-1">4<span class="text-lg">模式</span></div><div class="text-sm text-[rgb(var(--ink-rgb))]/60">原文/对照/白话/注音</div><div class="mt-2 text-xs text-[rgb(var(--jade-rgb))]">四档字号调节</div></div>
       <div class="layer-card rounded-2xl p-5"><div class="kpi-number text-3xl md:text-4xl font-bold mb-1">7<span class="text-lg">大部</span></div><div class="text-sm text-[rgb(var(--ink-rgb))]/60">三洞四辅分类</div><div class="mt-2 text-xs text-[rgb(var(--jade-rgb))]">三洞真经 · 四辅翼教</div></div>
       <div class="layer-card rounded-2xl p-5"><div class="kpi-number text-3xl md:text-4xl font-bold mb-1">1800<span class="text-lg">+年</span></div><div class="text-sm text-[rgb(var(--ink-rgb))]/60">道教传承历史</div><div class="mt-2 text-xs text-[rgb(var(--jade-rgb))]">祖天师立教至今</div></div>
     </div>
@@ -264,12 +404,12 @@ select:focus, input:focus { border-color: rgb(var(--brand-rgb)); }
 <!-- 全藏经文阅读库 -->
 <section id="library" class="py-16 px-4">
   <div class="max-w-7xl mx-auto">
-    <h2 class="serif text-3xl md:text-4xl font-bold text-center text-[rgb(var(--brand-rgb))] mb-2">📖 道藏經目 · 全文在线阅读</h2>
-    <p class="text-center text-[rgb(var(--ink-rgb))]/60 mb-8">1721部道经，支持原文/白话对照/纯白话三种阅读模式，字号可调</p>
+    <h2 class="serif text-3xl md:text-4xl font-bold text-center text-[rgb(var(--brand-rgb))] mb-2">📖 道藏經目</h2>
+    <p class="text-center text-[rgb(var(--ink-rgb))]/60 mb-8">CBETA 道藏全文在线阅读 · 1721部道经 · 原文/对照/白话/注音四模式</p>
     <div class="layer-card rounded-2xl overflow-hidden">
       <div class="p-4 md:p-5 border-b border-[rgba(139,69,19,0.1)] bg-[rgba(139,69,19,0.02)]">
         <div class="flex flex-wrap gap-3 items-center">
-          <input type="text" id="sutraSearch" placeholder="搜經名…" class="flex-1 min-w-[200px] px-4 py-2 rounded-lg border border-[rgba(139,69,19,0.2)] bg-white text-[15px]" oninput="filterSutras()">
+          <input type="text" id="sutraSearch" placeholder="搜經名·撰人·經號…" class="flex-1 min-w-[200px] px-4 py-2 rounded-lg border border-[rgba(139,69,19,0.2)] bg-white text-[15px]" oninput="filterSutras()">
           <select id="catFilter" aria-label="按道藏分类筛选" class="px-3 py-2 rounded-lg border border-[rgba(139,69,19,0.2)] bg-white text-sm" onchange="filterSutras()">
             <option value="all">全部七部</option>
             <option value="洞真部">洞真部 (326)</option>
@@ -285,7 +425,7 @@ select:focus, input:focus { border-color: rgb(var(--brand-rgb)); }
           <span class="text-sm text-[rgb(var(--ink-rgb))]/60" id="resultCount">加载中…</span>
         </div>
       </div>
-      <div class="sutra-list-scroll p-2" id="sutraList">
+      <div class="sutra-list-scroll" id="sutraList">
         <div class="p-8 text-center text-[rgb(var(--ink-rgb))]/50">正在加载经目…</div>
       </div>
     </div>
@@ -357,7 +497,75 @@ select:focus, input:focus { border-color: rgb(var(--brand-rgb)); }
 <script>
 let allSutras = [];
 let currentSutra = null;
-const famousSet = new Set(['道德经','南华真经','周易参同契','黄帝阴符经','灵宝无量度人上品妙经','上清大洞真经','高上玉皇本行集经','高上玉皇心印经','高上玉皇心印妙经','九天应元雷声普化天尊玉枢宝经','太平经','太上感应篇','文昌帝君阴骘文','太上老君说常清静经','太上老君说常清静妙经','抱朴子','悟真篇','黄庭经','黄庭内景经','黄庭外景经','老子想尔注','太上洞渊神咒经','无上秘要','云笈七签','太上老君内日用妙经','太上老君外日用妙经','太上老君说了心经','高上玉皇胎息经','胎息经','太上玄灵北斗本命长生妙经','太上升玄消灾护命妙经','元始天尊说生天得道经']);
+const famousSet = new Set(['道德经','南华真经','周易参同契','黄帝阴符经','灵宝无量度人上品妙经','上清大洞真经','高上玉皇本行集经','高上玉皇心印经','高上玉皇心印妙经','高上玉皇胎息经','九天应元雷声普化天尊玉枢宝经','太平经','太上感应篇','文昌帝君阴骘文','太上老君说常清静经','太上老君说常清静妙经','抱朴子','悟真篇','黄庭经','黄庭内景经','黄庭外景经','老子想尔注','太上洞渊神咒经','无上秘要','云笈七签','太上老君内日用妙经','太上老君外日用妙经','太上老君说了心经','胎息经','太上玄灵北斗本命长生妙经','太上升玄消灾护命妙经','元始天尊说生天得道经']);
+
+// ===== 难字注音表（道教经典常用字） =====
+const pinyinMap = {
+  '炁':'qì','箓':'lù','齋':'zhāi','醮':'jiào','箓':'lù','籙':'lù','禳':'ráng','劾':'hé',
+  '旛':'fān','罡':'gāng','煞':'shà','乩':'jī','覽':'lǎn','鬱':'yù','鬥':'dòu','鬱':'yù',
+  '闔':'hé','闢':'pì','闡':'chǎn','闕':'què','闡':'chǎn','闥':'tà','隱':'yǐn','隸':'lì',
+  '靈':'líng','靝':'tiān','靜':'jìng','顛':'diān','類':'lèi','顯':'xiǎn','顫':'chàn',
+  '驅':'qū','體':'tǐ','髮':'fà','鬚':'xū','髻':'jì','鬢':'bìn','魂魄':'hún pò','魄':'pò',
+  '乾':'qián','坤':'kūn','坎':'kǎn','離':'lí','震':'zhèn','巽':'xùn','艮':'gèn','兌':'duì',
+  '煉':'liàn','藥':'yào','爐':'lú','鼎':'dǐng','鉛':'qiān','汞':'gǒng','龍':'lóng','虎':'hǔ',
+  '嬰':'yīng','姹':'chà','黃庭':'huáng tíng','絳':'jiàng','闕':'què','絳宮':'jiàng gōng',
+  '泥丸':'ní wán','崑崙':'kūn lún','崙':'lún','蓬萊':'péng lái','瀛洲':'yíng zhōu',
+  '齎':'jī','齎持':'jī chí','祕':'mì','穢':'huì','殗':'yè','䰟':'hún','䰟':'hún',
+  '咒':'zhòu','誥':'gào','諱':'huì','諷誦':'fěng sòng','誦':'sòng','偈':'jì',
+  '元始天尊':'yuán shǐ tiān zūn','靈寶天尊':'líng bǎo tiān zūn','道德天尊':'dào dé tiān zūn',
+  '張道陵':'zhāng dào líng','葛洪':'gě hóng','魏華存':'wèi huá cún','寇謙之':'kòu qiān zhī',
+  '陸修靜':'lù xiū jìng','陶弘景':'táo hóng jǐng','王重陽':'wáng chóng yáng','張伯端':'zhāng bó duān',
+  '丘處機':'qiū chǔ jī','薩守堅':'sà shǒu jiān','許遜':'xǔ xùn','呂洞賓':'lǚ dòng bīn',
+  '鍾離權':'zhōng lí quán','鐵拐李':'tiě guǎi lǐ','驪山':'lí shān','瑤池':'yáo chí',
+  '朝禮':'cháo lǐ','稽首':'qǐ shǒu','皈命':'guī mìng','皈':'guī','涅槃':'niè pán',
+  '須彌':'xū mí','菩提':'pú tí','三昧':'sān mèi','陀羅尼':'tuó luó ní','般若':'bō rě',
+  '波羅蜜':'bō luó mì','涅槃':'niè pán','劫':'jié','須':'xū','彌':'mí','伽':'qié',
+  '梵':'fàn','唵':'ǎn','吽':'hōng','吽':'hōng','吒':'zhà','訶':'hē','謨':'mó',
+  '曩':'nǎng','囉':'luō','嚩':'pó','呬':'xì','吙':'huō','唎':'lì','哆':'duō',
+  '眞':'zhēn','爲':'wéi','無':'wú','與':'yǔ','處':'chù','箇':'gè','裏':'lǐ',
+  '萬':'wàn','經':'jīng','爾':'ěr','來':'lái','禮':'lǐ','寶':'bǎo','雲':'yún',
+  '飛':'fēi','升':'shēng','昇':'shēng','乘':'chéng','長':'cháng','虛':'xū',
+  '淸':'qīng','清':'qīng','淨':'jìng','净':'jìng','寧':'níng','宁':'níng',
+  '迺':'nǎi','乃':'nǎi','乗':'chéng','躰':'tǐ','躰':'tǐ','聻':'nǐ','聻':'nǐ',
+  '亹亹':'wěi wěi','亹':'wěi','亹':'wěi','肸蠁':'xī xiǎng','蠁':'xiǎng','肸':'xī',
+  '肸蠁':'xī xiǎng','肸蚃':'xī xiǎng','蚃':'xiǎng','蚃':'xiǎng','蚃':'xiǎng'
+};
+
+// 给原文加注音 ruby
+function addPinyin(text){
+  // 先处理多字词（长词优先）
+  const multi = Object.keys(pinyinMap).filter(k=>k.length>=2).sort((a,b)=>b.length-a.length);
+  multi.forEach(word=>{
+    const py = pinyinMap[word];
+    // 用 ruby 标签替换，但避免在已替换的ruby内部再次替换
+    const re = new RegExp('(?![^<]*>)'+word.replace(/[-/\\^$*+?.()|[\]{}]/g,'\\$&'),'g');
+    text = text.replace(re, `<ruby>${word}<rt>${py}</rt></ruby>`);
+  });
+  // 单字注音
+  let out = '';
+  let inRuby = false;
+  for(let i=0;i<text.length;i++){
+    const ch = text[i];
+    // 跳过ruby标签内部
+    if(ch==='<'){
+      // 扫描到>
+      let tag = '';
+      while(i<text.length && text[i]!=='>'){ tag+=text[i]; i++; }
+      tag+='>';
+      out+=tag;
+      if(tag.startsWith('</ruby')) inRuby=false;
+      if(tag.startsWith('<ruby')) inRuby=true;
+      continue;
+    }
+    if(inRuby){ out+=ch; continue; }
+    if(pinyinMap[ch]){
+      out += `<ruby>${ch}<rt>${pinyinMap[ch]}</rt></ruby>`;
+    }else{
+      out += ch;
+    }
+  }
+  return out;
+}
 
 function fmtSize(bytes){
   if(bytes<1024) return bytes+'字';
@@ -375,24 +583,24 @@ function renderSutraList(sutras){
   catOrder.forEach(cat=>{
     if(!grouped[cat]) return;
     const arr = grouped[cat];
-    html += `<div class="px-3 py-2 text-xs font-bold text-[rgb(var(--brand-rgb))] bg-[rgba(139,69,19,0.04)] sticky top-0 z-10">${cat}（${arr.length}部）</div>`;
-    html += '<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">';
+    html += `<div class="cat-sticky">${cat}（${arr.length}部）</div>`;
+    html += '<div class="sutra-grid">';
     const showAll = arr.length <= 200;
     const shown = showAll ? arr : arr.slice(0,200);
     shown.forEach(s=>{
-      const star = famousSet.has(s.name) ? '<span class="star">★</span> ' : '';
-      html += `<div class="sutra-list-item px-4 py-3" onclick="openSutra(${s.id})">
+      const star = famousSet.has(s.name) ? '<span class="star">★</span>' : '';
+      html += `<div class="sutra-card rounded-lg px-4 py-3" onclick="openSutra(${s.id})">
         <div class="flex items-start justify-between gap-2">
           <div class="flex-1 min-w-0">
-            <div class="serif font-medium text-[15px] truncate">${star}${s.name}</div>
-            <div class="text-xs text-[rgb(var(--ink-rgb))]/50 mt-0.5">${s.sub} · ${fmtSize(s.size)}</div>
+            <div class="serif font-medium text-[15px] truncate">${star}${escapeHtml(s.name)}</div>
+            <div class="text-xs text-[rgb(var(--ink-rgb))]/50 mt-0.5 truncate">${escapeHtml(s.sub||'')} · ${fmtSize(s.size)}</div>
           </div>
-          <span class="text-xs text-[rgb(var(--jade-rgb))] shrink-0">译</span>
+          ${s.hasTrans?'<span class="text-xs text-[rgb(var(--jade-rgb))] shrink-0 font-medium">译</span>':''}
         </div>
       </div>`;
     });
     html += '</div>';
-    if(!showAll) html += `<div class="px-4 py-2 text-xs text-[rgb(var(--ink-rgb))]/40 text-center">共${arr.length}部，当前显示前200部，请使用关键词搜索</div>`;
+    if(!showAll) html += `<div class="px-4 py-3 text-xs text-[rgb(var(--ink-rgb))]/40 text-center">共${arr.length}部，当前显示前200部，请使用关键词搜索</div>`;
   });
   list.innerHTML = html;
 }
@@ -407,118 +615,114 @@ function filterSutras(){
   renderSutraList(f);
 }
 
-// ========== 真实经文加载 ==========
+// ========== 经文加载与渲染 ==========
 function escapeHtml(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 
-// 把原文拆成段落
 function splitParagraphs(text){
   return text.split(/\r?\n/).map(l=>l.trim()).filter(l=>l.length>0);
 }
 
-// 解析译文文件，支持多种格式：
-// 格式A（短经/标准）：# 经名 → 说明 → ## 经名 → 白话译文 → 结尾（无【原文】块，全文为白话）
-// 格式B（长经）：==== 标题 ==== → 【现代汉语白话译文】说明 → 【原文】→ 原典（白话仅有简介，后续为原文）
-// 格式C（含【译文】标记）：原文...【译文】...译文
 function parseTranslation(text){
-  // 情况1：含【原文】标记，取【原文】之前的白话部分（不含【现代汉语白话译文】及说明头）
   const origMark = text.indexOf('【原文】');
   const transMark = text.indexOf('【现代汉语白话译文】');
   if(origMark >= 0){
     let before = text.substring(0, origMark);
-    // 去掉【现代汉语白话译文】标题行和"说明："一行
     before = before.replace(/【现代汉语白话译文】/g,'').replace(/^说明：[^\n]*\n?/m,'').trim();
-    // 如果before中有【译文】标记，取其后
     const yw = before.indexOf('【译文】');
     if(yw >= 0) before = before.substring(yw).replace(/^【译文】\s*/,'');
-    return {
-      type: 'preface',  // 仅有前言/简介
-      preface: before.trim()
-    };
+    return { type:'preface', preface: before.trim() };
   }
-  // 情况2：含【译文】标记
   const yw2 = text.indexOf('【译文】');
   if(yw2 >= 0){
     const after = text.substring(yw2).replace(/^【译文】\s*/,'');
     const paras = after.split(/\r?\n\s*\r?\n/).map(p=>p.trim()).filter(p=>p.length>0);
     return {type:'full', paragraphs: paras.length>0 ? paras : after.split(/\r?\n/).map(p=>p.trim()).filter(p=>p.length>0)};
   }
-  // 情况3：去除markdown标题和"经名："说明行后，剩余作为白话译文
   let cleaned = text
-    .replace(/^#+\s.*$/gm,'')  // 去#标题
+    .replace(/^#+\s.*$/gm,'')
     .replace(/^经名[：:][^\n]*$/gm,'')
     .replace(/^底本出处[：:][^\n]*$/gm,'')
     .replace(/^参校版本[：:][^\n]*$/gm,'')
     .replace(/^又名[：:][^\n]*$/gm,'')
     .replace(/^不着撰人[^\n]*$/gm,'')
     .replace(/^一篇[。.]?\s*$/gm,'')
-    .replace(/.*终$/gm,'')  // 去"XX经终"
+    .replace(/.*终$/gm,'')
     .trim();
   const paras = cleaned.split(/\r?\n\s*\r?\n/).map(p=>p.trim()).filter(p=>p.length>0);
-  if(paras.length===0) return null;
+  if(paras.length===0){
+    const lines = cleaned.split(/\r?\n/).map(p=>p.trim()).filter(p=>p.length>0);
+    if(lines.length===0) return null;
+    return {type:'full', paragraphs: lines};
+  }
   return {type:'full', paragraphs: paras};
 }
 
-function buildSutraHTML(origText, transObj){
+function isTitle(line){
+  if(line.length>40) return false;
+  if(/^[卷品章节第]/.test(line) && line.length<20) return true;
+  if(/(品|卷|章|第[一二三四五六七八九十百]+)$/.test(line) && line.length<25) return true;
+  if(/(经序|序|叙|开经偈|偈|赞|呪|咒)$/.test(line) && line.length<15) return true;
+  if(/^云笈七签卷之/.test(line)) return true;
+  return false;
+}
+
+function buildSutraHTML(origText, transObj, mode){
   const origParas = splitParagraphs(origText);
   let html = '';
 
-  // 如果有前言（长经的简介）
+  // 前言/题解
   if(transObj && transObj.type==='preface' && transObj.preface){
-    html += `<div class="section-title">📖 题解</div>`;
-    html += `<div class="trans-block">${escapeHtml(transObj.preface)}</div>`;
-    html += `<div class="section-title" style="margin-top:24px;">— 原文 —</div>`;
-  }else{
-    html += `<div class="section-title">— 原文 —</div>`;
+    html += `<div class="preface-block"><div class="preface-title">📖 题解</div>${escapeHtml(transObj.preface)}</div>`;
   }
 
-  // 标题识别
-  function isTitle(line){
-    if(line.length>40) return false;
-    if(/^[卷品章节第]/.test(line) && line.length<20) return true;
-    if(/(品|卷|章|第[一二三四五六七八九十百]+)$/.test(line) && line.length<25) return true;
-    if(/(经序|序|叙|开经偈|偈|赞)$/.test(line) && line.length<15) return true;
-    if(/^云笈七签卷之/.test(line)) return true;
-    return false;
-  }
+  // 原文标题
+  html += `<div class="section-title">— 原 文 —</div>`;
 
-  // 原文部分
-  origParas.forEach(p=>{
-    if(isTitle(p)){
-      html += `<div class="section-title">${escapeHtml(p)}</div>`;
-    }else{
-      html += `<p class="orig-line">${escapeHtml(p)}</p>`;
-    }
-  });
-
-  // 如果有完整译文，做逐段对照（追加在原文后）
   if(transObj && transObj.type==='full' && transObj.paragraphs.length>0){
     const tps = transObj.paragraphs;
     const ratio = tps.length / Math.max(origParas.length,1);
     const aligned = ratio>0.4 && ratio<2.5 && tps.length>1;
-    html += `<div class="section-title" style="margin-top:28px;">— 白话译文 —</div>`;
     if(aligned){
-      // 逐段对齐时重建为对照结构（替换上面的纯原文展示）
-      html = '';
-      if(transObj.type==='preface' && transObj.preface){
-        html += `<div class="section-title">📖 题解</div>`;
-        html += `<div class="trans-block">${escapeHtml(transObj.preface)}</div>`;
-      }
+      // 逐段对齐对照
       const n = Math.max(origParas.length, tps.length);
       for(let i=0;i<n;i++){
         const o = origParas[i]||'';
         const t = tps[i]||'';
-        if(isTitle(o)){
-          html += `<div class="section-title">${escapeHtml(o)}</div>`;
-          if(t) html += `<div class="trans-block">${escapeHtml(t)}</div>`;
+        if(o && isTitle(o)){
+          html += `<div class="section-title">${mode==='pinyin'?addPinyin(escapeHtml(o)):escapeHtml(o)}</div>`;
+          if(t) html += `<div class="trans-p">${escapeHtml(t)}</div>`;
         }else{
-          if(o) html += `<p class="orig-line">${escapeHtml(o)}</p>`;
-          if(t) html += `<div class="trans-block">${escapeHtml(t)}</div>`;
+          if(o) html += `<p class="orig-p">${mode==='pinyin'?addPinyin(escapeHtml(o)):escapeHtml(o)}</p>`;
+          if(t && mode!=='pinyin' && mode!=='orig') html += `<div class="trans-p">${escapeHtml(t)}</div>`;
         }
       }
     }else{
-      tps.forEach(p=>{
-        html += `<div class="trans-block">${escapeHtml(p)}</div>`;
+      // 原文整块 + 白话整块
+      origParas.forEach(p=>{
+        if(isTitle(p)){
+          html += `<div class="section-title">${mode==='pinyin'?addPinyin(escapeHtml(p)):escapeHtml(p)}</div>`;
+        }else{
+          html += `<p class="orig-p">${mode==='pinyin'?addPinyin(escapeHtml(p)):escapeHtml(p)}</p>`;
+        }
       });
+      if(mode!=='orig' && mode!=='pinyin'){
+        html += `<div class="section-title" style="margin-top:32px;">— 白话译文 —</div>`;
+        tps.forEach(p=>{
+          html += `<div class="trans-p">${escapeHtml(p)}</div>`;
+        });
+      }
+    }
+  }else{
+    // 无译文或只有前言：纯原文
+    origParas.forEach(p=>{
+      if(isTitle(p)){
+        html += `<div class="section-title">${mode==='pinyin'?addPinyin(escapeHtml(p)):escapeHtml(p)}</div>`;
+      }else{
+        html += `<p class="orig-p">${mode==='pinyin'?addPinyin(escapeHtml(p)):escapeHtml(p)}</p>`;
+      }
+    });
+    if(!transObj){
+      html += `<div style="text-align:center;margin-top:30px;padding:14px;color:rgba(45,45,45,0.45);font-size:14px;">— 此经白话译文待整理 —</div>`;
     }
   }
   return html;
@@ -528,9 +732,10 @@ async function openSutra(id){
   currentSutra = allSutras.find(s=>s.id===id);
   if(!currentSutra) return;
   document.getElementById('readerTitle').textContent = currentSutra.name;
-  document.getElementById('readerMeta').textContent = `${currentSutra.cat} · ${currentSutra.sub} · ${fmtSize(currentSutra.size)}`;
-  document.getElementById('sutraContent').innerHTML = '<div class="loading-tip">正在加载经文…</div>';
-  document.getElementById('readerModal').classList.add('active');
+  document.getElementById('readerMeta').textContent = `${currentSutra.cat} · ${currentSutra.sub||''} · ${fmtSize(currentSutra.size)}${currentSutra.hasTrans?' · 有白话译文':''}`;
+  document.getElementById('sutraContent').innerHTML = '<div class="loading-tip"><span class="spin"></span>正在加载经文…</div>';
+  document.getElementById('readerOverlay').classList.add('active');
+  document.getElementById('readerDrawer').classList.add('active');
   document.body.style.overflow='hidden';
   setViewMode('duizhao');
   setFontSize('medium');
@@ -543,7 +748,10 @@ async function openSutra(id){
     const origText = await origResp.text();
     const transText = transResp ? await transResp.text() : '';
     const transObj = transText ? parseTranslation(transText) : null;
-    document.getElementById('sutraContent').innerHTML = buildSutraHTML(origText, transObj);
+    // 缓存以便切换模式时使用
+    currentSutra._orig = origText;
+    currentSutra._trans = transObj;
+    document.getElementById('sutraContent').innerHTML = buildSutraHTML(origText, transObj, 'duizhao');
     document.getElementById('readerBody').scrollTop = 0;
   }catch(e){
     document.getElementById('sutraContent').innerHTML = `<div class="loading-tip">经文加载失败：${escapeHtml(e.message)}<br><br>提示：请通过本地 HTTP 服务器访问此页面（如 python -m http.server），直接用 file:// 打开浏览器会限制文件读取。</div>`;
@@ -551,21 +759,31 @@ async function openSutra(id){
 }
 
 function closeReader(){
-  document.getElementById('readerModal').classList.remove('active');
+  document.getElementById('readerOverlay').classList.remove('active');
+  document.getElementById('readerDrawer').classList.remove('active');
   document.body.style.overflow='';
 }
+
 function setViewMode(mode){
-  document.querySelectorAll('.view-btn').forEach(b=>b.classList.remove('active'));
-  document.querySelector(`.view-btn[data-mode="${mode}"]`).classList.add('active');
+  document.querySelectorAll('.tool-btn[data-mode]').forEach(b=>b.classList.remove('active'));
+  const btn = document.querySelector(`.tool-btn[data-mode="${mode}"]`);
+  if(btn) btn.classList.add('active');
   const c = document.getElementById('sutraContent');
-  c.classList.remove('orig-mode','baihua-mode','duizhao-mode');
-  c.classList.add(mode+'-mode');
+  c.classList.remove('mode-orig','mode-baihua','mode-duizhao','mode-pinyin');
+  c.classList.add('mode-'+mode);
+  // 切换到注音模式时需要重新渲染加拼音
+  if(currentSutra && currentSutra._orig){
+    c.innerHTML = buildSutraHTML(currentSutra._orig, currentSutra._trans, mode);
+  }
 }
+
 function setFontSize(size){
-  document.querySelectorAll('.font-btn').forEach(b=>b.classList.remove('active'));
-  document.querySelector(`.font-btn[data-size="${size}"]`).classList.add('active');
-  document.getElementById('readerBody').classList.remove('font-size-small','font-size-medium','font-size-large','font-size-xlarge');
-  document.getElementById('readerBody').classList.add('font-size-'+size);
+  document.querySelectorAll('.tool-btn[data-fs]').forEach(b=>b.classList.remove('active'));
+  const btn = document.querySelector(`.tool-btn[data-fs="${size}"]`);
+  if(btn) btn.classList.add('active');
+  const body = document.getElementById('readerBody');
+  body.classList.remove('fs-small','fs-medium','fs-large','fs-xlarge');
+  body.classList.add('fs-'+size);
 }
 
 // ========== 其他模块 ==========
@@ -647,7 +865,7 @@ function updateGraph(){
   window.addEventListener('resize',()=>chart.resize());
 }
 
-// ========== 初始化：加载真实经目 ==========
+// ========== 初始化 ==========
 fetch('sutras.json').then(r=>r.json()).then(data=>{
   allSutras = data;
   document.getElementById('resultCount').textContent = `共 ${allSutras.length} 部`;
@@ -659,8 +877,18 @@ fetch('sutras.json').then(r=>r.json()).then(data=>{
 switchSectTab(document.querySelector('#sectTabs button'),'zhengyi');
 setTimeout(updateGraph, 100);
 
-document.getElementById('readerModal').addEventListener('click',function(e){ if(e.target===this) closeReader();});
-document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeReader();});
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape') closeReader();
+  if(!document.getElementById('readerDrawer').classList.contains('active')) return;
+  // 左右方向键切换模式
+  if(e.key==='ArrowLeft' || e.key==='ArrowRight'){
+    const modes = ['orig','duizhao','baihua','pinyin'];
+    const cur = document.querySelector('.tool-btn[data-mode].active');
+    let idx = modes.indexOf(cur.dataset.mode);
+    idx = (idx + (e.key==='ArrowRight'?1:modes.length-1)) % modes.length;
+    setViewMode(modes[idx]);
+  }
+});
 </script>
 </body>
 </html>
