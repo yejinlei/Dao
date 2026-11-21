@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>道藏本体论 — 全藏智能知识图谱与义理推演平台</title>
+<script src="https://aisearch-task.bj.bcebos.com/static/tailwindcss-3.4.17.js"></script>
+<script src="https://aisearch-task.bj.bcebos.com/static/echarts-5.6.0.min.js"></script>
+<style>
+:root {
+  --brand-rgb: 139, 69, 19;
+  --accent-rgb: 218, 165, 32;
+  --jade-rgb: 46, 139, 87;
+  --ink-rgb: 45, 45, 45;
+  --paper-rgb: 252, 248, 240;
+  --card-bg: rgba(255,255,255,0.85);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'PingFang SC', 'HarmonyOS Sans SC', 'Microsoft YaHei', sans-serif;
+  background: linear-gradient(135deg, #fcf8f0 0%, #f5ebe0 40%, #ede0d0 100%);
+  color: rgb(var(--ink-rgb));
+  min-height: 100vh;
+  margin: 0;
+}
+.serif { font-family: 'Songti SC', 'STSong', 'SimSun', serif; }
+.nav-sticky {
+  backdrop-filter: blur(16px);
+  background: rgba(252,248,240,0.92);
+  border-bottom: 1px solid rgba(139,69,19,0.15);
+}
+.layer-card {
+  transition: all 0.4s cubic-bezier(.2,.8,.2,1);
+  border: 1px solid rgba(139,69,19,0.12);
+  background: var(--card-bg);
+}
+.layer-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 32px rgba(139,69,19,0.12);
+  border-color: rgba(139,69,19,0.25);
+}
+.dao-btn {
+  transition: all 0.25s ease;
+  border: 1px solid rgba(139,69,19,0.2);
+  cursor: pointer;
+}
+.dao-btn:hover, .dao-btn.active {
+  background: rgb(var(--brand-rgb));
+  color: #fff;
+  border-color: rgb(var(--brand-rgb));
+}
+.pattern-bg {
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(218,165,32,0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(46,139,87,0.04) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(139,69,19,0.03) 0%, transparent 50%);
+}
+.hex-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15z' fill='none' stroke='%238b4513' stroke-opacity='0.03' stroke-width='1'/%3E%3C/svg%3E");
+}
+.sutra-list-item {
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(139,69,19,0.08);
+}
+.sutra-list-item:hover {
+  background: rgba(139,69,19,0.06);
+}
+.sutra-list-item:last-child { border-bottom: none; }
+.sutra-list-scroll {
+  max-height: calc(100vh - 280px);
+  overflow-y: auto;
+}
+.sutra-list-scroll::-webkit-scrollbar { width: 6px; }
+.sutra-list-scroll::-webkit-scrollbar-thumb { background: rgba(139,69,19,0.2); border-radius: 3px; }
+
+.reader-container { max-width: 800px; margin: 0 auto; }
+.sutra-text { font-family: 'Songti SC', 'STSong', 'SimSun', serif; line-height: 2; text-align: justify; }
+.sutra-text.orig-mode .orig-line { display: block; color: #2d2d2d; }
+.sutra-text.orig-mode .trans-block { display: none; }
+.sutra-text.orig-mode .section-title { display: block; }
+.sutra-text.baihua-mode .orig-line { display: none; }
+.sutra-text.baihua-mode .trans-block { display: block; color: #444; }
+.sutra-text.baihua-mode .section-title { display: block; }
+.sutra-text.duizhao-mode .orig-line { display: block; color: #2d2d2d; margin-bottom: 4px; text-indent: 2em; }
+.sutra-text.duizhao-mode .trans-block { display: block; color: #5a3a1f; background: rgba(139,69,19,0.05); padding: 10px 14px; border-radius: 8px; margin-bottom: 18px; font-size: 0.96em; line-height: 1.9; }
+.sutra-text.duizhao-mode .section-title { display: block; }
+.trans-block { display: none; }
+.orig-line { text-indent: 2em; margin-bottom: 6px; }
+.section-title { font-weight: bold; font-size: 1.1em; color: rgb(var(--brand-rgb)); margin: 20px 0 10px; text-indent: 0; }
+
+.font-size-small .sutra-text { font-size: 16px; }
+.font-size-medium .sutra-text { font-size: 18px; }
+.font-size-large .sutra-text { font-size: 21px; }
+.font-size-xlarge .sutra-text { font-size: 24px; }
+
+.kpi-number {
+  font-family: 'Songti SC', 'STSong', serif;
+  background: linear-gradient(135deg, rgb(var(--brand-rgb)), rgb(var(--accent-rgb)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+select, input { font-family: inherit; outline: none; }
+select:focus, input:focus { border-color: rgb(var(--brand-rgb)); }
+.graph-container { min-height: 480px; }
+.bagua-symbol {
+  font-size: 2rem; opacity: 0.12; position: absolute; font-family: serif; pointer-events: none;
+}
+
+.modal-overlay {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.55); z-index: 100; display: none;
+  backdrop-filter: blur(4px);
+}
+.modal-overlay.active { display: flex; align-items: flex-start; justify-content: center; padding-top: 30px; }
+.modal-content {
+  background: #fcf8f0; border-radius: 16px; width: 95%; max-width: 940px;
+  max-height: 92vh; overflow: hidden; display: flex; flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.modal-header {
+  padding: 14px 22px; border-bottom: 1px solid rgba(139,69,19,0.15);
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap:8px;
+  background: linear-gradient(135deg, rgba(139,69,19,0.06), rgba(218,165,32,0.04));
+}
+.modal-body { flex: 1; overflow-y: auto; padding: 28px 32px; }
+.modal-body::-webkit-scrollbar { width: 6px; }
+.modal-body::-webkit-scrollbar-thumb { background: rgba(139,69,19,0.2); border-radius: 3px; }
+
+.star { color: rgb(var(--accent-rgb)); }
+.loading-tip { text-align: center; padding: 40px; color: rgb(var(--ink-rgb))/60; }
+</style>
+</head>
+<body class="pattern-bg hex-pattern" id="mainBody">
+
+<!-- 阅读模态框 -->
+<div class="modal-overlay" id="readerModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <div class="min-w-0">
+        <h2 class="serif text-xl md:text-2xl font-bold text-[rgb(var(--brand-rgb))] truncate" id="readerTitle">经名</h2>
+        <div class="text-xs text-[rgb(var(--ink-rgb))]/60 mt-1" id="readerMeta"></div>
+      </div>
+      <div class="flex items-center gap-1.5 flex-wrap">
+        <button onclick="setViewMode('orig')" class="dao-btn px-3 py-1.5 rounded-lg text-sm view-btn" data-mode="orig">原文</button>
+        <button onclick="setViewMode('duizhao')" class="dao-btn px-3 py-1.5 rounded-lg text-sm view-btn active" data-mode="duizhao">对照</button>
+        <button onclick="setViewMode('baihua')" class="dao-btn px-3 py-1.5 rounded-lg text-sm view-btn" data-mode="baihua">白话</button>
+        <span class="mx-1 text-[rgb(var(--ink-rgb))]/20">|</span>
+        <button onclick="setFontSize('small')" class="dao-btn px-2 py-1.5 rounded-lg text-sm font-btn" data-size="small">小</button>
+        <button onclick="setFontSize('medium')" class="dao-btn px-2 py-1.5 rounded-lg text-sm font-btn active" data-size="medium">中</button>
+        <button onclick="setFontSize('large')" class="dao-btn px-2 py-1.5 rounded-lg text-sm font-btn" data-size="large">大</button>
+        <button onclick="setFontSize('xlarge')" class="dao-btn px-2 py-1.5 rounded-lg text-sm font-btn" data-size="xlarge">特大</button>
+        <span class="mx-1 text-[rgb(var(--ink-rgb))]/20">|</span>
+        <button onclick="closeReader()" class="dao-btn px-3 py-1.5 rounded-lg text-sm">✕ 关闭</button>
+      </div>
+    </div>
+    <div class="modal-body font-size-medium" id="readerBody">
+      <div class="reader-container">
+        <div class="sutra-text duizhao-mode" id="sutraContent">
+          <div class="loading-tip">正在加载经文…</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 导航栏 -->
+<nav class="nav-sticky sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <span class="text-2xl serif font-bold text-[rgb(var(--brand-rgb))]">☯</span>
+      <span class="serif text-xl font-bold text-[rgb(var(--brand-rgb))] hidden sm:block">道藏本体论</span>
+    </div>
+    <div class="flex items-center gap-1 md:gap-2 text-sm overflow-x-auto">
+      <a href="#overview" class="px-2 md:px-3 py-1.5 rounded-lg hover:bg-[rgba(139,69,19,0.08)] whitespace-nowrap">总览</a>
+      <a href="#architecture" class="px-2 md:px-3 py-1.5 rounded-lg hover:bg-[rgba(139,69,19,0.08)] whitespace-nowrap">本体体系</a>
+      <a href="#library" class="px-2 md:px-3 py-1.5 rounded-lg hover:bg-[rgba(139,69,19,0.08)] whitespace-nowrap font-medium text-[rgb(var(--brand-rgb))]">全藏原典</a>
+      <a href="#graph" class="px-2 md:px-3 py-1.5 rounded-lg hover:bg-[rgba(139,69,19,0.08)] whitespace-nowrap">义理图谱</a>
+      <a href="#sects" class="px-2 md:px-3 py-1.5 rounded-lg hover:bg-[rgba(139,69,19,0.08)] whitespace-nowrap">宗派体系</a>
+      <a href="#persons" class="px-2 md:px-3 py-1.5 rounded-lg hover:bg-[rgba(139,69,19,0.08)] whitespace-nowrap">仙真人物</a>
+      <a href="#reasoning" class="px-2 md:px-3 py-1.5 rounded-lg hover:bg-[rgba(139,69,19,0.08)] whitespace-nowrap">智能推演</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section id="overview" class="relative overflow-hidden py-12 md:py-16 px-4">
+  <div class="bagua-symbol" style="top:10%;left:5%;">乾</div>
+  <div class="bagua-symbol" style="top:20%;right:8%;">坤</div>
+  <div class="bagua-symbol" style="bottom:15%;left:12%;">坎</div>
+  <div class="bagua-symbol" style="bottom:25%;right:5%;">离</div>
+  <div class="max-w-6xl mx-auto text-center relative z-10">
+    <h1 class="serif text-4xl md:text-6xl font-black text-[rgb(var(--brand-rgb))] leading-tight mb-4">道藏本体论</h1>
+    <p class="text-lg md:text-xl text-[rgb(var(--ink-rgb))]/70 max-w-2xl mx-auto mb-8 leading-relaxed">
+      全藏智能知识图谱与义理推演平台<br>
+      <span class="serif text-base">三洞四辅 · 十二类分 · 七部架构 · 万法归道</span>
+    </p>
+    <div class="flex flex-wrap justify-center gap-3 mb-10">
+      <a href="#architecture" class="dao-btn px-6 py-3 rounded-xl bg-[rgb(var(--brand-rgb))] text-white font-medium">☯ 进入本体世界</a>
+      <a href="#library" class="dao-btn px-6 py-3 rounded-xl bg-white font-medium">📜 全藏经文阅读</a>
+      <a href="#graph" class="dao-btn px-6 py-3 rounded-xl bg-white font-medium">🔮 探索义理图谱</a>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+      <div class="layer-card rounded-2xl p-5"><div class="kpi-number text-3xl md:text-4xl font-bold mb-1">1721<span class="text-lg">部</span></div><div class="text-sm text-[rgb(var(--ink-rgb))]/60">道藏经籍</div><div class="mt-2 text-xs text-[rgb(var(--jade-rgb))]">含续藏及藏外文献</div></div>
+      <div class="layer-card rounded-2xl p-5"><div class="kpi-number text-3xl md:text-4xl font-bold mb-1">100<span class="text-lg">%</span></div><div class="text-sm text-[rgb(var(--ink-rgb))]/60">白话翻译覆盖</div><div class="mt-2 text-xs text-[rgb(var(--jade-rgb))]">原文/对照/白话三模式</div></div>
+      <div class="layer-card rounded-2xl p-5"><div class="kpi-number text-3xl md:text-4xl font-bold mb-1">7<span class="text-lg">大部</span></div><div class="text-sm text-[rgb(var(--ink-rgb))]/60">三洞四辅分类</div><div class="mt-2 text-xs text-[rgb(var(--jade-rgb))]">三洞真经 · 四辅翼教</div></div>
+      <div class="layer-card rounded-2xl p-5"><div class="kpi-number text-3xl md:text-4xl font-bold mb-1">1800<span class="text-lg">+年</span></div><div class="text-sm text-[rgb(var(--ink-rgb))]/60">道教传承历史</div><div class="mt-2 text-xs text-[rgb(var(--jade-rgb))]">祖天师立教至今</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 七层本体架构 -->
+<section id="architecture" class="py-14 px-4">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="serif text-3xl md:text-4xl font-bold text-center text-[rgb(var(--brand-rgb))] mb-2">道藏本体论七层架构</h2>
+    <p class="text-center text-[rgb(var(--ink-rgb))]/60 mb-10">从元模型到文化外延，构建完整的道教知识体系</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="layer-card rounded-2xl p-6"><div class="flex items-center gap-3 mb-3"><span class="w-10 h-10 rounded-xl bg-[rgba(139,69,19,0.1)] flex items-center justify-center text-[rgb(var(--brand-rgb))] font-bold serif">L0</span><h3 class="serif text-xl font-bold">元模型层</h3></div><p class="text-sm text-[rgb(var(--ink-rgb))]/70 leading-relaxed mb-3">定义道、炁、德、阴阳、五行等核心元概念，确立本体论的基本范畴与关系框架，是整个体系的逻辑基石。</p><div class="flex flex-wrap gap-1.5"><span class="text-xs px-2 py-1 rounded-md bg-[rgba(139,69,19,0.08)]">道</span><span class="text-xs px-2 py-1 rounded-md bg-[rgba(139,69,19,0.08)]">炁</span><span class="text-xs px-2 py-1 rounded-md bg-[rgba(139,69,19,0.08)]">德</span><span class="text-xs px-2 py-1 rounded-md bg-[rgba(139,69,19,0.08)]">阴阳</span><span class="text-xs px-2 py-1 rounded-md bg-[rgba(139,69,19,0.08)]">五行</span><span class="text-xs px-2 py-1 rounded-md bg-[rgba(139,69,19,0.08)]">八卦</span></div></div>
+      <div class="layer-card rounded-2xl p-6"><div class="flex items-center gap-3 mb-3"><span class="w-10 h-10 rounded-xl bg-[rgba(218,165,32,0.15)] flex items-center justify-center text-[rgb(var(--accent-rgb))] font-bold serif">L1</span><h3 class="serif text-xl font-bold">教理本体层</h3></div><p class="text-sm text-[rgb(var(--ink-rgb))]/70 leading-relaxed mb-3">以"道"为最高信仰，构建尊道贵德、重生贵和、清静无为、得道成仙的核心教义体系，阐明宇宙生成与生命超越之道。</p><div class="flex flex-wrap gap-1.5"><span class="text-xs px-2 py-1 rounded-md bg-[rgba(218,165,32,0.1)]">道本体</span><span class="text-xs px-2 py-1 rounded-md bg-[rgba(218,165,32,0.1)]">气化宇宙</span><span class="text-xs px-2 py-1 rounded-md bg-[rgba(218,165,32,0.1)]">得道成仙</span><span class="text-xs px-2 py-1 rounded-md bg-[rgba(218,165,32,0.1)]">性命双修</span><span class="text-xs px-2 py-1 rounded-md bg-[rgba(218,165,32,0.1)]">我命在我</span></div></div>
+      <div class="layer-card rounded-2xl p-6"><div class="flex items-center gap-3 mb-3"><span class="w-10 h-10 rounded-xl bg-[rgba(46,139,87,0.12)] flex items-center justify-center text-[rgb(var(--jade-rgb))] font-bold serif">L2</span><h3 class="serif text-xl font-bold">义理范畴层</h3></div><p class="text-sm text-[rgb(var(--ink-rgb))]/70 leading-relaxed mb-3">涵盖自然哲学、生命哲学、道德哲学四大维度，系统阐释无为、自然、抱一、守静等修道范畴与修炼法门。</p><div class="flex flex-wrap gap-1.5"><span class="text-xs px-2 py-1 rounded-md bg-[rgba(46,139,87,0.08)]">无为自然</span><span class="text-xs px-2 py-1 rounded-md bg-[rgba(46,139,87,0.08)]">清静寡欲</span><span class="text-xs px-2 py-1 rounded-md bg-[rgba(46,139,87,0.08)]">抱元守一</span><span class="text-xs px-2 py-1 rounded-md bg-[rgba(46,139,87,0.08)]">内丹外丹</span><span class="text-xs px-2 py-1 rounded-md bg-[rgba(46,139,87,0.08)]">符箓斋醮</span></div></div>
+      <div class="layer-card rounded-2xl p-6"><div class="flex items-center gap-3 mb-3"><span class="w-10 h-10 rounded-xl bg-[rgba(139,69,19,0.1)] flex items-center justify-center text-[rgb(var(--brand-rgb))] font-bold serif">L3</span><h3 class="serif text-xl font-bold">宗派体系层</h3></div><p class="text-sm text-[rgb(var(--ink-rgb))]/70 leading-relaxed mb-3">梳理正一、全真两大主流派系，及上清、灵宝、神霄、清微等历史道派的源流、教义特色与法脉传承关系。</p><div class="flex flex-wrap gap-1.5"><span class="text-xs px-2 py-1 rounded-md bg-[rgba(139,69,19,0.08)]">正一道</span><span class="text-xs px-2 py-1 rounded-md bg-[rgba(139,69,19,0.08)]">全真道</span><span class="text-xs px-2 py-1 rounded-md bg-[rgba(139,69,19,0.08)]">上清派</span><span class="text-xs px-2 py-1 rounded-md bg-[rgba(139,69,19,0.08)]">灵宝派</span><span class="text-xs px-2 py-1 rounded-md bg-[rgba(139,69,19,0.08)]">净明道</span></div></div>
+      <div class="layer-card rounded-2xl p-6"><div class="flex items-center gap-3 mb-3"><span class="w-10 h-10 rounded-xl bg-[rgba(218,165,32,0.15)] flex items-center justify-center text-[rgb(var(--accent-rgb))] font-bold serif">L4</span><h3 class="serif text-xl font-bold">文本载体层</h3></div><p class="text-sm text-[rgb(var(--ink-rgb))]/70 leading-relaxed mb-3">按三洞四辅十二类分类编排道藏经籍，涵括本文、神符、玉诀、灵图、谱录、戒律、威仪、方法、众术、记传、赞颂、章表全十二类。</p><div class="flex flex-wrap gap-1.5"><span class="text-xs px-2 py-1 rounded-md bg-[rgba(218,165,32,0.1)]">洞真部</span><span class="text-xs px-2 py-1 rounded-md bg-[rgba(218,165,32,0.1)]">洞玄部</span><span class="text-xs px-2 py-1 rounded-md bg-[rgba(218,165,32,0.1)]">洞神部</span><span class="text-xs px-2 py-1 rounded-md bg-[rgba(218,165,32,0.1)]">太玄太平</span><span class="text-xs px-2 py-1 rounded-md bg-[rgba(218,165,32,0.1)]">太清正一</span></div></div>
+      <div class="layer-card rounded-2xl p-6"><div class="flex items-center gap-3 mb-3"><span class="w-10 h-10 rounded-xl bg-[rgba(46,139,87,0.12)] flex items-center justify-center text-[rgb(var(--jade-rgb))] font-bold serif">L5</span><h3 class="serif text-xl font-bold">人物传承层</h3></div><p class="text-sm text-[rgb(var(--ink-rgb))]/70 leading-relaxed mb-3">记录先天尊神、后天仙真、历代祖师、著名高道的事迹、著述与法脉传承，构建道脉相传的人物谱系。</p><div class="flex flex-wrap gap-1.5"><span class="text-xs px-2 py-1 rounded-md bg-[rgba(46,139,87,0.08)]">三清四御</span><span class="text-xs px-2 py-1 rounded-md bg-[rgba(46,139,87,0.08)]">历代天师</span><span class="text-xs px-2 py-1 rounded-md bg-[rgba(46,139,87,0.08)]">全真七子</span><span class="text-xs px-2 py-1 rounded-md bg-[rgba(46,139,87,0.08)]">仙真高道</span></div></div>
+      <div class="layer-card rounded-2xl p-6 md:col-span-2 lg:col-span-3"><div class="flex items-center gap-3 mb-3"><span class="w-10 h-10 rounded-xl bg-[rgba(139,69,19,0.1)] flex items-center justify-center text-[rgb(var(--brand-rgb))] font-bold serif">L6</span><h3 class="serif text-xl font-bold">文化外延层</h3></div><p class="text-sm text-[rgb(var(--ink-rgb))]/70 leading-relaxed mb-3">延伸至道教文化影响的宫观建筑、斋醮科仪、武术养生、医药丹道、音乐美术、民俗节日、文学艺术等广阔文化领域，展现道教作为中华传统文化根柢的深厚内涵。</p><div class="flex flex-wrap gap-1.5"><span class="text-xs px-2 py-1 rounded-md bg-[rgba(139,69,19,0.08)]">宫观山志</span><span class="text-xs px-2 py-1 rounded-md bg-[rgba(139,69,19,0.08)]">斋醮科仪</span><span class="text-xs px-2 py-1 rounded-md bg-[rgba(139,69,19,0.08)]">道教养生</span><span class="text-xs px-2 py-1 rounded-md bg-[rgba(139,69,19,0.08)]">道教医学</span><span class="text-xs px-2 py-1 rounded-md bg-[rgba(139,69,19,0.08)]">洞天福地</span><span class="text-xs px-2 py-1 rounded-md bg-[rgba(139,69,19,0.08)]">道教节日</span><span class="text-xs px-2 py-1 rounded-md bg-[rgba(139,69,19,0.08)]">仙话文学</span><span class="text-xs px-2 py-1 rounded-md bg-[rgba(139,69,19,0.08)]">道教艺术</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 三洞四辅 -->
+<section class="py-12 px-4 bg-white/40">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="serif text-3xl md:text-4xl font-bold text-center text-[rgb(var(--brand-rgb))] mb-2">三洞四辅 · 道藏分类体系</h2>
+    <p class="text-center text-[rgb(var(--ink-rgb))]/60 mb-8">七部分类法是道藏编纂的核心框架，自南北朝陆修静开创沿用至今</p>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div class="layer-card rounded-2xl p-6">
+        <h3 class="serif text-xl font-bold mb-4 text-[rgb(var(--brand-rgb))]">三洞真经</h3>
+        <div class="space-y-4">
+          <div class="flex gap-4 p-4 rounded-xl bg-[rgba(139,69,19,0.04)]"><div class="w-12 h-12 rounded-lg bg-[rgb(var(--brand-rgb))] text-white flex items-center justify-center font-bold serif shrink-0">洞真</div><div><div class="font-bold mb-1">洞真部 · 大乘上乘</div><div class="text-sm text-[rgb(var(--ink-rgb))]/70">教主：元始天尊。以上清经系为核心，注重存思炼养、精神升华，代表最上乘教法，共326部。</div></div></div>
+          <div class="flex gap-4 p-4 rounded-xl bg-[rgba(218,165,32,0.08)]"><div class="w-12 h-12 rounded-lg bg-[rgb(var(--accent-rgb))] text-white flex items-center justify-center font-bold serif shrink-0">洞玄</div><div><div class="font-bold mb-1">洞玄部 · 中乘中法</div><div class="text-sm text-[rgb(var(--ink-rgb))]/70">教主：灵宝天尊。以灵宝经系为核心，强调斋醮科仪、济世度人，具广大社会宗教功能，共311部。</div></div></div>
+          <div class="flex gap-4 p-4 rounded-xl bg-[rgba(46,139,87,0.08)]"><div class="w-12 h-12 rounded-lg bg-[rgb(var(--jade-rgb))] text-white flex items-center justify-center font-bold serif shrink-0">洞神</div><div><div class="font-bold mb-1">洞神部 · 小乘初法</div><div class="text-sm text-[rgb(var(--ink-rgb))]/70">教主：道德天尊。以三皇文为核心，侧重符箓咒术、劾召鬼神、禳灾治病等实践法门，共369部。</div></div></div>
+        </div>
+      </div>
+      <div class="layer-card rounded-2xl p-6">
+        <h3 class="serif text-xl font-bold mb-4 text-[rgb(var(--accent-rgb))]">四辅翼教</h3>
+        <div class="space-y-3">
+          <div class="flex gap-4 p-4 rounded-xl bg-[rgba(139,69,19,0.04)]"><div class="w-12 h-12 rounded-lg bg-[rgb(var(--brand-rgb))]/80 text-white flex items-center justify-center font-bold serif shrink-0 text-sm">太玄</div><div><div class="font-bold mb-1">太玄部 · 辅洞真（113部）</div><div class="text-sm text-[rgb(var(--ink-rgb))]/70">以《道德经》为核心，收纳道家诸子注疏，阐发重玄学理。</div></div></div>
+          <div class="flex gap-4 p-4 rounded-xl bg-[rgba(218,165,32,0.08)]"><div class="w-12 h-12 rounded-lg bg-[rgb(var(--accent-rgb))]/80 text-white flex items-center justify-center font-bold serif shrink-0 text-sm">太平</div><div><div class="font-bold mb-1">太平部 · 辅洞玄（65部）</div><div class="text-sm text-[rgb(var(--ink-rgb))]/70">以《太平经》为核心，宣扬太平世道、阴阳五行、治国修身之道。</div></div></div>
+          <div class="flex gap-4 p-4 rounded-xl bg-[rgba(46,139,87,0.08)]"><div class="w-12 h-12 rounded-lg bg-[rgb(var(--jade-rgb))]/80 text-white flex items-center justify-center font-bold serif shrink-0 text-sm">太清</div><div><div class="font-bold mb-1">太清部 · 辅洞神（24部）</div><div class="text-sm text-[rgb(var(--ink-rgb))]/70">以外丹经典为主，收录金丹服食、炉火变化之术，亦含部分内丹著作。</div></div></div>
+          <div class="flex gap-4 p-4 rounded-xl bg-[rgba(100,100,100,0.06)]"><div class="w-12 h-12 rounded-lg bg-gray-600 text-white flex items-center justify-center font-bold serif shrink-0 text-sm">正一</div><div><div class="font-bold mb-1">正一部 · 总辅六部（237部）</div><div class="text-sm text-[rgb(var(--ink-rgb))]/70">通贯三洞三太，以《正一经》为核心，遍陈三乘，为天师道所奉，主符箓章醮。</div></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-6 layer-card rounded-2xl p-6">
+      <div class="flex items-start gap-4">
+        <div class="w-12 h-12 rounded-lg bg-[rgba(139,69,19,0.1)] flex items-center justify-center font-bold serif shrink-0 text-sm">续藏</div>
+        <div class="flex-1"><div class="font-bold mb-1">续道藏 + 藏外文献（276部）</div><div class="text-sm text-[rgb(var(--ink-rgb))]/70">明万历《续道藏》补收58部道经，藏外敦煌道经、唐宋逸典及近代出土道教文献218部，一并纳入。</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 全藏经文阅读库 -->
+<section id="library" class="py-16 px-4">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="serif text-3xl md:text-4xl font-bold text-center text-[rgb(var(--brand-rgb))] mb-2">📖 道藏經目 · 全文在线阅读</h2>
+    <p class="text-center text-[rgb(var(--ink-rgb))]/60 mb-8">1721部道经，支持原文/白话对照/纯白话三种阅读模式，字号可调</p>
+    <div class="layer-card rounded-2xl overflow-hidden">
+      <div class="p-4 md:p-5 border-b border-[rgba(139,69,19,0.1)] bg-[rgba(139,69,19,0.02)]">
+        <div class="flex flex-wrap gap-3 items-center">
+          <input type="text" id="sutraSearch" placeholder="搜經名…" class="flex-1 min-w-[200px] px-4 py-2 rounded-lg border border-[rgba(139,69,19,0.2)] bg-white text-[15px]" oninput="filterSutras()">
+          <select id="catFilter" aria-label="按道藏分类筛选" class="px-3 py-2 rounded-lg border border-[rgba(139,69,19,0.2)] bg-white text-sm" onchange="filterSutras()">
+            <option value="all">全部七部</option>
+            <option value="洞真部">洞真部 (326)</option>
+            <option value="洞玄部">洞玄部 (311)</option>
+            <option value="洞神部">洞神部 (369)</option>
+            <option value="太玄部">太玄部 (113)</option>
+            <option value="太平部">太平部 (65)</option>
+            <option value="太清部">太清部 (24)</option>
+            <option value="正一部">正一部 (237)</option>
+            <option value="续道藏">续道藏 (58)</option>
+            <option value="藏外">藏外 (218)</option>
+          </select>
+          <span class="text-sm text-[rgb(var(--ink-rgb))]/60" id="resultCount">加载中…</span>
+        </div>
+      </div>
+      <div class="sutra-list-scroll p-2" id="sutraList">
+        <div class="p-8 text-center text-[rgb(var(--ink-rgb))]/50">正在加载经目…</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 义理图谱 -->
+<section id="graph" class="py-16 px-4 bg-white/40">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="serif text-3xl md:text-4xl font-bold text-center text-[rgb(var(--brand-rgb))] mb-2">义理关系图谱</h2>
+    <p class="text-center text-[rgb(var(--ink-rgb))]/60 mb-8">道教核心概念与经籍、人物、宗派之间的义理关联（可拖拽、缩放）</p>
+    <div class="layer-card rounded-2xl p-4 md:p-6">
+      <div id="graphChart" class="graph-container rounded-xl bg-white/50"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 宗派判教对比 -->
+<section id="sects" class="py-14 px-4">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="serif text-3xl md:text-4xl font-bold text-center text-[rgb(var(--brand-rgb))] mb-2">宗派判教对比</h2>
+    <p class="text-center text-[rgb(var(--ink-rgb))]/60 mb-8">道教主要流派的教义、修持与特色对比</p>
+    <div class="flex flex-wrap justify-center gap-2 mb-6" id="sectTabs">
+      <button class="dao-btn active px-4 py-2 rounded-lg text-sm" onclick="switchSectTab(this,'zhengyi')">正一道</button>
+      <button class="dao-btn px-4 py-2 rounded-lg text-sm" onclick="switchSectTab(this,'quanzhen')">全真道</button>
+      <button class="dao-btn px-4 py-2 rounded-lg text-sm" onclick="switchSectTab(this,'shangqing')">上清派</button>
+      <button class="dao-btn px-4 py-2 rounded-lg text-sm" onclick="switchSectTab(this,'lingbao')">灵宝派</button>
+    </div>
+    <div id="sectContent"></div>
+  </div>
+</section>
+
+<!-- 仙真人物 -->
+<section id="persons" class="py-14 px-4 bg-white/40">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="serif text-3xl md:text-4xl font-bold text-center text-[rgb(var(--brand-rgb))] mb-2">圣众 · 仙真 · 祖师</h2>
+    <p class="text-center text-[rgb(var(--ink-rgb))]/60 mb-8">道教尊神与历代仙真祖师</p>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+      <div class="layer-card rounded-xl p-4 text-center"><div class="serif text-lg font-bold text-[rgb(var(--brand-rgb))]">元始天尊</div><div class="text-xs text-[rgb(var(--ink-rgb))]/60 mt-1">三清之首 · 洞真教主</div></div>
+      <div class="layer-card rounded-xl p-4 text-center"><div class="serif text-lg font-bold text-[rgb(var(--accent-rgb))]">灵宝天尊</div><div class="text-xs text-[rgb(var(--ink-rgb))]/60 mt-1">三清之二 · 洞玄教主</div></div>
+      <div class="layer-card rounded-xl p-4 text-center"><div class="serif text-lg font-bold text-[rgb(var(--jade-rgb))]">道德天尊</div><div class="text-xs text-[rgb(var(--ink-rgb))]/60 mt-1">三清之三 · 洞神教主</div></div>
+      <div class="layer-card rounded-xl p-4 text-center"><div class="serif text-lg font-bold">玉皇大帝</div><div class="text-xs text-[rgb(var(--ink-rgb))]/60 mt-1">四御之首 · 昊天金阙</div></div>
+      <div class="layer-card rounded-xl p-4 text-center"><div class="serif text-lg font-bold">张道陵</div><div class="text-xs text-[rgb(var(--ink-rgb))]/60 mt-1">祖天师 · 正一真人</div></div>
+      <div class="layer-card rounded-xl p-4 text-center"><div class="serif text-lg font-bold">王重阳</div><div class="text-xs text-[rgb(var(--ink-rgb))]/60 mt-1">全真教主 · 重阳真人</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 智能推演 -->
+<section id="reasoning" class="py-14 px-4">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="serif text-3xl md:text-4xl font-bold text-[rgb(var(--brand-rgb))] mb-2">概念路径智能推演</h2>
+    <p class="text-[rgb(var(--ink-rgb))]/60 mb-8">输入道教概念，探索义理路径与关联网络</p>
+    <div class="layer-card rounded-2xl p-6 md:p-8">
+      <div class="flex flex-col sm:flex-row gap-3 mb-6">
+        <input type="text" id="reasonInput" placeholder="如：道" class="flex-1 px-4 py-3 rounded-xl border border-[rgba(139,69,19,0.2)] bg-white text-[16px]">
+        <button onclick="doReasoning()" class="dao-btn px-6 py-3 rounded-xl bg-[rgb(var(--brand-rgb))] text-white font-medium">推演路径</button>
+      </div>
+      <div id="reasonResult" class="hidden p-4 rounded-xl bg-[rgba(46,139,87,0.06)] text-left text-[15px] leading-relaxed"></div>
+      <p class="text-sm text-[rgb(var(--ink-rgb))]/50 mt-4">例如：道 → 炁 → 阴阳 → 五行 → 性命 → 金丹 → 成仙</p>
+    </div>
+  </div>
+</section>
+
+<footer class="py-8 text-center text-sm text-[rgb(var(--ink-rgb))]/50 border-t border-[rgba(139,69,19,0.1)]">
+  <p class="serif">道藏本体论 · 三洞四辅十二类 · 全藏智能知识图谱</p>
+</footer>
+
+<script>
+let allSutras = [];
+let currentSutra = null;
+const famousSet = new Set(['道德经','南华真经','周易参同契','黄帝阴符经','灵宝无量度人上品妙经','上清大洞真经','高上玉皇本行集经','高上玉皇心印经','高上玉皇心印妙经','九天应元雷声普化天尊玉枢宝经','太平经','太上感应篇','文昌帝君阴骘文','太上老君说常清静经','太上老君说常清静妙经','抱朴子','悟真篇','黄庭经','黄庭内景经','黄庭外景经','老子想尔注','太上洞渊神咒经','无上秘要','云笈七签','太上老君内日用妙经','太上老君外日用妙经','太上老君说了心经','高上玉皇胎息经','胎息经','太上玄灵北斗本命长生妙经','太上升玄消灾护命妙经','元始天尊说生天得道经']);
+
+function fmtSize(bytes){
+  if(bytes<1024) return bytes+'字';
+  if(bytes<1024*1024) return (bytes/1024).toFixed(1)+'k字';
+  return (bytes/1024/1024).toFixed(2)+'M字';
+}
+
+function renderSutraList(sutras){
+  const list = document.getElementById('sutraList');
+  if(!sutras.length){ list.innerHTML='<div class="p-8 text-center text-[rgb(var(--ink-rgb))]/50">未找到匹配经籍</div>'; return;}
+  const grouped = {};
+  sutras.forEach(s=>{ if(!grouped[s.cat]) grouped[s.cat]=[]; grouped[s.cat].push(s);});
+  const catOrder=['洞真部','洞玄部','洞神部','太玄部','太平部','太清部','正一部','续道藏','藏外'];
+  let html='';
+  catOrder.forEach(cat=>{
+    if(!grouped[cat]) return;
+    const arr = grouped[cat];
+    html += `<div class="px-3 py-2 text-xs font-bold text-[rgb(var(--brand-rgb))] bg-[rgba(139,69,19,0.04)] sticky top-0 z-10">${cat}（${arr.length}部）</div>`;
+    html += '<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">';
+    const showAll = arr.length <= 200;
+    const shown = showAll ? arr : arr.slice(0,200);
+    shown.forEach(s=>{
+      const star = famousSet.has(s.name) ? '<span class="star">★</span> ' : '';
+      html += `<div class="sutra-list-item px-4 py-3" onclick="openSutra(${s.id})">
+        <div class="flex items-start justify-between gap-2">
+          <div class="flex-1 min-w-0">
+            <div class="serif font-medium text-[15px] truncate">${star}${s.name}</div>
+            <div class="text-xs text-[rgb(var(--ink-rgb))]/50 mt-0.5">${s.sub} · ${fmtSize(s.size)}</div>
+          </div>
+          <span class="text-xs text-[rgb(var(--jade-rgb))] shrink-0">译</span>
+        </div>
+      </div>`;
+    });
+    html += '</div>';
+    if(!showAll) html += `<div class="px-4 py-2 text-xs text-[rgb(var(--ink-rgb))]/40 text-center">共${arr.length}部，当前显示前200部，请使用关键词搜索</div>`;
+  });
+  list.innerHTML = html;
+}
+
+function filterSutras(){
+  const kw = document.getElementById('sutraSearch').value.trim();
+  const cat = document.getElementById('catFilter').value;
+  let f = allSutras;
+  if(cat!=='all') f = f.filter(s=>s.cat===cat);
+  if(kw) f = f.filter(s=>s.name.includes(kw));
+  document.getElementById('resultCount').textContent = `共 ${f.length} 部`;
+  renderSutraList(f);
+}
+
+// ========== 真实经文加载 ==========
+function escapeHtml(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+// 把原文拆成段落
+function splitParagraphs(text){
+  return text.split(/\r?\n/).map(l=>l.trim()).filter(l=>l.length>0);
+}
+
+// 解析译文文件，支持多种格式：
+// 格式A（短经/标准）：# 经名 → 说明 → ## 经名 → 白话译文 → 结尾（无【原文】块，全文为白话）
+// 格式B（长经）：==== 标题 ==== → 【现代汉语白话译文】说明 → 【原文】→ 原典（白话仅有简介，后续为原文）
+// 格式C（含【译文】标记）：原文...【译文】...译文
+function parseTranslation(text){
+  // 情况1：含【原文】标记，取【原文】之前的白话部分（不含【现代汉语白话译文】及说明头）
+  const origMark = text.indexOf('【原文】');
+  const transMark = text.indexOf('【现代汉语白话译文】');
+  if(origMark >= 0){
+    let before = text.substring(0, origMark);
+    // 去掉【现代汉语白话译文】标题行和"说明："一行
+    before = before.replace(/【现代汉语白话译文】/g,'').replace(/^说明：[^\n]*\n?/m,'').trim();
+    // 如果before中有【译文】标记，取其后
+    const yw = before.indexOf('【译文】');
+    if(yw >= 0) before = before.substring(yw).replace(/^【译文】\s*/,'');
+    return {
+      type: 'preface',  // 仅有前言/简介
+      preface: before.trim()
+    };
+  }
+  // 情况2：含【译文】标记
+  const yw2 = text.indexOf('【译文】');
+  if(yw2 >= 0){
+    const after = text.substring(yw2).replace(/^【译文】\s*/,'');
+    const paras = after.split(/\r?\n\s*\r?\n/).map(p=>p.trim()).filter(p=>p.length>0);
+    return {type:'full', paragraphs: paras.length>0 ? paras : after.split(/\r?\n/).map(p=>p.trim()).filter(p=>p.length>0)};
+  }
+  // 情况3：去除markdown标题和"经名："说明行后，剩余作为白话译文
+  let cleaned = text
+    .replace(/^#+\s.*$/gm,'')  // 去#标题
+    .replace(/^经名[：:][^\n]*$/gm,'')
+    .replace(/^底本出处[：:][^\n]*$/gm,'')
+    .replace(/^参校版本[：:][^\n]*$/gm,'')
+    .replace(/^又名[：:][^\n]*$/gm,'')
+    .replace(/^不着撰人[^\n]*$/gm,'')
+    .replace(/^一篇[。.]?\s*$/gm,'')
+    .replace(/.*终$/gm,'')  // 去"XX经终"
+    .trim();
+  const paras = cleaned.split(/\r?\n\s*\r?\n/).map(p=>p.trim()).filter(p=>p.length>0);
+  if(paras.length===0) return null;
+  return {type:'full', paragraphs: paras};
+}
+
+function buildSutraHTML(origText, transObj){
+  const origParas = splitParagraphs(origText);
+  let html = '';
+
+  // 如果有前言（长经的简介）
+  if(transObj && transObj.type==='preface' && transObj.preface){
+    html += `<div class="section-title">📖 题解</div>`;
+    html += `<div class="trans-block">${escapeHtml(transObj.preface)}</div>`;
+    html += `<div class="section-title" style="margin-top:24px;">— 原文 —</div>`;
+  }else{
+    html += `<div class="section-title">— 原文 —</div>`;
+  }
+
+  // 标题识别
+  function isTitle(line){
+    if(line.length>40) return false;
+    if(/^[卷品章节第]/.test(line) && line.length<20) return true;
+    if(/(品|卷|章|第[一二三四五六七八九十百]+)$/.test(line) && line.length<25) return true;
+    if(/(经序|序|叙|开经偈|偈|赞)$/.test(line) && line.length<15) return true;
+    if(/^云笈七签卷之/.test(line)) return true;
+    return false;
+  }
+
+  // 原文部分
+  origParas.forEach(p=>{
+    if(isTitle(p)){
+      html += `<div class="section-title">${escapeHtml(p)}</div>`;
+    }else{
+      html += `<p class="orig-line">${escapeHtml(p)}</p>`;
+    }
+  });
+
+  // 如果有完整译文，做逐段对照（追加在原文后）
+  if(transObj && transObj.type==='full' && transObj.paragraphs.length>0){
+    const tps = transObj.paragraphs;
+    const ratio = tps.length / Math.max(origParas.length,1);
+    const aligned = ratio>0.4 && ratio<2.5 && tps.length>1;
+    html += `<div class="section-title" style="margin-top:28px;">— 白话译文 —</div>`;
+    if(aligned){
+      // 逐段对齐时重建为对照结构（替换上面的纯原文展示）
+      html = '';
+      if(transObj.type==='preface' && transObj.preface){
+        html += `<div class="section-title">📖 题解</div>`;
+        html += `<div class="trans-block">${escapeHtml(transObj.preface)}</div>`;
+      }
+      const n = Math.max(origParas.length, tps.length);
+      for(let i=0;i<n;i++){
+        const o = origParas[i]||'';
+        const t = tps[i]||'';
+        if(isTitle(o)){
+          html += `<div class="section-title">${escapeHtml(o)}</div>`;
+          if(t) html += `<div class="trans-block">${escapeHtml(t)}</div>`;
+        }else{
+          if(o) html += `<p class="orig-line">${escapeHtml(o)}</p>`;
+          if(t) html += `<div class="trans-block">${escapeHtml(t)}</div>`;
+        }
+      }
+    }else{
+      tps.forEach(p=>{
+        html += `<div class="trans-block">${escapeHtml(p)}</div>`;
+      });
+    }
+  }
+  return html;
+}
+
+async function openSutra(id){
+  currentSutra = allSutras.find(s=>s.id===id);
+  if(!currentSutra) return;
+  document.getElementById('readerTitle').textContent = currentSutra.name;
+  document.getElementById('readerMeta').textContent = `${currentSutra.cat} · ${currentSutra.sub} · ${fmtSize(currentSutra.size)}`;
+  document.getElementById('sutraContent').innerHTML = '<div class="loading-tip">正在加载经文…</div>';
+  document.getElementById('readerModal').classList.add('active');
+  document.body.style.overflow='hidden';
+  setViewMode('duizhao');
+  setFontSize('medium');
+
+  try{
+    const [origResp, transResp] = await Promise.all([
+      fetch(currentSutra.src),
+      currentSutra.hasTrans ? fetch(currentSutra.trans) : Promise.resolve(null)
+    ]);
+    const origText = await origResp.text();
+    const transText = transResp ? await transResp.text() : '';
+    const transObj = transText ? parseTranslation(transText) : null;
+    document.getElementById('sutraContent').innerHTML = buildSutraHTML(origText, transObj);
+    document.getElementById('readerBody').scrollTop = 0;
+  }catch(e){
+    document.getElementById('sutraContent').innerHTML = `<div class="loading-tip">经文加载失败：${escapeHtml(e.message)}<br><br>提示：请通过本地 HTTP 服务器访问此页面（如 python -m http.server），直接用 file:// 打开浏览器会限制文件读取。</div>`;
+  }
+}
+
+function closeReader(){
+  document.getElementById('readerModal').classList.remove('active');
+  document.body.style.overflow='';
+}
+function setViewMode(mode){
+  document.querySelectorAll('.view-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelector(`.view-btn[data-mode="${mode}"]`).classList.add('active');
+  const c = document.getElementById('sutraContent');
+  c.classList.remove('orig-mode','baihua-mode','duizhao-mode');
+  c.classList.add(mode+'-mode');
+}
+function setFontSize(size){
+  document.querySelectorAll('.font-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelector(`.font-btn[data-size="${size}"]`).classList.add('active');
+  document.getElementById('readerBody').classList.remove('font-size-small','font-size-medium','font-size-large','font-size-xlarge');
+  document.getElementById('readerBody').classList.add('font-size-'+size);
+}
+
+// ========== 其他模块 ==========
+function switchSectTab(btn, sect){
+  document.querySelectorAll('#sectTabs button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const data={
+    zhengyi:{name:'正一道',founder:'祖天师张道陵',feature:'符箓斋醮、祈福禳灾、降邪驱鬼、超度亡灵，可以结婚生子、不住宫观、可食荤腥，火居道士为主。',classic:'《正一经》《老子想尔注》《天官历包元太平经》'},
+    quanzhen:{name:'全真道',founder:'重阳真人王重阳',feature:'内丹修炼为主，要求出家清修、不结婚、不茹荤、住丛林，类似佛教禅寺制度，修性命双全。',classic:'《道德经》《般若心经》《孝经》《重阳立教十五论》《悟真篇》'},
+    shangqing:{name:'上清派',founder:'魏华存元君（南岳魏夫人）',feature:'存思存神、诵经念道，以个人修炼成仙为主，不重符箓斋醮，代表经典《上清大洞真经》。',classic:'《上清大洞真经》《黄庭经》《真诰》'},
+    lingbao:{name:'灵宝派',founder:'葛玄葛仙翁',feature:'注重斋醮科仪、济世度人，吸收佛教教义，强调「仙道贵生，无量度人」，灵宝斋法最为完备。',classic:'《灵宝无量度人上品妙经》《灵宝经》'}
+  };
+  const d = data[sect];
+  document.getElementById('sectContent').innerHTML = `
+    <div class="layer-card rounded-2xl p-6 md:p-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-4 rounded-xl bg-[rgba(139,69,19,0.04)]"><div class="text-xs text-[rgb(var(--ink-rgb))]/50 mb-1">开山祖师</div><div class="serif text-lg font-bold">${d.founder}</div></div>
+        <div class="md:col-span-2 p-4 rounded-xl bg-[rgba(218,165,32,0.06)]"><div class="text-xs text-[rgb(var(--ink-rgb))]/50 mb-1">教义特色</div><div class="text-[15px] leading-relaxed">${d.feature}</div></div>
+        <div class="md:col-span-3 p-4 rounded-xl bg-[rgba(46,139,87,0.06)]"><div class="text-xs text-[rgb(var(--ink-rgb))]/50 mb-1">核心经典</div><div class="serif text-[15px]">${d.classic}</div></div>
+      </div>
+    </div>`;
+}
+
+function doReasoning(){
+  const kw = document.getElementById('reasonInput').value.trim() || '道';
+  const paths = {
+    '道':'道 → 炁 → 阴阳 → 五行 → 性命 → 金丹 → 得道成仙',
+    '炁':'炁 → 先天一炁 → 祖炁 → 炼精化气 → 炼气化神 → 炼神还虚',
+    '阴阳':'阴阳 → 太极 → 两仪 → 坎离 → 龙虎 → 铅汞 → 大丹',
+    '清静':'清静 → 遣欲 → 澄心 → 观空 → 真静 → 真道 → 得道',
+    '无为':'无为 → 自然 → 不争 → 抱一 → 守中 → 合道',
+    '金丹':'金丹 → 小周天 → 大周天 → 结丹 → 养丹 → 脱胎 → 神化'
+  };
+  const r = paths[kw] || `${kw} → 请查阅相关道经义理，路径推演需要更具体的核心概念`;
+  const el = document.getElementById('reasonResult');
+  el.textContent = '义理推演路径：' + r;
+  el.classList.remove('hidden');
+}
+
+function updateGraph(){
+  const chart = echarts.init(document.getElementById('graphChart'));
+  const nodes = [
+    {name:'道',category:0,symbolSize:60},{name:'炁',category:0,symbolSize:45},{name:'阴阳',category:0,symbolSize:40},
+    {name:'五行',category:0,symbolSize:38},{name:'无为',category:0,symbolSize:35},{name:'清静',category:0,symbolSize:35},
+    {name:'性命双修',category:0,symbolSize:40},{name:'金丹',category:0,symbolSize:42},{name:'得道成仙',category:0,symbolSize:45},
+    {name:'《道德经》',category:1,symbolSize:50},{name:'《南华真经》',category:1,symbolSize:40},
+    {name:'《周易参同契》',category:1,symbolSize:42},{name:'《度人经》',category:1,symbolSize:42},
+    {name:'《阴符经》',category:1,symbolSize:38},{name:'《清静经》',category:1,symbolSize:38},
+    {name:'《黄庭经》',category:1,symbolSize:38},{name:'《悟真篇》',category:1,symbolSize:40},
+    {name:'老子',category:2,symbolSize:42},{name:'庄子',category:2,symbolSize:38},
+    {name:'张道陵',category:2,symbolSize:38},{name:'葛洪',category:2,symbolSize:35},
+    {name:'魏伯阳',category:2,symbolSize:34},{name:'王重阳',category:2,symbolSize:38},{name:'张伯端',category:2,symbolSize:34},
+    {name:'正一道',category:3,symbolSize:38},{name:'全真道',category:3,symbolSize:38},
+    {name:'上清派',category:3,symbolSize:34},{name:'灵宝派',category:3,symbolSize:34}
+  ];
+  const links = [
+    {source:'道',target:'炁'},{source:'炁',target:'阴阳'},{source:'阴阳',target:'五行'},
+    {source:'道',target:'无为'},{source:'无为',target:'清静'},{source:'清静',target:'性命双修'},
+    {source:'性命双修',target:'金丹'},{source:'金丹',target:'得道成仙'},
+    {source:'老子',target:'《道德经》'},{source:'庄子',target:'《南华真经》'},
+    {source:'道',target:'《道德经》'},{source:'道',target:'《阴符经》'},{source:'道',target:'《清静经》'},
+    {source:'《周易参同契》',target:'金丹'},{source:'《悟真篇》',target:'金丹'},
+    {source:'《度人经》',target:'得道成仙'},{source:'《黄庭经》',target:'性命双修'},
+    {source:'张道陵',target:'正一道'},{source:'王重阳',target:'全真道'},
+    {source:'魏伯阳',target:'《周易参同契》'},{source:'张伯端',target:'《悟真篇》'},
+    {source:'正一道',target:'《道德经》'},{source:'全真道',target:'《道德经》'},{source:'全真道',target:'金丹'}
+  ];
+  chart.setOption({
+    tooltip:{},
+    legend:[{data:['义理概念','经典论典','仙真祖师','道派'],textStyle:{fontSize:12}}],
+    series:[{type:'graph',layout:'force',roam:true,draggable:true,
+      label:{show:true,fontSize:12,fontFamily:'serif'},
+      force:{repulsion:220,edgeLength:90},
+      categories:[{name:'义理概念',itemStyle:{color:'#8b4513'}},{name:'经典论典',itemStyle:{color:'#daa520'}},{name:'仙真祖师',itemStyle:{color:'#2e8b57'}},{name:'道派',itemStyle:{color:'#666'}}],
+      data:nodes,links:links,
+      lineStyle:{color:'rgba(139,69,19,0.2)',curveness:0.1}
+    }]
+  });
+  window.addEventListener('resize',()=>chart.resize());
+}
+
+// ========== 初始化：加载真实经目 ==========
+fetch('sutras.json').then(r=>r.json()).then(data=>{
+  allSutras = data;
+  document.getElementById('resultCount').textContent = `共 ${allSutras.length} 部`;
+  renderSutraList(allSutras);
+}).catch(e=>{
+  document.getElementById('sutraList').innerHTML = '<div class="p-8 text-center text-red-600/70">经目加载失败：'+e.message+'<br>请通过本地 HTTP 服务器访问此页面。</div>';
+});
+
+switchSectTab(document.querySelector('#sectTabs button'),'zhengyi');
+setTimeout(updateGraph, 100);
+
+document.getElementById('readerModal').addEventListener('click',function(e){ if(e.target===this) closeReader();});
+document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeReader();});
+</script>
+</body>
+</html>
