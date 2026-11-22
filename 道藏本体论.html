@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>道藏本体论</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:"Songti SC","STSong","Noto Serif CJK SC","SimSun",serif;background:#f5efe0;color:#3a2a15;}
+/* Top Nav */
+.topnav{position:fixed;top:0;left:0;right:0;height:50px;background:#2d2416;display:flex;align-items:center;padding:0 20px;z-index:100;border-bottom:2px solid #c9a959;}
+.brand{color:#d4af37;font-size:24px;font-weight:bold;margin-right:30px;letter-spacing:2px;}
+.brand-sep{color:#7a6040;margin:0 15px;}
+.tab-btn{padding:8px 20px;font-size:18px;color:#c9a959;background:transparent;border:none;cursor:pointer;border-radius:4px 4px 0 0;margin-right:2px;font-family:inherit;}
+.tab-btn.active{background:#4a3520;color:#f5efe0;}
+.top-links{margin-left:auto;display:flex;gap:22px;}
+.top-links a{color:#c9a959;text-decoration:none;font-size:16px;}
+.top-links a.active{color:#f5efe0;border-bottom:2px solid #c9a959;}
+.top-links a:hover{color:#fff;}
+/* Layout */
+.main-layout{display:flex;margin-top:50px;height:calc(100vh - 50px);}
+/* Sidebar */
+.sidebar{width:240px;background:#ede2c5;border-right:1px solid #c9b888;display:flex;flex-direction:column;flex-shrink:0;}
+.sidebar-header{padding:12px 10px;border-bottom:1px solid #c9b888;background:#e8d9b0;}
+.lib-title{font-size:24px;color:#2d2416;font-weight:bold;display:flex;align-items:center;gap:8px;}
+.ready-badge{background:#5a8c3e;color:#fff;font-size:14px;padding:4px 12px;border-radius:20px;margin-left:6px;}
+.search-box{width:100%;padding:10px 12px;margin-top:10px;border:1px solid #c9b888;border-radius:8px;background:#fdf8ec;font-size:16px;font-family:inherit;}
+.filters{padding:6px 10px;border-bottom:1px solid #e0d3a8;}
+.filters select{width:100%;padding:8px 10px;margin:4px 0;border:1px solid #c9b888;border-radius:8px;background:#fdf8ec;font-size:18px;font-family:inherit;}
+.sutra-list{flex:1;overflow-y:auto;padding:0;}
+.group-header{background:#e0d3a8;padding:8px 12px;font-size:17px;font-weight:bold;color:#5a4020;position:sticky;top:0;z-index:1;}
+.sutra-item{padding:10px 12px;cursor:pointer;border-bottom:1px dashed #d9c99a;font-size:16px;display:flex;align-items:center;gap:8px;}
+.sutra-item:hover{background:#f5efe0;}
+.sutra-item.active{background:#e8c96e;}
+.sutra-name{flex:1;}
+.trans-tag{background:#c41e3a;color:#fff;font-size:11px;padding:2px 6px;border-radius:2px;font-weight:bold;font-family:"PingFang SC",sans-serif;}
+.sutra-id{color:#8a7850;font-size:13px;font-family:monospace;}
+/* Content */
+.content{flex:1;background:#f5efe0;overflow-y:auto;position:relative;}
+/* Welcome */
+.welcome{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;text-align:center;}
+.welcome-icon{font-size:80px;margin-bottom:20px;opacity:0.5;}
+.welcome h2{font-size:36px;color:#2d2416;margin-bottom:16px;}
+.welcome p{font-size:20px;color:#6a5a40;margin:8px 0;}
+.welcome .count{color:#8b1e1e;font-weight:bold;font-size:22px;}
+/* Reader */
+.reader{padding:0;max-width:960px;margin:0 auto;}
+.reader-toolbar{position:sticky;top:0;background:#f5efe0;border-bottom:2px solid #c9a959;padding:12px 20px;display:flex;align-items:center;gap:0;z-index:50;}
+.reader-title{font-size:22px;color:#8b1e1e;font-weight:bold;margin-right:20px;flex-shrink:0;max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.mode-group{display:flex;border:1px solid #c9a959;border-radius:8px;overflow:hidden;}
+.mode-btn{padding:10px 18px;font-size:20px;background:#fdf8ec;border:none;cursor:pointer;font-family:inherit;color:#5a4020;display:flex;align-items:center;gap:6px;border-right:1px solid #c9a959;position:relative;}
+.mode-btn:last-child{border-right:none;}
+.mode-btn.main.active{background:#8b1e1e;color:#fff;}
+.mode-btn.toggle.active{background:#8b1e1e;color:#fff;}
+.mode-btn:disabled{color:#bbb;cursor:not-allowed;text-decoration:line-through;}
+.mode-icon{font-size:22px;}
+.abc-badge{background:#1a6ed8;color:#fff;font-size:13px;font-weight:bold;padding:1px 5px;border-radius:3px;font-family:Arial,sans-serif;}
+.mode-btn.toggle.active .abc-badge{background:#1a6ed8;}
+.size-group{display:flex;margin-left:20px;border:1px solid #c9a959;border-radius:8px;overflow:hidden;}
+.size-btn{padding:8px 14px;background:#fdf8ec;border:none;cursor:pointer;font-size:18px;font-family:inherit;color:#5a4020;border-right:1px solid #c9a959;}
+.size-btn:last-child{border-right:none;}
+.size-btn.active{background:#d4af37;color:#2d2416;}
+.tool-group{margin-left:auto;display:flex;gap:10px;}
+.tool-btn{width:42px;height:42px;border-radius:8px;border:1px solid #c9a959;background:#fdf8ec;cursor:pointer;font-size:22px;}
+.tool-btn:hover{background:#e8c96e;}
+/* Sutra Body */
+.sutra-body{padding:30px 50px 80px;}
+.sutra-main-title{text-align:center;font-size:34px;color:#8b1e1e;margin-bottom:10px;letter-spacing:4px;}
+.sutra-divider{border:none;border-top:3px solid #8b1e1e;margin:0 0 20px;}
+.meta-box{background:#f5efe0;border-left:4px solid #5a8c3e;padding:12px 20px;text-align:center;color:#6a5a40;font-size:18px;border-radius:0 4px 4px 0;margin-bottom:30px;line-height:1.8;}
+.chapter-title{color:#8b1e1e;font-size:22px;font-weight:bold;margin:28px 0 14px;padding:8px 16px;border-left:4px solid #c9a959;background:rgba(201,169,89,0.12);}
+.verse-p{font-size:var(--fz,20px);line-height:2.1;text-indent:2em;margin-bottom:10px;color:#2d2416;}
+.baihua-block{background:#fff9e6;border-left:4px solid #d4af37;padding:14px 20px;margin:6px 0 20px;border-radius:0 6px 6px 0;font-size:var(--fz,19px);line-height:1.9;color:#3a2a15;text-indent:2em;}
+.sutra-end{text-align:center;font-size:24px;color:#8b1e1e;margin:30px 0;font-weight:bold;letter-spacing:3px;}
+.sutra-end-divider{border:none;border-top:2px solid #8b1e1e;margin:30px 0;}
+.edit-note{border-top:1px dashed #c9a959;padding-top:16px;margin-top:16px;color:#7a6040;font-size:15px;line-height:1.8;}
+.edit-note p{text-indent:0;margin-bottom:6px;}
+ruby rt{font-size:0.55em;color:#c41e3a;font-weight:normal;}
+/* Ontology appended block */
+.ont-append{margin-top:40px;padding-top:30px;border-top:4px double #8b1e1e;}
+.ont-hero{background:linear-gradient(135deg,#2d2416,#5a2010);color:#d4af37;padding:30px;border-radius:12px;text-align:center;margin-bottom:30px;}
+.ont-hero h2{font-size:28px;letter-spacing:8px;margin-bottom:8px;}
+.ont-hero .quote{color:#f5efe0;font-size:18px;margin-top:12px;opacity:0.9;}
+.ont-section{margin-bottom:36px;}
+.ont-section h3{color:#8b1e1e;font-size:22px;border-bottom:2px solid #c9a959;padding-bottom:8px;margin-bottom:18px;}
+.ont-stage{display:flex;flex-direction:column;gap:0;align-items:center;}
+.stage-card{width:90%;background:#fff;border:2px solid #c9a959;border-radius:10px;padding:16px 24px;position:relative;}
+.stage-card h4{color:#8b1e1e;font-size:20px;margin-bottom:8px;}
+.stage-card .tag{display:inline-block;background:#8b1e1e;color:#fff;font-size:13px;padding:2px 10px;border-radius:4px;margin-right:8px;}
+.stage-arrow{color:#c9a959;font-size:32px;line-height:1;margin:4px 0;}
+.gua-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:10px;}
+.gua-card{background:#fff;border-radius:10px;padding:16px;text-align:center;border:3px solid;}
+.gua-card.qian{border-color:#8b1e1e;}
+.gua-card.kun{border-color:#2d2416;}
+.gua-card.kan{border-color:#1a4d8c;}
+.gua-card.li{border-color:#d4af37;}
+.gua-symbol{font-size:40px;line-height:1;margin:6px 0;color:#2d2416;}
+.yao-list{display:flex;flex-direction:column;gap:8px;}
+.yao-row{display:flex;align-items:flex-start;gap:12px;padding:10px 16px;background:#fff;border-left:4px solid #c9a959;border-radius:0 8px 8px 0;}
+.yao-num{width:36px;height:36px;border-radius:50%;background:#8b1e1e;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:bold;flex-shrink:0;}
+.yao-cont{flex:1;line-height:1.8;font-size:17px;}
+.reverse-path{display:flex;align-items:center;flex-wrap:wrap;gap:8px;padding:16px;background:#fff;border-radius:10px;justify-content:center;}
+.rev-node{padding:8px 16px;background:#f5efe0;border:2px solid #c9a959;border-radius:20px;font-size:16px;}
+.rev-node.core{background:#8b1e1e;color:#fff;border-color:#8b1e1e;}
+.rev-node.goal{background:linear-gradient(135deg,#d4af37,#f0c860);color:#2d2416;border-color:#b8941f;font-weight:bold;}
+.rev-arrow{color:#8b1e1e;font-size:20px;}
+.concept-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;}
+.concept-card{background:#fff;border-top:4px solid #8b1e1e;border-radius:8px;padding:14px 16px;box-shadow:0 2px 6px rgba(0,0,0,0.06);}
+.concept-card h4{color:#8b1e1e;font-size:18px;margin-bottom:6px;}
+.concept-card p{font-size:15px;line-height:1.7;color:#5a4020;}
+#ont-chart{width:100%;height:420px;background:#fff;border-radius:10px;border:1px solid #e0d3a8;}
+.ont-summary{background:linear-gradient(135deg,#f5efe0,#ede2c5);border-left:4px solid #8b1e1e;padding:18px 22px;border-radius:0 8px 8px 0;font-size:17px;line-height:1.9;margin-top:20px;}
+</style>
+</head>
+<body>
+<div class="topnav">
+  <div class="brand">道藏本体论</div>
+  <div class="brand-sep">|</div>
+  <button class="tab-btn" onclick="showView('home')">首页</button>
+  <button class="tab-btn active" onclick="showView('library')">全藏原典</button>
+  <div class="top-links">
+    <a href="#" onclick="showView('home');return false;">首页</a>
+    <a href="#">部类总览</a>
+    <a href="#" onclick="showView('library');return false;" class="active">全藏原典</a>
+    <a href="#">全文检索</a>
+    <a href="#">道学词典</a>
+    <a href="#">义理图谱</a>
+    <a href="#">判教对比</a>
+    <a href="#">概念推演</a>
+  </div>
+</div>
+
+<div class="main-layout">
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <div class="lib-title">📖 正统道藏经目 <span class="ready-badge">已就绪</span></div>
+      <input type="text" class="search-box" id="searchBox" placeholder="搜经名..." oninput="renderList()">
+    </div>
+    <div class="filters">
+      <select id="buFilter" onchange="onBuChange();renderList()">
+        <option value="">全部部类</option>
+      </select>
+      <select id="subFilter" onchange="renderList()">
+        <option value="">全部子类</option>
+      </select>
+    </div>
+    <div class="sutra-list" id="sutraList"></div>
+  </div>
+
+  <div class="content" id="content">
+    <div class="welcome" id="welcome">
+      <div class="welcome-icon">📜</div>
+      <h2>正统道藏全文在线阅读</h2>
+      <p>从左侧选择一部经典开始阅读。</p>
+      <p>首批收录 <span class="count" id="totalCount">104</span> 部核心短篇道经，含原文、注音、白话对照及本体分析。</p>
+      <p style="margin-top:20px;color:#8a7850;font-size:15px;">按经独立加载，秒开阅读。支持原文/注音/对照/白话/本体五种阅读模式。</p>
+    </div>
+  </div>
+</div>
+
+<script>
+// ========== 全局状态 ==========
+let allSutras = [];
+let curSutra = null;
+let curMode = 'original';     // original | duizhao | baihua
+let pinyinOn = false;         // 注音toggle
+let ontologyOn = false;       // 本体toggle
+let fontSize = 2;             // 0:16 1:18 2:20 3:24
+let origBlocks = [];          // [{title,paras:[]}]
+let transBlocks = [];         // [{title,paras:[]}, endText, notes:[]]
+let metaText = '';
+let mainTitle = '';
+const pinyinMap = {
+  '乾':'qián','坤':'kūn','坎':'kǎn','離':'lí','离':'lí','艮':'gèn','震':'zhèn','兌':'duì','兑':'duì','巽':'xùn',
+  '爻':'yáo','巳':'sì','亥':'hài','壬':'rén','癸':'guǐ','子':'zǐ','丑':'chǒu','寅':'yín','卯':'mǎo','辰':'chén','午':'wǔ','未':'wèi','申':'shēn','酉':'yǒu','戌':'xū',
+  '炁':'qì','氣':'qì','箓':'lù','籙':'lù','齋':'zhāi','醮':'jiào','禳':'ráng','罡':'gāng','鉛':'qiān','汞':'gǒng','酆':'fēng',
+  '壅':'yōng','煦':'xù','貞':'zhēn','晦':'huì','驥':'jì','闢':'pì','闔':'hé','昃':'zè','溽':'rù','蟄':'zhé','骯':'wán',
+  '祇':'qí','祉':'zhǐ','禍':'huò','殃':'yāng','齡':'líng','殄':'tiǎn','壘':'lěi','瀆':'dú','宥':'yòu','臻':'zhēn'
+};
+
+// ========== 注音处理 ==========
+function addPinyin(text){
+  return text.replace(/[^\s<\u4e00-\u9fff]*/g, function(c){return c;}).replace(/[\u4e00-\u9fff]/g, function(ch){
+    if(pinyinMap[ch]) return '<ruby>'+ch+'<rt>'+pinyinMap[ch]+'</rt></ruby>';
+    return ch;
+  });
+}
+
+// ========== 解析原典 ==========
+function parseOriginal(text){
+  const lines = text.split(/\r?\n/).map(l=>l.trim()).filter(l=>l.length>0);
+  const blocks = [];
+  let cur = null;
+  let title = '';
+  let meta = '';
+  let i = 0;
+  // 第一行是经名
+  if(lines.length>0){ title = lines[0].replace(/[ 　]/g,''); i=1; }
+  // 跳过题解行和重复经名
+  while(i<lines.length){
+    const l = lines[i].replace(/^[ 　]+/,'').trim();
+    if(l.startsWith('经名：')){ meta=l; i++; continue; }
+    if(l === title){ i++; continue; }
+    if(l.endsWith('竟') || l.endsWith('终')){ i++; continue; }
+    break;
+  }
+  // 解析正文
+  const sections = ['太易','太初','太始','太素'];
+  while(i<lines.length){
+    let l = lines[i].replace(/^[ 　]+/,'').trim();
+    // 章节标题（独立一行且是已知章节名/或长度<=5且不含标点）
+    const isSec = sections.includes(l) || (/^[\u4e00-\u9fff]{2,5}$/.test(l) && l.length<=4 && !/[，。；：、！？]/.test(l));
+    if(isSec){
+      if(cur) blocks.push(cur);
+      cur = {title:l, paras:[]};
+    } else if(l.endsWith('竟') || l.endsWith('终')){
+      // skip
+    } else {
+      if(!cur){ cur = {title:'',paras:[]}; }
+      cur.paras.push(l);
+    }
+    i++;
+  }
+  if(cur) blocks.push(cur);
+  return {title, meta, blocks};
+}
+
+// ========== 解析译文 ==========
+function parseTranslation(text){
+  const lines = text.split(/\r?\n/);
+  const blocks = [];
+  let cur = null;
+  let endText = '';
+  const notes = [];
+  let inNote = false;
+  for(let raw of lines){
+    const l = raw.trim();
+    if(l.startsWith('### ')){
+      if(cur) blocks.push(cur);
+      const t = l.replace(/^###\s*/,'').trim();
+      cur = {title:t, paras:[]};
+    } else if(l.startsWith('---')){
+      if(cur){ blocks.push(cur); cur=null; }
+    } else if(l.startsWith('**校译记') || l.startsWith('校译记')){
+      inNote = true;
+    } else if(inNote){
+      const m = l.match(/^\d+\.\s*(.+)$/);
+      if(m) notes.push(m[1]);
+    } else if(/^\*\*.+(终|竟)\*\*$/.test(l) || /^.+经终$/.test(l)){
+      endText = l.replace(/\*/g,'');
+    } else if(l.length>0){
+      if(!cur) cur = {title:'',paras:[]};
+      cur.paras.push(l);
+    }
+  }
+  if(cur) blocks.push(cur);
+  return {blocks, endText, notes};
+}
+
+// ========== 渲染正文 ==========
+function renderBody(){
+  const c = document.getElementById('content');
+  c.innerHTML = '';
+  const rd = document.createElement('div');
+  rd.className = 'reader';
+
+  // 工具栏
+  const tb = document.createElement('div');
+  tb.className = 'reader-toolbar';
+  tb.innerHTML = `
+    <div class="reader-title">${curSutra.title}</div>
+    <div class="mode-group">
+      <button class="mode-btn main" data-mode="original" onclick="setMode('original')">
+        <span class="mode-icon">📜</span> 原文
+      </button>
+      <button class="mode-btn toggle ${pinyinOn?'active':''}" onclick="togglePinyin()">
+        <span class="abc-badge">abc</span> 注音
+      </button>
+      <button class="mode-btn main ${curSutra.translated?'':'disabled'}" data-mode="duizhao" ${curSutra.translated?'onclick="setMode(\'duizhao\')"':'disabled'}>
+        <span class="mode-icon">📖</span> 对照${curSutra.translated?'':'(待)'}
+      </button>
+      <button class="mode-btn main ${curSutra.translated?'':'disabled'}" data-mode="baihua" ${curSutra.translated?'onclick="setMode(\'baihua\')"':'disabled'}>
+        <span class="mode-icon">📝</span> 白话${curSutra.translated?'':'(待)'}
+      </button>
+      <button class="mode-btn toggle ${ontologyOn?'active':''}" onclick="toggleOntology()">
+        <span class="mode-icon">📐</span> 本体
+      </button>
+    </div>
+    <div class="size-group">
+      <button class="size-btn ${fontSize===0?'active':''}" onclick="setFont(0)">A-</button>
+      <button class="size-btn ${fontSize===1?'active':''}" onclick="setFont(1)">A</button>
+      <button class="size-btn ${fontSize===2?'active':''}" onclick="setFont(2)">A+</button>
+      <button class="size-btn ${fontSize===3?'active':''}" onclick="setFont(3)">A++</button>
+    </div>
+    <div class="tool-group">
+      <button class="tool-btn" title="收藏">⭐</button>
+      <button class="tool-btn" title="笔记">📝</button>
+      <button class="tool-btn" title="书签">🔖</button>
+      <button class="tool-btn" title="关闭" onclick="closeReader()">✕</button>
+    </div>`;
+  rd.appendChild(tb);
+
+  // 更新主模式按钮激活状态
+  setTimeout(()=>{
+    tb.querySelectorAll('.mode-btn.main').forEach(b=>{
+      b.classList.toggle('active', b.dataset.mode===curMode);
+    });
+  },0);
+
+  // 正文容器
+  const body = document.createElement('div');
+  body.className = 'sutra-body';
+  body.style.setProperty('--fz', ['16px','18px','20px','24px'][fontSize]);
+
+  // 经名+分割线+题解
+  const titleEl = document.createElement('div');
+  titleEl.className = 'sutra-main-title';
+  titleEl.innerHTML = pinyinOn ? addPinyin(mainTitle) : mainTitle;
+  body.appendChild(titleEl);
+  body.appendChild(Object.assign(document.createElement('hr'),{className:'sutra-divider'}));
+  if(metaText){
+    const mb = document.createElement('div');
+    mb.className = 'meta-box';
+    mb.innerHTML = pinyinOn ? addPinyin(metaText) : metaText;
+    body.appendChild(mb);
+  }
+
+  // 根据模式渲染
+  if(curMode==='original'){
+    origBlocks.forEach(bl=>{
+      if(bl.title){
+        const h = document.createElement('div');
+        h.className='chapter-title';
+        h.innerHTML = pinyinOn ? addPinyin(bl.title) : bl.title;
+        body.appendChild(h);
+      }
+      bl.paras.forEach(p=>{
+        const pp = document.createElement('p');
+        pp.className='verse-p';
+        pp.innerHTML = pinyinOn ? addPinyin(p) : p;
+        body.appendChild(pp);
+      });
+    });
+  } else if(curMode==='baihua'){
+    transBlocks.forEach(bl=>{
+      if(bl.title){
+        const h = document.createElement('div');
+        h.className='chapter-title';
+        h.innerHTML = pinyinOn ? addPinyin(bl.title) : bl.title;
+        body.appendChild(h);
+      }
+      bl.paras.forEach(p=>{
+        const d = document.createElement('div');
+        d.className='baihua-block';
+        d.innerHTML = pinyinOn ? addPinyin(p) : p;
+        body.appendChild(d);
+      });
+    });
+  } else if(curMode==='duizhao'){
+    // 按章节对齐原文和译文
+    const maxLen = Math.max(origBlocks.length, transBlocks.length);
+    for(let i=0;i<maxLen;i++){
+      const ob = origBlocks[i];
+      const tb = transBlocks[i];
+      const t = (tb&&tb.title)?tb.title:(ob?ob.title:'');
+      if(t){
+        const h = document.createElement('div');
+        h.className='chapter-title';
+        h.innerHTML = pinyinOn ? addPinyin(t) : t;
+        body.appendChild(h);
+      }
+      if(ob) ob.paras.forEach(p=>{
+        const pp = document.createElement('p');
+        pp.className='verse-p';
+        pp.innerHTML = pinyinOn ? addPinyin(p) : p;
+        body.appendChild(pp);
+      });
+      if(tb){
+        tb.paras.forEach(p=>{
+          const d = document.createElement('div');
+          d.className='baihua-block';
+          d.innerHTML = pinyinOn ? addPinyin(p) : p;
+          body.appendChild(d);
+        });
+      }
+    }
+  }
+
+  // 经终
+  const endEl = document.createElement('div');
+  endEl.className = 'sutra-end';
+  const endTxt = (curMode==='baihua')? (transBlocks.endText||(mainTitle+' 终')) : (mainTitle+' 终');
+  endEl.innerHTML = pinyinOn ? addPinyin(endTxt) : endTxt;
+  body.appendChild(endEl);
+  body.appendChild(Object.assign(document.createElement('hr'),{className:'sutra-end-divider'}));
+
+  // 校译记
+  if((curMode==='duizhao'||curMode==='baihua') && transBlocks.notes && transBlocks.notes.length>0){
+    const note = document.createElement('div');
+    note.className='edit-note';
+    note.innerHTML = '<strong>校译记：</strong>'+transBlocks.notes.map((n,i)=>'<p>'+(i+1)+'. '+(pinyinOn?addPinyin(n):n)+'</p>').join('');
+    body.appendChild(note);
+  }
+
+  // 本体（toggle on 时追加）
+  if(ontologyOn && curSutra.id==='DZ1-001'){
+    const ont = buildSanShiOntology();
+    body.appendChild(ont);
+    setTimeout(()=>initOntChart(),100);
+  }
+
+  rd.appendChild(body);
+  c.appendChild(rd);
+  c.scrollTop = 0;
+}
+
+// ========== 本体渲染 ==========
+function buildSanShiOntology(){
+  const d = document.createElement('div');
+  d.className='ont-append';
+  d.innerHTML = `
+    <div class="ont-hero">
+      <h2>◆ 本 体 论 ◆</h2>
+      <div class="quote">"天地者起於太易，太易者不可见也。"</div>
+    </div>
+
+    <div class="ont-section">
+      <h3>📜 经旨题要</h3>
+      <p style="font-size:18px;line-height:2;color:#3a2a15;text-indent:2em;">《乾元子三始论》是唐宋内丹学"引易入丹"的代表性文献，收录于《正统道藏》洞真部方法类。全文以《周易·乾卦》为骨架，依《易纬》太易、太初、太始、太素四阶论述宇宙从无到有、气形质渐具的生成过程，配以乾坤坎离四正卦、初九至上九六爻、子午巳亥四正时，系统阐述内丹修炼"顺行生物、逆返成丹"的火候路径，最终归结于"自强不息、非道不授"的修持与传承宗旨。</p>
+    </div>
+
+    <div class="ont-section">
+      <h3>🌌 宇宙生成四阶段（顺行：道→万物）</h3>
+      <div class="ont-stage">
+        <div class="stage-card"><h4><span class="tag">阶一</span>太易 · 未见气</h4>
+          <p style="line-height:1.8;">天地之根，形相未显，玄黄杂居，龙德而隐。气从下生，动于地之下而应天之上，从无生有。<br>
+          <b>对应</b>：乾初九·潜龙勿用 · 子时</p></div>
+        <div class="stage-arrow">▼</div>
+        <div class="stage-card"><h4><span class="tag">阶二</span>太初 · 气之始</h4>
+          <p style="line-height:1.8;">气始生发，从坎而生，变而为一（阳之始、天地元气）。历九州终归于乾，润物济众，气用无穷，终而复始，谓之长生。<br>
+          <b>对应</b>：乾九二·见龙在田 · 丑寅时</p></div>
+        <div class="stage-arrow">▼</div>
+        <div class="stage-card"><h4><span class="tag">阶三</span>太始 · 形之始</h4>
+          <p style="line-height:1.8;">形质始具，名为器。一变而七（南方火位），阴阳交泰，万物长养。左化离为日右旋，右化坎为月左转，二气相济，交成太素。<br>
+          <b>对应</b>：乾九三·终日乾乾 · 巳午时</p></div>
+        <div class="stage-arrow">▼</div>
+        <div class="stage-card"><h4><span class="tag">阶四</span>太素 · 质之始</h4>
+          <p style="line-height:1.8;">气形质具，名曰大象，阴阳未离谓之混沌。万物因此三始而煦育，七变而化九（乾·纯阳），日月如合璧，坎内阳珠现，坎离交济而成丹。<br>
+          <b>对应</b>：乾九五·飞龙在天 · 亥时</p></div>
+      </div>
+    </div>
+
+    <div class="ont-section">
+      <h3>☰ 乾坤坎离四正卦</h3>
+      <div class="gua-grid">
+        <div class="gua-card qian"><div class="gua-symbol">☰</div><b style="color:#8b1e1e;font-size:20px;">乾（天）</b><p>纯阳之卦，炉鼎之象，健行不息</p></div>
+        <div class="gua-card kun"><div class="gua-symbol">☷</div><b style="color:#2d2416;font-size:20px;">坤（地）</b><p>纯阴之卦，鼎炉之基，厚德载物</p></div>
+        <div class="gua-card kan"><div class="gua-symbol">☵</div><b style="color:#1a4d8c;font-size:20px;">坎（水）</b><p>外阴内阳，肾中真阳，药物之根</p></div>
+        <div class="gua-card li"><div class="gua-symbol">☲</div><b style="color:#b8860b;font-size:20px;">離（火）</b><p>外阳内阴，心中真阴，神火之用</p></div>
+      </div>
+    </div>
+
+    <div class="ont-section">
+      <h3>🔥 乾卦六爻·丹道火候阶梯</h3>
+      <div class="yao-list">
+        <div class="yao-row"><div class="yao-num">初九</div><div class="yao-cont"><b>潜龙勿用</b>（子时）｜一阳初生，潜藏守真，火候未动</div></div>
+        <div class="yao-row"><div class="yao-num">九二</div><div class="yao-cont"><b>见龙在田</b>（丑寅）｜阳气生发，见龙在田，德施普也</div></div>
+        <div class="yao-row"><div class="yao-num">九三</div><div class="yao-cont"><b>终日乾乾</b>（巳午）｜终日乾乾，夕惕若厉，阴阳交泰</div></div>
+        <div class="yao-row"><div class="yao-num">九四</div><div class="yao-cont"><b>或跃在渊</b>（未申）｜上下无常，进退无恒，审时度势</div></div>
+        <div class="yao-row"><div class="yao-num">九五</div><div class="yao-cont"><b>飞龙在天</b>（酉戌亥）｜金丹大成，与道合真，利见大人</div></div>
+        <div class="yao-row"><div class="yao-num">上九</div><div class="yao-cont"><b>亢龙有悔</b>（阴极）｜物极必反，知进退存亡而不失其正</div></div>
+      </div>
+    </div>
+
+    <div class="ont-section">
+      <h3>🛤 内丹修炼·逆返路径</h3>
+      <div class="reverse-path">
+        <span class="rev-node">太易</span><span class="rev-arrow">→</span>
+        <span class="rev-node">太初</span><span class="rev-arrow">→</span>
+        <span class="rev-node">太始</span><span class="rev-arrow">→</span>
+        <span class="rev-node">乾坤分判</span><span class="rev-arrow">→</span>
+        <span class="rev-node core">坎离交济</span><span class="rev-arrow">→</span>
+        <span class="rev-node">心肾相交</span><span class="rev-arrow">→</span>
+        <span class="rev-node">七返九还</span><span class="rev-arrow">→</span>
+        <span class="rev-node goal">金丹·与道合真</span>
+      </div>
+    </div>
+
+    <div class="ont-section">
+      <h3>💡 核心概念</h3>
+      <div class="concept-grid">
+        <div class="concept-card"><h4>坎离交济</h4><p>坎中真阳上腾、离中真阴下降，心肾相交，水火既济，为内丹核心枢纽。</p></div>
+        <div class="concept-card"><h4>七返九还</h4><p>火数七、金数九，七为火之成数、九为金之成数，卦爻周天运转返本还元。</p></div>
+        <div class="concept-card"><h4>自强不息</h4><p>取《易·乾》"天行健，君子以自强不息"义，修炼精进不退，终而复始。</p></div>
+        <div class="concept-card"><h4>非道不授</h4><p>道门传承禁戒，丹法秘宝严禁传授给不合于道、行为不端之人。</p></div>
+        <div class="concept-card"><h4>引易入丹</h4><p>以周易卦爻、时辰、象数系统阐释内丹火候，为唐宋内丹学的典型范式。</p></div>
+        <div class="concept-card"><h4>混沌合璧</h4><p>太素阶段阴阳未离、日月如合璧，修行者守真不散，神气合一。</p></div>
+      </div>
+    </div>
+
+    <div class="ont-section">
+      <h3>🔗 义理关系图谱</h3>
+      <div id="ont-chart"></div>
+    </div>
+
+    <div class="ont-summary">
+      <b>本体论总结：</b>《乾元子三始论》的核心本体命题是：<b>本体即无（太易），气形质顺行生化万物；逆行由质还形、由形还气、由气返无，由坎离交济、七返九还而金丹成、与道合真。</b>此论将《周易》宇宙论与内丹修炼论熔于一炉，奠定了"引易入丹"的理论框架。
+    </div>
+  `;
+  return d;
+}
+
+function initOntChart(){
+  const el = document.getElementById('ont-chart');
+  if(!el) return;
+  const chart = echarts.init(el);
+  chart.setOption({
+    tooltip:{},
+    series:[{
+      type:'graph',
+      layout:'force',
+      roam:true,
+      draggable:true,
+      label:{show:true,fontSize:14},
+      force:{repulsion:300,edgeLength:100},
+      data:[
+        {name:'三始论',symbolSize:50,itemStyle:{color:'#8b1e1e'},textStyle:{color:'#fff',fontWeight:'bold'}},
+        {name:'太易',symbolSize:32,itemStyle:{color:'#5a8c3e'}},
+        {name:'太初',symbolSize:32,itemStyle:{color:'#1a6ed8'}},
+        {name:'太始',symbolSize:32,itemStyle:{color:'#d4af37'}},
+        {name:'太素',symbolSize:32,itemStyle:{color:'#b85a1e'}},
+        {name:'乾',symbolSize:36,itemStyle:{color:'#8b1e1e'}},
+        {name:'坤',symbolSize:36,itemStyle:{color:'#2d2416'}},
+        {name:'坎',symbolSize:36,itemStyle:{color:'#1a4d8c'}},
+        {name:'离',symbolSize:36,itemStyle:{color:'#d4af37'}},
+        {name:'初九',symbolSize:22},{name:'九二',symbolSize:22},{name:'九三',symbolSize:22},
+        {name:'九四',symbolSize:22},{name:'九五',symbolSize:22},{name:'上九',symbolSize:22},
+        {name:'坎离交济',symbolSize:30,itemStyle:{color:'#c41e3a'}},
+        {name:'七返九还',symbolSize:28,itemStyle:{color:'#8b1e1e'}},
+        {name:'金丹',symbolSize:32,itemStyle:{color:'#d4af37'}},
+        {name:'自强不息',symbolSize:22},
+        {name:'非道不授',symbolSize:22},
+        {name:'引易入丹',symbolSize:26,itemStyle:{color:'#5a4020'}}
+      ],
+      links:[
+        {source:'三始论',target:'太易'},{source:'三始论',target:'太初'},{source:'三始论',target:'太始'},{source:'三始论',target:'太素'},
+        {source:'太易',target:'初九'},{source:'太初',target:'九二'},{source:'太始',target:'九三'},{source:'太素',target:'九五'},
+        {source:'三始论',target:'乾'},{source:'三始论',target:'坤'},{source:'三始论',target:'坎'},{source:'三始论',target:'离'},
+        {source:'乾',target:'初九'},{source:'乾',target:'九二'},{source:'乾',target:'九三'},{source:'乾',target:'九四'},{source:'乾',target:'九五'},{source:'乾',target:'上九'},
+        {source:'坎',target:'坎离交济'},{source:'离',target:'坎离交济'},
+        {source:'坎离交济',target:'七返九还'},{source:'七返九还',target:'金丹'},
+        {source:'乾',target:'自强不息'},{source:'三始论',target:'非道不授'},
+        {source:'三始论',target:'引易入丹'}
+      ]
+    }]
+  });
+  window.addEventListener('resize',()=>chart.resize());
+}
+
+// ========== 模式控制 ==========
+function setMode(m){
+  curMode = m;
+  renderBody();
+}
+function togglePinyin(){
+  pinyinOn = !pinyinOn;
+  renderBody();
+}
+function toggleOntology(){
+  ontologyOn = !ontologyOn;
+  renderBody();
+}
+function setFont(s){
+  fontSize = s;
+  renderBody();
+}
+function closeReader(){
+  curSutra=null;
+  showView('library');
+}
+
+// ========== 加载经文 ==========
+async function openSutra(s){
+  curSutra = s;
+  pinyinOn = false;
+  ontologyOn = false;
+  curMode = 'original';
+  showView('reader');
+  try{
+    const origText = await fetch(s.src).then(r=>r.text());
+    const o = parseOriginal(origText);
+    mainTitle = o.title;
+    metaText = o.meta;
+    origBlocks = o.blocks;
+    if(s.translated){
+      const tText = await fetch(s.trans).then(r=>r.text());
+      transBlocks = parseTranslation(tText);
+    } else {
+      transBlocks = {blocks:[],endText:'',notes:[]};
+    }
+    renderBody();
+  }catch(e){
+    document.getElementById('content').innerHTML = '<div style="padding:80px;text-align:center;font-size:22px;color:#c41e3a;">经文加载失败：'+e.message+'</div>';
+  }
+}
+
+// ========== 经目列表 ==========
+function onBuChange(){
+  const bu = document.getElementById('buFilter').value;
+  const sub = document.getElementById('subFilter');
+  const subs = new Set();
+  allSutras.filter(s=>!bu||s.bu===bu).forEach(s=>subs.add(s.subcat));
+  sub.innerHTML = '<option value="">全部子类</option>' + [...subs].sort().map(s=>`<option value="${s}">${s}</option>`).join('');
+}
+function renderList(){
+  const kw = document.getElementById('searchBox').value.trim();
+  const bu = document.getElementById('buFilter').value;
+  const sub = document.getElementById('subFilter').value;
+  const filtered = allSutras.filter(s=>{
+    if(kw && !s.title.includes(kw)) return false;
+    if(bu && s.bu!==bu) return false;
+    if(sub && s.subcat!==sub) return false;
+    return true;
+  });
+  const groups = {};
+  filtered.forEach(s=>{
+    if(!groups[s.bu]) groups[s.bu]=[];
+    groups[s.bu].push(s);
+  });
+  const list = document.getElementById('sutraList');
+  list.innerHTML = '';
+  Object.keys(groups).forEach(bu=>{
+    const gh = document.createElement('div');
+    gh.className='group-header';
+    gh.textContent = bu;
+    list.appendChild(gh);
+    groups[bu].forEach(s=>{
+      const it = document.createElement('div');
+      it.className = 'sutra-item'+(curSutra&&curSutra.id===s.id?' active':'');
+      it.innerHTML = `<span class="sutra-name">${s.title}</span>${s.translated?'<span class="trans-tag">译</span>':''}<span class="sutra-id">${s.id}</span>`;
+      it.onclick = ()=>openSutra(s);
+      list.appendChild(it);
+    });
+  });
+}
+
+function showView(v){
+  // 更新tab
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  if(v==='library'||v==='reader') document.querySelectorAll('.tab-btn')[1].classList.add('active');
+  else document.querySelectorAll('.tab-btn')[0].classList.add('active');
+
+  const c = document.getElementById('content');
+  if(v==='home'){
+    c.innerHTML = `<div class="welcome"><div class="welcome-icon">📜</div><h2>正统道藏全文在线阅读</h2><p>从左侧选择一部经典开始阅读。</p><p>首批收录 <span class="count">${allSutras.length}</span> 部核心短篇道经。</p></div>`;
+  } else if(v==='library'){
+    c.innerHTML = `<div class="welcome"><div class="welcome-icon">📜</div><h2>正统道藏全文在线阅读</h2><p>从左侧选择一部经典开始阅读。</p><p>首批收录 <span class="count">${allSutras.length}</span> 部核心短篇道经，含原文、注音、白话对照及本体分析。</p><p style="margin-top:20px;color:#8a7850;font-size:15px;">按经独立加载，秒开阅读。支持原文/注音/对照/白话/本体五种阅读模式。</p></div>`;
+  }
+  // reader模式由openSutra渲染
+}
+
+// ========== 初始化 ==========
+async function init(){
+  try{
+    allSutras = await fetch('sutras.json').then(r=>r.json());
+    document.getElementById('totalCount').textContent = allSutras.length;
+    const bus = new Set();
+    allSutras.forEach(s=>bus.add(s.bu));
+    document.getElementById('buFilter').innerHTML = '<option value="">全部部类</option>'+[...bus].sort().map(b=>`<option value="${b}">${b}</option>`).join('');
+    onBuChange();
+    renderList();
+  }catch(e){
+    document.getElementById('sutraList').innerHTML = '<div style="padding:20px;color:#c41e3a;">经目加载失败</div>';
+  }
+}
+init();
+
+// ESC关闭阅读器
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape' && curSutra) closeReader();
+});
+</script>
+</body>
+</html>
