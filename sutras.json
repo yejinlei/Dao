@@ -3558,10 +3558,10 @@
     "categoryKey": "dongzhen",
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/黄帝授三子玄女经.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/dongzhen/黄帝授三子玄女经.txt",
+    "translated": true,
     "srcChars": 1133,
-    "transChars": 0
+    "transChars": 3254
   },
   {
     "id": "dongzhen_0298",
@@ -3846,10 +3846,10 @@
     "categoryKey": "dongzhen",
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/黄箓九巵灯仪.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/dongzhen/黄箓九巵灯仪.txt",
+    "translated": true,
     "srcChars": 1119,
-    "transChars": 0
+    "transChars": 2768
   },
   {
     "id": "dongzhen_0322",
@@ -5094,10 +5094,10 @@
     "categoryKey": "dongxuan",
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/太上洞玄灵宝大纲钞.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/dongxuan/太上洞玄灵宝大纲钞.txt",
+    "translated": true,
     "srcChars": 1075,
-    "transChars": 0
+    "transChars": 2779
   },
   {
     "id": "dongxuan_0426",
@@ -5142,10 +5142,10 @@
     "categoryKey": "dongxuan",
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/太上洞玄灵宝天尊说济苦经.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/dongxuan/太上洞玄灵宝天尊说济苦经.txt",
+    "translated": true,
     "srcChars": 1100,
-    "transChars": 0
+    "transChars": 2726
   },
   {
     "id": "dongxuan_0430",
@@ -5406,10 +5406,10 @@
     "categoryKey": "dongxuan",
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/太上洞玄灵宝补谢灶王经.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/dongxuan/太上洞玄灵宝补谢灶王经.txt",
+    "translated": true,
     "srcChars": 1128,
-    "transChars": 0
+    "transChars": 2935
   },
   {
     "id": "dongxuan_0452",
@@ -6786,10 +6786,10 @@
     "categoryKey": "dongxuan",
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/玄珠歌.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/dongxuan/玄珠歌.txt",
+    "translated": true,
     "srcChars": 1120,
-    "transChars": 0
+    "transChars": 3337
   },
   {
     "id": "dongxuan_0567",
@@ -8094,10 +8094,10 @@
     "categoryKey": "dongshen",
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/北斗七元金玄羽章.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/dongshen/北斗七元金玄羽章.txt",
+    "translated": true,
     "srcChars": 1062,
-    "transChars": 0
+    "transChars": 2564
   },
   {
     "id": "dongshen_0676",
@@ -9654,10 +9654,10 @@
     "categoryKey": "dongshen",
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/太上说紫微神兵护国消魔经.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/dongshen/太上说紫微神兵护国消魔经.txt",
+    "translated": true,
     "srcChars": 1051,
-    "transChars": 0
+    "transChars": 2680
   },
   {
     "id": "dongshen_0806",
@@ -10890,10 +10890,10 @@
     "categoryKey": "dongshen",
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/神气养形论.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/dongshen/神气养形论.txt",
+    "translated": true,
     "srcChars": 1141,
-    "transChars": 0
+    "transChars": 3494
   },
   {
     "id": "dongshen_0909",
@@ -11058,10 +11058,10 @@
     "categoryKey": "dongshen",
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/胎息抱一歌.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/dongshen/胎息抱一歌.txt",
+    "translated": true,
     "srcChars": 1082,
-    "transChars": 0
+    "transChars": 3148
   },
   {
     "id": "dongshen_0923",
@@ -13062,10 +13062,10 @@
     "categoryKey": "taixuan",
     "categoryDesc": "道德经系，老子、庄子、列子文子诸子真经注疏",
     "src": "texts/taixuan/内丹还元诀.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/taixuan/内丹还元诀.txt",
+    "translated": true,
     "srcChars": 1062,
-    "transChars": 0
+    "transChars": 2885
   },
   {
     "id": "taixuan_1090",
@@ -14286,10 +14286,10 @@
     "categoryKey": "taiqing",
     "categoryDesc": "金丹外丹、服食、药法类经典",
     "src": "texts/taiqing/太上老君说上七灭罪集福妙经.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/taiqing/太上老君说上七灭罪集福妙经.txt",
+    "translated": true,
     "srcChars": 1135,
-    "transChars": 0
+    "transChars": 2817
   },
   {
     "id": "taiqing_1192",
@@ -14514,10 +14514,10 @@
     "categoryKey": "zhengyi",
     "categoryDesc": "正一经系，南北宗、雷法、符箓、斋醮科仪",
     "src": "texts/zhengyi/七元真人说神真灵符经.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/zhengyi/七元真人说神真灵符经.txt",
+    "translated": true,
     "srcChars": 1135,
-    "transChars": 0
+    "transChars": 1993
   },
   {
     "id": "zhengyi_1211",
@@ -15282,10 +15282,10 @@
     "categoryKey": "zhengyi",
     "categoryDesc": "正一经系，南北宗、雷法、符箓、斋醮科仪",
     "src": "texts/zhengyi/丹阳真人直言.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/zhengyi/丹阳真人直言.txt",
+    "translated": true,
     "srcChars": 1132,
-    "transChars": 0
+    "transChars": 2892
   },
   {
     "id": "zhengyi_1275",
@@ -15786,10 +15786,10 @@
     "categoryKey": "zhengyi",
     "categoryDesc": "正一经系，南北宗、雷法、符箓、斋醮科仪",
     "src": "texts/zhengyi/太上洞玄灵宝天尊说罗天大醮上品妙经.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/zhengyi/太上洞玄灵宝天尊说罗天大醮上品妙经.txt",
+    "translated": true,
     "srcChars": 1062,
-    "transChars": 0
+    "transChars": 2653
   },
   {
     "id": "zhengyi_1317",
@@ -15894,10 +15894,10 @@
     "categoryKey": "zhengyi",
     "categoryDesc": "正一经系，南北宗、雷法、符箓、斋醮科仪",
     "src": "texts/zhengyi/太上金华天尊救劫护命妙经.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/zhengyi/太上金华天尊救劫护命妙经.txt",
+    "translated": true,
     "srcChars": 1138,
-    "transChars": 0
+    "transChars": 2631
   },
   {
     "id": "zhengyi_1326",
@@ -17598,10 +17598,10 @@
     "categoryKey": "xu",
     "categoryDesc": "明万历续收及藏外劝善三圣经等",
     "src": "texts/xu/太上洞玄济众经.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/xu/太上洞玄济众经.txt",
+    "translated": true,
     "srcChars": 1083,
-    "transChars": 0
+    "transChars": 2649
   },
   {
     "id": "xu_1468",
@@ -17898,10 +17898,10 @@
     "categoryKey": "xu",
     "categoryDesc": "明万历续收及藏外劝善三圣经等",
     "src": "texts/xu/朝真发愿忏悔文.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/xu/朝真发愿忏悔文.txt",
+    "translated": true,
     "srcChars": 1106,
-    "transChars": 0
+    "transChars": 2966
   },
   {
     "id": "xu_1493",
