@@ -1795,7 +1795,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/太上登真三矫灵应经.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2215,
     "transChars": 0
   },
@@ -2071,7 +2071,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/学仙辨真诀.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2191,
     "transChars": 0
   },
@@ -2239,7 +2239,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/无上赤文洞古真经注.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2211,
     "transChars": 0
   },
@@ -2851,7 +2851,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/真藏经要诀.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2257,
     "transChars": 0
   },
@@ -2875,7 +2875,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/破迷正道歌.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2217,
     "transChars": 0
   },
@@ -3283,7 +3283,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/金晶论.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2200,
     "transChars": 0
   },
@@ -3823,7 +3823,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/黄帝阴符经颂.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2244,
     "transChars": 0
   },
@@ -3931,7 +3931,7 @@
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/上方大洞真元图书继说终篇.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2212,
     "transChars": 0
   },
@@ -6919,7 +6919,7 @@
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/玉箓资度设醮仪.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2218,
     "transChars": 0
   },
@@ -7747,7 +7747,7 @@
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/上清司命茅真君修行指迷诀.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2239,
     "transChars": 0
   },
@@ -7759,7 +7759,7 @@
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/上清经真丹秘诀.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2240,
     "transChars": 0
   },
@@ -9547,7 +9547,7 @@
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/太上老君金书内序.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2198,
     "transChars": 0
   },
@@ -11047,7 +11047,7 @@
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/老子说五厨经.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2224,
     "transChars": 0
   },
@@ -13351,7 +13351,7 @@
     "categoryDesc": "道德经系，老子、庄子、列子文子诸子真经注疏",
     "src": "texts/taixuan/太上洞玄灵宝天关经.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2199,
     "transChars": 0
   },
@@ -14935,7 +14935,7 @@
     "categoryDesc": "正一经系，南北宗、雷法、符箓、斋醮科仪",
     "src": "texts/zhengyi/上清太霄隐书元真洞飞二景经.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2230,
     "transChars": 0
   },
@@ -16435,7 +16435,7 @@
     "categoryDesc": "正一经系，南北宗、雷法、符箓、斋醮科仪",
     "src": "texts/zhengyi/洞真太上上皇民籍定真玉箓.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2234,
     "transChars": 0
   },
@@ -16843,7 +16843,7 @@
     "categoryDesc": "正一经系，南北宗、雷法、符箓、斋醮科仪",
     "src": "texts/zhengyi/灵书肘后钞.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2249,
     "transChars": 0
   },
@@ -17071,7 +17071,7 @@
     "categoryDesc": "正一经系，南北宗、雷法、符箓、斋醮科仪",
     "src": "texts/zhengyi/赣州圣济庙灵迹碑.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2221,
     "transChars": 0
   },
