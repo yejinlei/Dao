@@ -66,10 +66,10 @@
     "categoryKey": "dongzhen",
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/三才定位图.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/dongzhen/三才定位图.txt",
+    "translated": true,
     "srcChars": 2580,
-    "transChars": 0
+    "transChars": 9322
   },
   {
     "id": "dongzhen_0007",
@@ -1974,10 +1974,10 @@
     "categoryKey": "dongzhen",
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/太微灵书紫文仙忌真记上经.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/dongzhen/太微灵书紫文仙忌真记上经.txt",
+    "translated": true,
     "srcChars": 1413,
-    "transChars": 0
+    "transChars": 7163
   },
   {
     "id": "dongzhen_0166",
@@ -2142,10 +2142,10 @@
     "categoryKey": "dongzhen",
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/慈明瑞象灯仪.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/dongzhen/慈明瑞象灯仪.txt",
+    "translated": true,
     "srcChars": 2538,
-    "transChars": 0
+    "transChars": 9851
   },
   {
     "id": "dongzhen_0180",
@@ -2418,10 +2418,10 @@
     "categoryKey": "dongzhen",
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/洞真太微黄书九天八箓真文.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/dongzhen/洞真太微黄书九天八箓真文.txt",
+    "translated": true,
     "srcChars": 1411,
-    "transChars": 0
+    "transChars": 6116
   },
   {
     "id": "dongzhen_0203",
@@ -2898,10 +2898,10 @@
     "categoryKey": "dongzhen",
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/秤星灵台秘要经.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/dongzhen/秤星灵台秘要经.txt",
+    "translated": true,
     "srcChars": 2573,
-    "transChars": 0
+    "transChars": 10797
   },
   {
     "id": "dongzhen_0243",
@@ -4254,10 +4254,10 @@
     "categoryKey": "dongxuan",
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/上清洞玄明灯上经.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/dongxuan/上清洞玄明灯上经.txt",
+    "translated": true,
     "srcChars": 2563,
-    "transChars": 0
+    "transChars": 9371
   },
   {
     "id": "dongxuan_0356",
@@ -4998,10 +4998,10 @@
     "categoryKey": "dongxuan",
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/太上洞玄灵宝五帝醮祭招真玉诀.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/dongxuan/太上洞玄灵宝五帝醮祭招真玉诀.txt",
+    "translated": true,
     "srcChars": 2599,
-    "transChars": 0
+    "transChars": 10067
   },
   {
     "id": "dongxuan_0418",
@@ -5946,10 +5946,10 @@
     "categoryKey": "dongxuan",
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/存神固气论.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/dongxuan/存神固气论.txt",
+    "translated": true,
     "srcChars": 2592,
-    "transChars": 0
+    "transChars": 10900
   },
   {
     "id": "dongxuan_0497",
@@ -7242,10 +7242,10 @@
     "categoryKey": "dongxuan",
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/金箓十回度人晚朝转经仪.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/dongxuan/金箓十回度人晚朝转经仪.txt",
+    "translated": true,
     "srcChars": 2618,
-    "transChars": 0
+    "transChars": 9312
   },
   {
     "id": "dongxuan_0605",
@@ -8838,10 +8838,10 @@
     "categoryKey": "dongshen",
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/太上卫灵神化九转丹砂法.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/dongshen/太上卫灵神化九转丹砂法.txt",
+    "translated": true,
     "srcChars": 2578,
-    "transChars": 0
+    "transChars": 9897
   },
   {
     "id": "dongshen_0738",
@@ -9450,10 +9450,10 @@
     "categoryKey": "dongshen",
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/太上老君说常清静经颂注.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/dongshen/太上老君说常清静经颂注.txt",
+    "translated": true,
     "srcChars": 2615,
-    "transChars": 0
+    "transChars": 16848
   },
   {
     "id": "dongshen_0789",
@@ -10938,10 +10938,10 @@
     "categoryKey": "dongshen",
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/章献明肃皇后受上清毕法箓记.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/dongshen/章献明肃皇后受上清毕法箓记.txt",
+    "translated": true,
     "srcChars": 1418,
-    "transChars": 0
+    "transChars": 6566
   },
   {
     "id": "dongshen_0913",
@@ -12558,10 +12558,10 @@
     "categoryKey": "taiping",
     "categoryDesc": "太平经系，含《太平经》及相关注疏",
     "src": "texts/taiping/洞玄灵宝八仙王教诫经.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/taiping/洞玄灵宝八仙王教诫经.txt",
+    "translated": true,
     "srcChars": 2525,
-    "transChars": 0
+    "transChars": 10954
   },
   {
     "id": "taiping_1048",
@@ -13338,10 +13338,10 @@
     "categoryKey": "taixuan",
     "categoryDesc": "道德经系，老子、庄子、列子文子诸子真经注疏",
     "src": "texts/taixuan/太上洞玄灵宝三一五气真经.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/taixuan/太上洞玄灵宝三一五气真经.txt",
+    "translated": true,
     "srcChars": 2612,
-    "transChars": 0
+    "transChars": 11064
   },
   {
     "id": "taixuan_1113",
@@ -14370,10 +14370,10 @@
     "categoryKey": "taiqing",
     "categoryDesc": "金丹外丹、服食、药法类经典",
     "src": "texts/taiqing/橐钥子.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/taiqing/橐钥子.txt",
+    "translated": true,
     "srcChars": 2522,
-    "transChars": 0
+    "transChars": 11452
   },
   {
     "id": "taiqing_1199",
@@ -14838,10 +14838,10 @@
     "categoryKey": "zhengyi",
     "categoryDesc": "正一经系，南北宗、雷法、符箓、斋醮科仪",
     "src": "texts/zhengyi/上清太上回元隐道除罪籍经.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/zhengyi/上清太上回元隐道除罪籍经.txt",
+    "translated": true,
     "srcChars": 2558,
-    "transChars": 0
+    "transChars": 9875
   },
   {
     "id": "zhengyi_1238",
@@ -15930,10 +15930,10 @@
     "categoryKey": "zhengyi",
     "categoryDesc": "正一经系，南北宗、雷法、符箓、斋醮科仪",
     "src": "texts/zhengyi/太清元道真经.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/zhengyi/太清元道真经.txt",
+    "translated": true,
     "srcChars": 2549,
-    "transChars": 0
+    "transChars": 10292
   },
   {
     "id": "zhengyi_1329",
@@ -16254,10 +16254,10 @@
     "categoryKey": "zhengyi",
     "categoryDesc": "正一经系，南北宗、雷法、符箓、斋醮科仪",
     "src": "texts/zhengyi/洞玄灵宝课中法.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/zhengyi/洞玄灵宝课中法.txt",
+    "translated": true,
     "srcChars": 2616,
-    "transChars": 0
+    "transChars": 9656
   },
   {
     "id": "zhengyi_1356",
@@ -16854,10 +16854,10 @@
     "categoryKey": "zhengyi",
     "categoryDesc": "正一经系，南北宗、雷法、符箓、斋醮科仪",
     "src": "texts/zhengyi/灵信经旨.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/zhengyi/灵信经旨.txt",
+    "translated": true,
     "srcChars": 2559,
-    "transChars": 0
+    "transChars": 11578
   },
   {
     "id": "zhengyi_1406",
@@ -17298,10 +17298,10 @@
     "categoryKey": "zhengyi",
     "categoryDesc": "正一经系，南北宗、雷法、符箓、斋醮科仪",
     "src": "texts/zhengyi/高上神霄宗师受经式.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/zhengyi/高上神霄宗师受经式.txt",
+    "translated": true,
     "srcChars": 2568,
-    "transChars": 0
+    "transChars": 10115
   },
   {
     "id": "zhengyi_1443",
@@ -17730,10 +17730,10 @@
     "categoryKey": "xu",
     "categoryDesc": "明万历续收及藏外劝善三圣经等",
     "src": "texts/xu/太微帝君二十四神回元经.txt",
-    "trans": "",
-    "translated": false,
+    "trans": "translations/xu/太微帝君二十四神回元经.txt",
+    "translated": true,
     "srcChars": 2546,
-    "transChars": 0
+    "transChars": 9681
   },
   {
     "id": "xu_1479",
