@@ -379,7 +379,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/九还七返龙虎金丹析理真诀.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3551,
     "transChars": 0
   },
@@ -631,7 +631,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/元始上真众仙记 枕中书.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3608,
     "transChars": 0
   },
@@ -1099,7 +1099,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/吕纯阳真人沁园春丹词批注.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3525,
     "transChars": 0
   },
@@ -1375,7 +1375,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/太上十二上品飞天法轮劝戒妙经.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3701,
     "transChars": 0
   },
@@ -2395,7 +2395,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/洞玄灵宝无量度人经诀音义.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3752,
     "transChars": 0
   },
@@ -2467,7 +2467,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/清微丹诀.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3568,
     "transChars": 0
   },
@@ -2611,7 +2611,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/灵宝自然九天生神三尊大有金书.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3544,
     "transChars": 0
   },
@@ -3199,7 +3199,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/还丹显妙通幽集.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3760,
     "transChars": 0
   },
@@ -3643,7 +3643,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/黄帝阴符经注（唐张果）.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3737,
     "transChars": 0
   },
@@ -3859,7 +3859,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/黄箓九阳梵炁灯仪.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3642,
     "transChars": 0
   },
@@ -4075,7 +4075,7 @@
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/上清侍帝晏桐柏真人真图赞.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3687,
     "transChars": 0
   },
@@ -4279,7 +4279,7 @@
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/上清紫微帝君南极元君玉经宝诀.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3675,
     "transChars": 0
   },
@@ -7783,7 +7783,7 @@
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/上清金阙帝君五斗三一图诀.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3543,
     "transChars": 0
   },
@@ -7915,7 +7915,7 @@
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/保生要录.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3720,
     "transChars": 0
   },
@@ -7951,7 +7951,7 @@
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/修真秘录—宋.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 4081,
     "transChars": 0
   },
@@ -9691,7 +9691,7 @@
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/太上通灵八史圣文真形图.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3681,
     "transChars": 0
   },
@@ -10231,7 +10231,7 @@
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/悬解录.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3470,
     "transChars": 0
   },
@@ -16231,7 +16231,7 @@
     "categoryDesc": "正一经系，南北宗、雷法、符箓、斋醮科仪",
     "src": "texts/zhengyi/洞玄灵宝太上六斋十直圣纪经.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3564,
     "transChars": 0
   },
