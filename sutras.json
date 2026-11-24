@@ -223,7 +223,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/上清太玄九阳图.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3102,
     "transChars": 0
   },
@@ -775,7 +775,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/元始天尊说玄微妙经.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2750,
     "transChars": 0
   },
@@ -1999,7 +1999,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/太极真人说二十四门戒经.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2774,
     "transChars": 0
   },
@@ -3067,7 +3067,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/至真子龙虎大丹诗.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2782,
     "transChars": 0
   },
@@ -3943,7 +3943,7 @@
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/上方大洞真元妙经品.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2768,
     "transChars": 0
   },
@@ -4831,7 +4831,7 @@
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/太上洞渊三昧神咒斋清旦行道仪.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2727,
     "transChars": 0
   },
@@ -5707,7 +5707,7 @@
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/太上灵宝玉匮明真斋忏方仪.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2711,
     "transChars": 0
   },
@@ -5755,7 +5755,7 @@
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/太上玄司灭罪紫府消灾法忏.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3081,
     "transChars": 0
   },
@@ -7291,7 +7291,7 @@
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/金箓大斋补职说戒仪.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2950,
     "transChars": 0
   },
@@ -9463,7 +9463,7 @@
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/太上老君说报父母恩重经.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2760,
     "transChars": 0
   },
@@ -9787,7 +9787,7 @@
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/太极真人九转还丹经要诀.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2777,
     "transChars": 0
   },
@@ -10459,7 +10459,7 @@
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/正一解卮醮仪.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2823,
     "transChars": 0
   },
@@ -13771,7 +13771,7 @@
     "categoryDesc": "道德经系，老子、庄子、列子文子诸子真经注疏",
     "src": "texts/taixuan/真人高象先生金丹歌.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2751,
     "transChars": 0
   },
@@ -15271,7 +15271,7 @@
     "categoryDesc": "正一经系，南北宗、雷法、符箓、斋醮科仪",
     "src": "texts/zhengyi/上清黄庭养神经.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2866,
     "transChars": 0
   },
@@ -16195,7 +16195,7 @@
     "categoryDesc": "正一经系，南北宗、雷法、符箓、斋醮科仪",
     "src": "texts/zhengyi/洞玄灵宝五老摄召北酆鬼魔赤书玉诀.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2715,
     "transChars": 0
   },
@@ -16207,7 +16207,7 @@
     "categoryDesc": "正一经系，南北宗、雷法、符箓、斋醮科仪",
     "src": "texts/zhengyi/洞玄灵宝八节斋宿启仪.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2855,
     "transChars": 0
   },
@@ -16891,7 +16891,7 @@
     "categoryDesc": "正一经系，南北宗、雷法、符箓、斋醮科仪",
     "src": "texts/zhengyi/灵济真君注生堂灵签.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3105,
     "transChars": 0
   },
@@ -17323,7 +17323,7 @@
     "categoryDesc": "正一经系，南北宗、雷法、符箓、斋醮科仪",
     "src": "texts/zhengyi/龙虎精微论.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2790,
     "transChars": 0
   },
