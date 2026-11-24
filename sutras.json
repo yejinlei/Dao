@@ -319,7 +319,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/丹经极论.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3909,
     "transChars": 0
   },
@@ -427,7 +427,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/修丹妙用至理论.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3996,
     "transChars": 0
   },
@@ -2167,7 +2167,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/擒玄赋.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3922,
     "transChars": 0
   },
@@ -2887,7 +2887,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/碧虚子亲传直指.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3998,
     "transChars": 0
   },
@@ -3655,7 +3655,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/黄帝阴符经注（宋俞琰）.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 4001,
     "transChars": 0
   },
@@ -5035,7 +5035,7 @@
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/太上洞玄灵宝净供妙经.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 4028,
     "transChars": 0
   },
@@ -5875,7 +5875,7 @@
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/太上黄庭内景玉经.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 4048,
     "transChars": 0
   },
@@ -7447,7 +7447,7 @@
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/青玄救苦宝忏.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 4114,
     "transChars": 0
   },
@@ -7687,7 +7687,7 @@
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/三洞法服科戒文.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 4004,
     "transChars": 0
   },
@@ -11647,7 +11647,7 @@
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/道德真经藏室纂微篇开题.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3854,
     "transChars": 0
   },
@@ -12115,7 +12115,7 @@
     "categoryDesc": "太平经系，含《太平经》及相关注疏",
     "src": "texts/taiping/上清太玄鉴诫论.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 4008,
     "transChars": 0
   },
@@ -12247,7 +12247,7 @@
     "categoryDesc": "太平经系，含《太平经》及相关注疏",
     "src": "texts/taiping/太上洞玄灵宝中和经.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 4038,
     "transChars": 0
   },
@@ -13039,7 +13039,7 @@
     "categoryDesc": "道德经系，老子、庄子、列子文子诸子真经注疏",
     "src": "texts/taixuan/内丹秘诀.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 4044,
     "transChars": 0
   },
@@ -15103,7 +15103,7 @@
     "categoryDesc": "正一经系，南北宗、雷法、符箓、斋醮科仪",
     "src": "texts/zhengyi/上清素灵上篇.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3881,
     "transChars": 0
   },
@@ -16243,7 +16243,7 @@
     "categoryDesc": "正一经系，南北宗、雷法、符箓、斋醮科仪",
     "src": "texts/zhengyi/洞玄灵宝真人修行延年益算法.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 4087,
     "transChars": 0
   },
@@ -16495,7 +16495,7 @@
     "categoryDesc": "正一经系，南北宗、雷法、符箓、斋醮科仪",
     "src": "texts/zhengyi/洞真太上八素真经占候入定妙诀.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 4043,
     "transChars": 0
   },
@@ -16735,7 +16735,7 @@
     "categoryDesc": "正一经系，南北宗、雷法、符箓、斋醮科仪",
     "src": "texts/zhengyi/洞真金房度命绿字回年三华宝曤内真上经.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3994,
     "transChars": 0
   },
@@ -16759,7 +16759,7 @@
     "categoryDesc": "正一经系，南北宗、雷法、符箓、斋醮科仪",
     "src": "texts/zhengyi/洞真黄书.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3891,
     "transChars": 0
   },
