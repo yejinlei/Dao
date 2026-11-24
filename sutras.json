@@ -271,7 +271,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/上清琼宫灵飞六甲左右上符.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3539,
     "transChars": 0
   },
@@ -1207,7 +1207,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/大洞金华玉经.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3493,
     "transChars": 0
   },
@@ -1279,7 +1279,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/太上九真妙戒金箓度命拔罪妙经.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3602,
     "transChars": 0
   },
@@ -2623,7 +2623,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/玄元十子图.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3448,
     "transChars": 0
   },
@@ -3403,7 +3403,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/附内义丹旨纲目举要.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3507,
     "transChars": 0
   },
@@ -3691,7 +3691,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/黄帝阴符经注（宋黄居真）.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3546,
     "transChars": 0
   },
@@ -4111,7 +4111,7 @@
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/上清六甲祈祷秘法.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3477,
     "transChars": 0
   },
@@ -6511,7 +6511,7 @@
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/灵宝五经提纲.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3490,
     "transChars": 0
   },
@@ -6979,7 +6979,7 @@
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/神功妙济真君礼文.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3363,
     "transChars": 0
   },
@@ -7351,7 +7351,7 @@
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/金箓斋投简仪.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3492,
     "transChars": 0
   },
@@ -7975,7 +7975,7 @@
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/先天玄妙玉女太上圣母资传仙道.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3468,
     "transChars": 0
   },
@@ -8299,7 +8299,7 @@
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/参同契五相类秘要.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3388,
     "transChars": 0
   },
@@ -14095,7 +14095,7 @@
     "categoryDesc": "道德经系，老子、庄子、列子文子诸子真经注疏",
     "src": "texts/taixuan/黄帝八十一难经注义图序论.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3423,
     "transChars": 0
   },
@@ -14167,7 +14167,7 @@
     "categoryDesc": "道德经系，老子、庄子、列子文子诸子真经注疏",
     "src": "texts/taixuan/龙虎元旨.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3523,
     "transChars": 0
   },
@@ -15775,7 +15775,7 @@
     "categoryDesc": "正一经系，南北宗、雷法、符箓、斋醮科仪",
     "src": "texts/zhengyi/太上洞玄灵宝二部传授仪.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3478,
     "transChars": 0
   },
@@ -17023,7 +17023,7 @@
     "categoryDesc": "正一经系，南北宗、雷法、符箓、斋醮科仪",
     "src": "texts/zhengyi/老子秘旨例略.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3635,
     "transChars": 0
   },
@@ -17515,7 +17515,7 @@
     "categoryDesc": "明万历续收及藏外劝善三圣经等",
     "src": "texts/xu/太上三元赐福敖罪解厄消灾延生保命妙经.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3541,
     "transChars": 0
   },
@@ -17611,7 +17611,7 @@
     "categoryDesc": "明万历续收及藏外劝善三圣经等",
     "src": "texts/xu/太上洞玄灵宝五显观华光本行妙经.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3373,
     "transChars": 0
   },
