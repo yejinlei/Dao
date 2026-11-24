@@ -175,7 +175,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/上清十一大曜灯仪.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2708,
     "transChars": 0
   },
@@ -607,7 +607,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/修真太极混元指玄图.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2740,
     "transChars": 0
   },
@@ -943,7 +943,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/元始高上玉检大箓.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2751,
     "transChars": 0
   },
@@ -1495,7 +1495,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/太上导引三光宝真妙经.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2781,
     "transChars": 0
   },
@@ -3883,7 +3883,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/黄箓破狱灯仪.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2728,
     "transChars": 0
   },
@@ -5491,7 +5491,7 @@
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/太上灵宝下元水官消愆灭罪忏.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2703,
     "transChars": 0
   },
@@ -5503,7 +5503,7 @@
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/太上灵宝中元地官消愆灭罪忏.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2723,
     "transChars": 0
   },
@@ -5731,7 +5731,7 @@
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/太上玄一真人说劝诫法 轮妙经.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2734,
     "transChars": 0
   },
@@ -5743,7 +5743,7 @@
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/太上玄一真人说妙通转神入定经.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3008,
     "transChars": 0
   },
@@ -5995,7 +5995,7 @@
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/慈尊升度宝忏.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2840,
     "transChars": 0
   },
@@ -6163,7 +6163,7 @@
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/洞玄灵宝定观经注.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2770,
     "transChars": 0
   },
@@ -8863,7 +8863,7 @@
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/太上太清天童护命妙经注.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2763,
     "transChars": 0
   },
@@ -9163,7 +9163,7 @@
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/太上瑶台益算宝籍延年忏.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2873,
     "transChars": 0
   },
@@ -11923,7 +11923,7 @@
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/金石簿九五数诀.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2804,
     "transChars": 0
   },
@@ -13579,7 +13579,7 @@
     "categoryDesc": "道德经系，老子、庄子、列子文子诸子真经注疏",
     "src": "texts/taixuan/洞玄灵宝九真人五复三归行道观门经.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2777,
     "transChars": 0
   },
@@ -14239,7 +14239,7 @@
     "categoryDesc": "金丹外丹、服食、药法类经典",
     "src": "texts/taiqing/天机经.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2716,
     "transChars": 0
   },
@@ -17383,7 +17383,7 @@
     "categoryDesc": "明万历续收及藏外劝善三圣经等",
     "src": "texts/xu/元始天尊说药王救八十一难真经.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2722,
     "transChars": 0
   },
@@ -17647,7 +17647,7 @@
     "categoryDesc": "明万历续收及藏外劝善三圣经等",
     "src": "texts/xu/太上老君开天经.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2927,
     "transChars": 0
   },
