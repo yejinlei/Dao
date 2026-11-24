@@ -1147,7 +1147,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/土司灯仪.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2934,
     "transChars": 0
   },
@@ -3367,7 +3367,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/金阙帝君三元真一经.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2803,
     "transChars": 0
   },
@@ -4927,7 +4927,7 @@
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/太上洞玄灵宝三涂五苦拔度生死妙经.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2874,
     "transChars": 0
   },
@@ -6667,7 +6667,7 @@
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/灵宝归空诀.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2897,
     "transChars": 0
   },
@@ -6751,7 +6751,7 @@
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/玄灵转经晚朝行道仪.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2892,
     "transChars": 0
   },
@@ -7339,7 +7339,7 @@
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/金箓斋忏方仪.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2832,
     "transChars": 0
   },
@@ -8215,7 +8215,7 @@
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/南华真经新传.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2876,
     "transChars": 0
   },
@@ -8551,7 +8551,7 @@
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/大明御制玄教乐章.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3139,
     "transChars": 0
   },
@@ -8995,7 +8995,7 @@
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/太上洞神五星赞.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2816,
     "transChars": 0
   },
@@ -9823,7 +9823,7 @@
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/太清修丹秘诀.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2823,
     "transChars": 0
   },
@@ -10831,7 +10831,7 @@
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/碧玉朱砂寒林玉树匮.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2896,
     "transChars": 0
   },
@@ -10987,7 +10987,7 @@
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/纯阳吕真人药石制.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3286,
     "transChars": 0
   },
@@ -12451,7 +12451,7 @@
     "categoryDesc": "太平经系，含《太平经》及相关注疏",
     "src": "texts/taiping/太极左仙公说神符经.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2770,
     "transChars": 0
   },
@@ -14767,7 +14767,7 @@
     "categoryDesc": "正一经系，南北宗、雷法、符箓、斋醮科仪",
     "src": "texts/zhengyi/上清大洞三景玉清隐书诀箓.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2737,
     "transChars": 0
   },
@@ -15415,7 +15415,7 @@
     "categoryDesc": "正一经系，南北宗、雷法、符箓、斋醮科仪",
     "src": "texts/zhengyi/六十甲子本命元辰历.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3009,
     "transChars": 0
   },
@@ -15451,7 +15451,7 @@
     "categoryDesc": "正一经系，南北宗、雷法、符箓、斋醮科仪",
     "src": "texts/zhengyi/北帝七元紫庭延生秘诀.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3005,
     "transChars": 0
   },
@@ -15739,7 +15739,7 @@
     "categoryDesc": "正一经系，南北宗、雷法、符箓、斋醮科仪",
     "src": "texts/zhengyi/太上正一法文经.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2864,
     "transChars": 0
   },
@@ -16903,7 +16903,7 @@
     "categoryDesc": "正一经系，南北宗、雷法、符箓、斋醮科仪",
     "src": "texts/zhengyi/玄和子十二月卦金诀.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 2733,
     "transChars": 0
   },
