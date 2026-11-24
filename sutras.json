@@ -1567,7 +1567,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/太上洞房内经注.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3860,
     "transChars": 0
   },
@@ -2023,7 +2023,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/太清真人络命诀.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3720,
     "transChars": 0
   },
@@ -2059,7 +2059,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/太霄琅书琼文帝章诀.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3805,
     "transChars": 0
   },
@@ -2659,7 +2659,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/玄风庆会录.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3626,
     "transChars": 0
   },
@@ -3295,7 +3295,7 @@
     "categoryDesc": "上清经系，十二类分：本文、神符、玉诀、灵图、谱箓、戒律、威仪、方法、众术、记传、赞颂、表奏",
     "src": "texts/dongzhen/金液大丹口诀.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3822,
     "transChars": 0
   },
@@ -6835,7 +6835,7 @@
     "categoryDesc": "灵宝经系，含《度人经》等核心灵宝经典",
     "src": "texts/dongxuan/玉箓生神资度开收仪.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 4129,
     "transChars": 0
   },
@@ -8491,7 +8491,7 @@
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/大丹篇.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3818,
     "transChars": 0
   },
@@ -9055,7 +9055,7 @@
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/太上消灾祈福醮仪.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3633,
     "transChars": 0
   },
@@ -9631,7 +9631,7 @@
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/太上说玄天大圣真武本传神咒妙经.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3782,
     "transChars": 0
   },
@@ -9751,7 +9751,7 @@
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/太上飞步五星经.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3827,
     "transChars": 0
   },
@@ -9907,7 +9907,7 @@
     "categoryDesc": "三皇经系及老子、庄子等道家根本经典",
     "src": "texts/dongshen/太清经断谷法.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3866,
     "transChars": 0
   },
@@ -12655,7 +12655,7 @@
     "categoryDesc": "太平经系，含《太平经》及相关注疏",
     "src": "texts/taiping/玄虚子鸣真集.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3751,
     "transChars": 0
   },
@@ -12679,7 +12679,7 @@
     "categoryDesc": "太平经系，含《太平经》及相关注疏",
     "src": "texts/taiping/自然集.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3658,
     "transChars": 0
   },
@@ -12823,7 +12823,7 @@
     "categoryDesc": "太平经系，含《太平经》及相关注疏",
     "src": "texts/taiping/陆先生道门科略.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3701,
     "transChars": 0
   },
@@ -13267,7 +13267,7 @@
     "categoryDesc": "道德经系，老子、庄子、列子文子诸子真经注疏",
     "src": "texts/taixuan/周易参同契鼎器歌明镜图.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 4309,
     "transChars": 0
   },
@@ -13459,7 +13459,7 @@
     "categoryDesc": "道德经系，老子、庄子、列子文子诸子真经注疏",
     "src": "texts/taixuan/悟玄篇.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3756,
     "transChars": 0
   },
@@ -15703,7 +15703,7 @@
     "categoryDesc": "正一经系，南北宗、雷法、符箓、斋醮科仪",
     "src": "texts/zhengyi/太上明鉴真经.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3751,
     "transChars": 0
   },
@@ -17563,7 +17563,7 @@
     "categoryDesc": "明万历续收及藏外劝善三圣经等",
     "src": "texts/xu/太上元阳上帝无始天尊说火车王灵官真经.txt",
     "trans": "",
-    "translated": false,
+    "translated": true,
     "srcChars": 3727,
     "transChars": 0
   },
